@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Icon -->
+    <link rel="icon" href="assets/logo.png" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="assets/logo.png" alt="logo" />
+        <a href="#">Abdallah</a>
+      </div>
+
+      <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#skill">Skills</a>
+        <a href="#project">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="extra-nav">
+        <button>Get In Touch</button>
+      </div>
+
+      <div id="menu" class="hamburger-menu">
+        <svg
+          width="35px"
+          height="35px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 18L20 18"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M4 12L20 12"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M4 6L20 6"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="nav-mobile" class="mobile-nav">
+        <div id="close-mobile" class="close">
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #ffffff;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 2px;
+                }
+              </style>
+            </defs>
+
+            <title />
+
+            <g id="cross">
+              <line class="cls-1" x1="7" x2="25" y1="7" y2="25" />
+
+              <line class="cls-1" x1="7" x2="25" y1="25" y2="7" />
+            </g>
+          </svg>
+        </div>
+        <ul>
+          <li><a class="nav-link" href="#">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#skilll">Skilll</a></li>
+          <li><a class="nav-link" href="#project">Project</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="content">
+          <svg viewBox="0 0 1500 500" data-aos="fade-down">
+            <text x="50%" y="50%" text-anchor="middle">ABDALLAH</text>
+          </svg>
+          <h1 data-aos="zoom-in-up">
+            Delivering Custom Frontend Solutions that <span>Stand Out</span>
+          </h1>
+          <button data-aos="zoom-out"><span>Show my Work</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title">
+            About Me
+          </h1>
+          <div class="about-me">
+            <div data-aos="zoom-out-right" data-aos-delay="300" class="profile">
+              <div class="image-box">
+                <img src="assets/profile.png" alt="profile" />
+              </div>
+            </div>
+
+            <div
+              data-aos="zoom-in-left"
+              data-aos-delay="300"
+              class="description"
+            >
+              <div class="name-role">
+                <h1>Abdallah Kassem</h1>
+                <div class="role">
+                  <h2>Computer Science Student</h2>
+                </div>
+              </div>
+              <p>
+                I am a Computer Science and Information Technology student at Egypt-Japan University for Science and Technology, passionate about software development, problem solving, and game development. I enjoy building projects that challenge my skills and help me grow as a developer. My interests include Python, C/C++, web development, and learning new technologies. I am always eager to collaborate, learn, and contribute to impactful projects.
+                <br /><br />
+                <strong>Location:</strong> Aswan, Egypt<br />
+                <strong>Email:</strong> abdallahkassemhassan@gmail.com<br />
+                <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/abdallah-kassem" target="_blank">linkedin.com/in/abdallah-kassem</a><br />
+                <strong>GitHub:</strong> <a href="https://github.com/TaQsiimUwU" target="_blank">github.com/TaQsiim</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skill" class="skill">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title">
+            Skills
+          </h1>
+
+          <div class="skills" data-aos-delay="500">
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/html5.svg" alt="HTML" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/css3.svg" alt="CSS" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/javascript.svg" alt="JavaScript" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/typescript.svg" alt="TypeScript" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/react.svg" alt="React" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/next.svg" alt="Next.js" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/alpinejs.svg" alt="Alpine.js" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/tailwind.svg" alt="Tailwind CSS" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/mysql.svg" alt="MySQL" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/postgresql.svg" alt="PostgreSQL" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/figma.svg" alt="Figma" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="assets/icon/github.svg" alt="GitHub" />
+            </div>
+          </div>
+          <div class="skills-list">
+            <ul>
+              <li>Object-Oriented Programming (OOP)</li>
+              <li>Software Development Life Cycle (SDLC)</li>
+              <li>Agile Development Practices</li>
+              <li>Python, C/C++, HTML/CSS, JavaScript, Dart</li>
+              <li>VS Code, Google Cloud Platform, Android Studio</li>
+              <li>Arch Linux, GitHub, Flutter</li>
+              <li>Team Leadership, Communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project" class="project">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title">
+            Projects
+          </h1>
+
+          <div class="projects">
+            <div data-aos="zoom-in-down" data-aos-delay="300" class="card">
+              <img src="assets/project.png" alt="Bookstore Management System" />
+
+              <div class="description">
+                <h1>Bookstore Management System</h1>
+                <p>
+                  Python (OOP) | May 2024<br />
+                  Developed a Python-based bookstore management system for the Advanced Programming course. Features include inventory management, search, and a modular codebase for easy maintenance and future enhancements.
+                </p>
+                <div class="action">
+                  <a href="#" target="_blank"><button>Github</button></a>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-down" data-aos-delay="400" class="card">
+              <img src="assets/project.png" alt="Python Discord Chat Bot" />
+
+              <div class="description">
+                <h1>Python Discord Chat Bot</h1>
+                <p>
+                  Python | 2022<br />
+                  Developed a modular Python-based Discord chat bot with message handling, user command processing, and customizable commands to enhance server interactions.
+                </p>
+                <div class="action">
+                  <a href="#" target="_blank"><button>Github</button></a>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-down" data-aos-delay="500" class="card">
+              <img src="assets/project.png" alt="Unity Game Development" />
+
+              <div class="description">
+                <h1>Unity Game Development</h1>
+                <p>
+                  Unity | 2024<br />
+                  Explored game development using Unity, focusing on UI, character control, environment setup, and scripting for engaging gameplay experiences.
+                </p>
+                <div class="action">
+                  <a href="#" target="_blank"><button>Github</button></a>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-down" data-aos-delay="600" class="card">
+              <img src="assets/project.png" alt="ECPC Problem Solving" />
+
+              <div class="description">
+                <h1>ECPC Problem Solving</h1>
+                <p>
+                  ECPC Qualification | July 2024<br />
+                  Participated in the ECPC contest for problem-solving, placing 31/60 at the university and 200/500 overall. Enhanced teamwork and algorithmic skills.
+                </p>
+                <div class="action">
+                  <a href="#" target="_blank"><button>Details</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title">
+            Contact
+          </h1>
+
+          <form
+            data-aos="zoom-in-down"
+            data-aos-delay="300"
+            class="contact-form"
+          >
+            <div class="input">
+              <input type="text" placeholder="Name..." />
+              <input type="email" placeholder="Email..." />
+              <input type="number" placeholder="Phone..." />
+              <input type="text" placeholder="Subject..." />
+            </div>
+            <textarea name="message" placeholder="Message..."></textarea>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div data-aos="fade-up" data-aos-duration="1000" class="container">
+        <div class="profile">
+          <div class="logo">
+            <img src="assets/logo.png" alt="logo" />
+            <a href="#">Abdallah</a>
+          </div>
+
+          <!-- Short About -->
+          <p>
+            Computer Science student at E-JUST, passionate about software development, problem solving, and building impactful projects. Always eager to learn and collaborate.
+          </p>
+
+          <!-- Social Media -->
+          <div class="social-media-container">
+            <div class="social-media">
+              <a href="https://linkedin.com/in/abdallah-kassem" target="_blank"><box-icon color="#ffd600" type="logo" name="linkedin"></box-icon></a>
+            </div>
+            <div class="social-media">
+              <a href="https://github.com/TaQsiimUwU" target="_blank"><box-icon color="#ffd600" type="logo" name="github"></box-icon></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="link-container">
+          <div class="information">
+            <h1>Skills</h1>
+            <ul>
+              <li>OOP</li>
+              <li>SDLC</li>
+              <li>Agile</li>
+              <li>Python, C/C++, HTML/CSS, JavaScript, Dart</li>
+              <li>Flutter, GitHub</li>
+            </ul>
+          </div>
+
+          <div class="resource">
+            <h1>Technology</h1>
+            <ul>
+              <li>VS Code</li>
+              <li>Google Cloud Platform</li>
+              <li>Android Studio</li>
+              <li>Arch Linux</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+
+          <div class="navigation">
+            <h1>Navigation</h1>
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Skill</a>
+              </li>
+              <li>
+                <a href="#">Project</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Box Icon -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
