@@ -11,21 +11,27 @@ export const Home = () => {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden ">
       {/*  theme toggle*/}
       <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
       {/* Background Effects */}
 
-      {/*  Navbar*/}
-      <Menu onMenuItemClick={handleMenuItemClick} />
+        {/* Content Container */}
+        <div className="flex">
+          {/* Navbar */}
+          <div className="w-full">
+            <Menu onMenuItemClick={handleMenuItemClick} />
+          </div>
 
-      {/* Main content */}
-      <div className="flex flex-col items-center justify-center py-6 w-full h-full">
-        <Main_content activeSection={activeSection} />
-      </div>
-      {/* Footer */}
+          {/* Main content */}
+          <div className="flex flex-col items-center py-6 flex-grow w-full">
+            <Main_content activeSection={activeSection} />
+          </div>
+
+        </div>
+        {/* Footer */}
       <Footer />
     </div>
   );
