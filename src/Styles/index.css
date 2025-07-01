@@ -1,0 +1,173 @@
+
+@import "tailwindcss";
+
+@theme {
+
+   /* color var */
+   --color-border: rgpa(var(--border));
+   --color-background: rgpa(var(--background));
+   --color-forground: rgpa(var(--foreground));
+   --color-text: rgpa(var(--text));
+   --color-primary: rgpa(var(--primary));
+   --color-secondary: rgpa(var(--secondary));
+   --color-card: rgpa(var(--card));
+
+   /* animations var */
+   --animation-float: float 3s ease-in-out infinite;
+   --animation-pulse: pulse-subtle 4s ease-in-out infinite;
+   --animation-fade-in: fade-in 0.7s ease-in-out forwards;
+   --animation-fade-out: fade-out 0.7s ease-in-out forwards;
+   --animation-slide-in: slide-in 0.7s ease-in-out forwards;
+   --animation-fade-in-delay: fade-in 0.7s ease-in-out forwards;
+   --animation-meteor: meteor 0.7s linear infinite;
+
+   /* key frames */
+   @keyframes float {
+      0%,
+      100% {
+         transform: translateY(0);
+      }
+      50% {
+       transform: translateY(-10px);
+      }
+   }
+
+   @keyframes pulse-subtle {
+      0%,
+      100% {
+         transform: scale(1);
+         opacity: 1;
+      }
+      50% {
+         transform: scale(1.05);
+         opacity: 0.8;
+      }
+   }
+   @keyframes fade-in {
+      from {
+         opacity: 0;
+         transform: translateY(20px);
+      }
+      to {
+         opacity: 1;
+         transform: translateY(0);
+      }
+   }
+   @keyframes fade-out {
+      from {
+         opacity: 1;
+         transform: translateY(0);
+      }
+      to {
+         opacity: 0;
+         transform: translateY(20px);
+      }
+
+      }
+
+   @keyframes slide-in {
+      from {
+         opacity: 0;
+         transform: translateX(-100%);
+      }
+      to {
+         opacity: 1;
+         transform: translateX(0);
+      }
+   }
+
+   @keyframes meteor {
+      0% {
+         transform: translateY(0) rotate(0deg);
+         opacity: 1;
+      }
+      70% {
+
+         opacity: 1;
+      }
+      100% {
+         transform: translateY(100vh) rotate(360deg);
+         opacity: 0;
+      }
+   }
+}
+
+@layer base {
+   :root {
+      /* colors */
+      --border: 0, 0, 0, 0.1;
+      --background: 255, 255, 255, 1;
+      --foreground: 255, 255, 255, 1;
+      --text: 0, 0, 0, 1;
+      --primary: 0, 123, 255, 1;
+      --secondary: 108, 117, 125, 1;
+      --card: 255, 255, 255, .8;
+   }
+
+   .light {
+      --border: 0, 0, 0, 0.1;
+      --background: 255, 255, 255, 1;
+      --foreground: 255, 255, 255, 1;
+      --text: 0, 0, 0, 1;
+      --primary: 0, 123, 255, 1;
+      --secondary: 108, 117, 125, 1;
+      --card: 255, 255, 255, .8;
+   }
+
+}
+
+@utilities container {
+
+   margin-inline: auto;
+   padding-inline: 2rem;
+
+   @media (min-width: 640px) {
+      max-width: 640px;
+   }
+
+   @media (min-width: 768px) {
+      max-width: 768px;
+   }
+
+   @media (min-width: 1024px) {
+      max-width: 1024px;
+   }
+
+   @media (min-width: 1280px) {
+      max-width: 1280px;
+   }
+
+   @media (min-width: 1536px) {
+      max-width: 1536px;
+   }
+}
+
+
+@utility text-glow {
+   @apply relative;
+   text-shadow: 0 0 5px var(--color-primary), 0 0 10px var(--color-primary), 0 0 15px var(--color-primary), 0 0 20px var(--color-primary);
+}
+
+@utility card-hover {
+   @apply transition-transform duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+@utility gradient-border {
+   @apply relative rounded-md;
+   background: linear-gradient(to right , rgb(var(--color-primary)), rgb(var(--color-secondary)));
+}
+
+@utility gradient-border {
+   @apply relative rounded-md;
+   background: linear-gradient(to right , rgb(var(--color-primary)), rgb(var(--color-secondary)));
+   background-clip: padding-box;
+   border: 2px solid transparent;
+}
+
+@utility button-static {
+   @apply relative rounded-md;
+   background: linear-gradient(to right , rgb(var(--color-primary)), rgb(var(--color-secondary)));
+   background-clip: padding-box;
+   border: 2px solid transparent;
+}
+

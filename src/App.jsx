@@ -1,7 +1,8 @@
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter , Route, Routes} from 'react-router-dom'
+import {Leading} from './pages/Leading'
 import {Home} from './pages/Home'
-import {Notfound} from './pages/NotFound'
-import './App.css'
+import {NotFound} from './pages/404'
+// import './Styles/App.css'
 
 function App() {
 
