@@ -1,123 +1,8 @@
-
+@import url("var.css");
 @import "tailwindcss";
 
-@theme {
-
-   /* color var */
-   --color-border: rgpa(var(--border));
-   --color-background: rgpa(var(--background));
-   --color-forground: rgpa(var(--foreground));
-   --color-text: rgpa(var(--text));
-   --color-primary: rgpa(var(--primary));
-   --color-secondary: rgpa(var(--secondary));
-   --color-card: rgpa(var(--card));
-
-   /* animations var */
-   --animation-float: float 3s ease-in-out infinite;
-   --animation-pulse: pulse-subtle 4s ease-in-out infinite;
-   --animation-fade-in: fade-in 0.7s ease-in-out forwards;
-   --animation-fade-out: fade-out 0.7s ease-in-out forwards;
-   --animation-slide-in: slide-in 0.7s ease-in-out forwards;
-   --animation-fade-in-delay: fade-in 0.7s ease-in-out forwards;
-   --animation-meteor: meteor 0.7s linear infinite;
-
-   /* key frames */
-   @keyframes float {
-      0%,
-      100% {
-         transform: translateY(0);
-      }
-      50% {
-       transform: translateY(-10px);
-      }
-   }
-
-   @keyframes pulse-subtle {
-      0%,
-      100% {
-         transform: scale(1);
-         opacity: 1;
-      }
-      50% {
-         transform: scale(1.05);
-         opacity: 0.8;
-      }
-   }
-   @keyframes fade-in {
-      from {
-         opacity: 0;
-         transform: translateY(20px);
-      }
-      to {
-         opacity: 1;
-         transform: translateY(0);
-      }
-   }
-   @keyframes fade-out {
-      from {
-         opacity: 1;
-         transform: translateY(0);
-      }
-      to {
-         opacity: 0;
-         transform: translateY(20px);
-      }
-
-      }
-
-   @keyframes slide-in {
-      from {
-         opacity: 0;
-         transform: translateX(-100%);
-      }
-      to {
-         opacity: 1;
-         transform: translateX(0);
-      }
-   }
-
-   @keyframes meteor {
-      0% {
-         transform: translateY(0) rotate(0deg);
-         opacity: 1;
-      }
-      70% {
-
-         opacity: 1;
-      }
-      100% {
-         transform: translateY(100vh) rotate(360deg);
-         opacity: 0;
-      }
-   }
-}
-
-@layer base {
-   :root {
-      /* colors */
-      --border: 0, 0, 0, 0.1;
-      --background: 255, 255, 255, 1;
-      --foreground: 255, 255, 255, 1;
-      --text: 0, 0, 0, 1;
-      --primary: 0, 123, 255, 1;
-      --secondary: 108, 117, 125, 1;
-      --card: 255, 255, 255, .8;
-   }
-
-   .light {
-      --border: 0, 0, 0, 0.1;
-      --background: 255, 255, 255, 1;
-      --foreground: 255, 255, 255, 1;
-      --text: 0, 0, 0, 1;
-      --primary: 0, 123, 255, 1;
-      --secondary: 108, 117, 125, 1;
-      --card: 255, 255, 255, .8;
-   }
-
-}
-
+/* Original index.css content */
 @utilities container {
-
    margin-inline: auto;
    padding-inline: 2rem;
 
@@ -141,7 +26,6 @@
       max-width: 1536px;
    }
 }
-
 
 @utility text-glow {
    @apply relative;
@@ -171,3 +55,296 @@
    border: 2px solid transparent;
 }
 
+button{
+   cursor: pointer;
+}
+
+body {
+   /* cursor: url('custom.cur'), auto; */
+   overflow-x: hidden;
+   width: 100%;
+   max-width: 100%;
+   box-sizing: border-box;
+   background-color: #101010;
+   color: white;
+}
+
+html {
+   overflow-x: hidden;
+   width: 100%;
+}
+
+.container {
+   width: 100%;
+   max-width: 100%;
+   padding-inline: 1rem;
+   box-sizing: border-box;
+
+   @media (min-width: 640px) {
+      padding-inline: 1.5rem;
+   }
+
+   @media (min-width: 768px) {
+      padding-inline: 2rem;
+   }
+
+   @media (min-width: 1024px) {
+      padding-inline: 3rem;
+   }
+}
+
+/* Content from bg.css */
+/* body{
+  background-color: #101010;
+  color: white;
+} */
+
+/* Content from Home.css */
+#content-container {
+   font-size: 4.5rem;
+   /* font-family: var(--h1font); */
+   color: white;
+   display: flex;
+   flex-direction: row;
+   height: 100%;
+   width: 100%;
+   /* flex: 1; */
+}
+
+#main-content.hide-main-content {
+  display: none;
+}
+
+#main-content.show-main-content {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: flex-start; */
+  width: 100%;
+  height: 150%;
+  overflow: auto;
+  border: 2px solid;
+  margin-right: 0;
+  padding: 4rem;
+  box-sizing: border-box;
+
+  /* Responsive padding */
+  @media (min-width: 768px) {
+    margin-right: 5%;
+    padding: 6rem;
+  }
+
+  @media (min-width: 1024px) {
+    margin-right: 10%;
+    padding: 10rem;
+  }
+  /* border-radius: 20px; */
+}
+
+#main-content {
+  position: relative; /* Creates a positioning context for the button */
+}
+
+#main-content button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px; /* Adds some spacing from the edges */
+}
+
+/* Content from menu.css */
+#name {
+ font-size: 3.5rem;
+ font-weight: bold;
+ color: var(--text-color);
+ text-align: center;
+ text-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
+
+ @media (min-width: 768px) {
+   font-size: 4.5rem;
+ }
+
+ @media (min-width: 1024px) {
+   font-size: 5rem;
+ }
+}
+
+#menu {
+  margin-bottom: 100px;
+  letter-spacing: 8px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#list {
+  font-size: 1rem;
+  margin: 10px;
+}
+
+#list li {
+  margin: 30px;
+}
+
+/* From Uiverse.io by doniaskima */
+.btn-31,
+.btn-31 *,
+.btn-31 :after,
+.btn-31 :before,
+.btn-31:after,
+.btn-31:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-31 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  /* font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; */
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  mask-image: radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-31:disabled {
+  cursor: default;
+}
+
+.btn-31:-moz-focusring {
+  outline: auto;
+}
+
+.btn-31 svg {
+  display: block;
+}
+
+.btn-31 [hidden] {
+  display: none;
+}
+
+.btn-31 {
+  border-width: 1px;
+  padding: 1rem 2rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-31:before {
+  --progress: 100%;
+  background: #fff;
+  -webkit-clip-path: polygon(
+    100% 0,
+    var(--progress) var(--progress),
+    0 100%,
+    100% 100%
+  );
+  clip-path: polygon(
+    100% 0,
+    var(--progress) var(--progress),
+    0 100%,
+    100% 100%
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+  transition: -webkit-clip-path 0.2s ease;
+  transition: clip-path 0.2s ease;
+  transition: clip-path 0.2s ease, -webkit-clip-path 0.2s ease;
+}
+
+.btn-31:hover:before {
+  --progress: 0%;
+}
+
+.btn-31 .text-container {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-31 .text {
+  display: block;
+  font-weight: 900;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.btn-31:hover .text {
+  -webkit-animation: move-up-alternate 0.3s ease forwards;
+  animation: move-up-alternate 0.3s ease forwards;
+}
+
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Content from Name.css */
+.name {
+   /* font-size: 48px; */
+   color: white;
+   /* font-weight: 300; */
+   letter-spacing: 2px;
+   cursor: pointer;
+   display: inline-block;
+   transition: none;
+}
+
+.name:hover .letter {
+   animation: wiggle 0.6s ease-in-out;
+}
+
+.letter {
+   display: inline-block;
+   transition: transform 0.1s ease;
+}
+
+@keyframes wiggle {
+   0%, 100% { transform: translateY(0); }
+   25% { transform: translateY(-8px); }
+   75% { transform: translateY(8px); }
+}
