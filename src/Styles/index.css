@@ -27,34 +27,6 @@
    }
 }
 
-@utility text-glow {
-   @apply relative;
-   text-shadow: 0 0 5px var(--color-primary), 0 0 10px var(--color-primary), 0 0 15px var(--color-primary), 0 0 20px var(--color-primary);
-}
-
-@utility card-hover {
-   @apply transition-transform duration-300 hover:scale-105 hover:shadow-lg;
-}
-
-@utility gradient-border {
-   @apply relative rounded-md;
-   background: linear-gradient(to right , rgb(var(--color-primary)), rgb(var(--color-secondary)));
-}
-
-@utility gradient-border {
-   @apply relative rounded-md;
-   background: linear-gradient(to right , rgb(var(--color-primary)), rgb(var(--color-secondary)));
-   background-clip: padding-box;
-   border: 2px solid transparent;
-}
-
-@utility button-static {
-   @apply relative rounded-md;
-   background: linear-gradient(to right , rgb(var(--color-primary)), rgb(var(--color-secondary)));
-   background-clip: padding-box;
-   border: 2px solid transparent;
-}
-
 button{
    cursor: pointer;
 }
