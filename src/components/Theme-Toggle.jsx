@@ -4,5 +4,5 @@ import { Sun ,Moon} from 'lucide-react';
 export const ThemeToggle = () => {
   const [IsDark, setIsDark] = useState(true);
 
-  return <button> {IsDark ? <Sun /> : <Moon />} </button>
+  return <button> {IsDark ? <Sun size={40} absoluteStrokeWidth /> : <Moon />} </button>
 }

@@ -4,14 +4,13 @@ export const About = () => {
     <section id="about" className="py-12 px-4">
       <h2 className="text-3xl font-bold mb-6">About Me</h2>
       <p className="text-lg mb-4">
-        Hello! I'm TaQsiim, a passionate web developer with a love for creating
-        beautiful and functional websites. I specialize in front-end development
-        and have experience with various technologies.
+       Yo, I'm Abdallah Kassem or TaQsiim, computer science student at Egypt-Japan University of Science and Technology (E-JUST).
+        A full stack developer, specializing in Frontend development more. I make Mobile, desktop, and web applications using various technologies.
       </p>
       <p className="text-lg">
-        In my free time, I enjoy exploring new technologies, contributing to open
-        source projects, and sharing my knowledge with the community.
+       Some of the technologies I use are:
       </p>
+
     </section>
 </div>
   );

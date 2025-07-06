@@ -1,34 +1,48 @@
 import { useState } from 'react';
+import { SquareX} from 'lucide-react';
 import { ThemeToggle } from '../components/Theme-Toggle.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Menu } from '../components/Menu.jsx';
-import { Main_content } from './Main_content.jsx';
+import { Main_content } from '../components/Main_content.jsx';
+import { BG } from '../components/bg.jsx';
+
+
+
 
 export const Home = () => {
   const [activeSection, setActiveSection] = useState('about');
+  const [showMainContent, setShowMainContent] = useState(false);
+
   const handleMenuItemClick = (section) => {
     setActiveSection(section);
+    setShowMainContent(true);
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden ">
+    <div className="min-h-screen flex flex-col overflow-x-hidden ">
       {/*  theme toggle*/}
       <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
       {/* Background Effects */}
-
+      <BG />
         {/* Content Container */}
-        <div className="flex">
+        <div className="flex-grow flex items-center justify-center" id="content-container">
           {/* Navbar */}
-          <div className="w-full">
+          <div className="w-full max-w-4xl flex flex-col items-center" id="menu">
             <Menu onMenuItemClick={handleMenuItemClick} />
           </div>
 
           {/* Main content */}
-          <div className="flex flex-col items-center py-6 flex-grow w-full">
-            <Main_content activeSection={activeSection} />
-          </div>
+          <div
+          className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}
+          id="main-content"
+        >
+           <button onClick={() => setShowMainContent(false)}>
+              <SquareX size={40} absoluteStrokeWidth />
+            </button>
+          <Main_content activeSection={activeSection} />
+        </div>
 
         </div>
         {/* Footer */}

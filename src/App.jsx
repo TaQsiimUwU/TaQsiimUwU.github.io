@@ -1,6 +1,6 @@
 import { BrowserRouter , Route, Routes} from 'react-router-dom'
 import {Leading} from './pages/Leading'
-import {Home} from './pages/Home'
+import {Home} from './pages/home.jsx'
 import {NotFound} from './pages/404'
 // import './Styles/App.css'
 
