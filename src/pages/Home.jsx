@@ -1,13 +1,10 @@
-import { useState } from 'react';
-import { SquareX} from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { SquareX } from 'lucide-react';
 import { ThemeToggle } from '../components/Theme-Toggle.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Menu } from '../components/Menu.jsx';
 import { Main_content } from '../components/Main_content.jsx';
 import { BG } from '../components/bg.jsx';
-
-
-
 
 export const Home = () => {
   const [activeSection, setActiveSection] = useState('about');
@@ -17,6 +14,17 @@ export const Home = () => {
     setActiveSection(section);
     setShowMainContent(true);
   };
+
+  // Listen for ESC key to close main content
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === 'Escape') {
+        setShowMainContent(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden ">
@@ -33,19 +41,18 @@ export const Home = () => {
             <Menu onMenuItemClick={handleMenuItemClick} />
           </div>
 
-          {/* Main content */}
-          <div
+        {/* Main content */}
+        <div
           className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}
           id="main-content"
         >
-           <button onClick={() => setShowMainContent(false)}>
-              <SquareX size={40} absoluteStrokeWidth />
-            </button>
+          <button onClick={() => setShowMainContent(false)}>
+            <SquareX size={40} absoluteStrokeWidth />
+          </button>
           <Main_content activeSection={activeSection} />
         </div>
-
-        </div>
-        {/* Footer */}
+      </div>
+      {/* Footer */}
       <Footer />
     </div>
   );

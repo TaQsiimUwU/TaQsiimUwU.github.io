@@ -1,9 +1,10 @@
 
-
+import {Name} from './Name.jsx';
 export const Menu = ({ onMenuItemClick }) => {
   return (
     <div className="flex flex-col items-center justify-center py-6 w-full h-full" id="menu">
-     <h1 className="text-3xl font-bold mb-4" id="name">TaQsiim</h1>
+     {/* <h1 className="text-3xl font-bold mb-4" id="name">TaQsiim</h1> */}
+      <Name />
       <nav className="w-full flex-grow flex items-center" >
         <div className="flex justify-center w-full">
           <ul className=" space-x-8 text-xl" id="list">
