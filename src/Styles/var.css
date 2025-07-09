@@ -89,3 +89,9 @@
          opacity: 0;
       }
    }
+
+   @keyframes wiggle {
+   0%, 100% { transform: translateY(0); }
+   25% { transform: translateY(-8px); }
+   75% { transform: translateY(8px); }
+}
