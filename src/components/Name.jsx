@@ -1,5 +1,5 @@
 
- document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('mouseover', function() {
             const letters = document.querySelectorAll('.letter');
             letters.forEach((letter, index) => {
                 letter.style.animationDelay = `${index * 0.1}s`;
