@@ -37,7 +37,7 @@ body {
    width: 100%;
    max-width: 100%;
    box-sizing: border-box;
-   background-color: #101010;
+   /* background-color: #101010; */
    color: white;
 }
 

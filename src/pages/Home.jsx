@@ -4,7 +4,7 @@ import { ThemeToggle } from '../components/Theme-Toggle.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Menu } from '../components/Menu.jsx';
 import { Main_content } from '../components/Main_content.jsx';
-import { BG } from '../components/bg.jsx';
+import Aurora  from '../components/bg/Aurora.jsx';
 
 export const Home = () => {
   const [activeSection, setActiveSection] = useState('about');
@@ -33,7 +33,20 @@ export const Home = () => {
         <ThemeToggle />
       </div>
       {/* Background Effects */}
-      <BG />
+
+     {/*
+      <Aurora
+
+        colorStops={["#FFFFFF", "#000000", "#FFFFFF"]}
+
+        blend={0.5}
+
+        amplitude={1.0}
+
+        speed={0.5}
+
+      />
+      */}
         {/* Content Container */}
         <div className="flex-grow flex items-center justify-center" id="content-container">
           {/* Navbar */}
