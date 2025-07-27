@@ -308,3 +308,47 @@ html {
    transition: transform 0.1s ease;
 }
 
+@keyframes wiggle {
+   0%, 100% { transform: translateY(0); }
+   25% { transform: translateY(-8px); }
+   75% { transform: translateY(8px); }
+}
+
+/* Terminal text animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.terminal-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+    typing 2s steps(40, end),
+    blink .75s step-end infinite;
+  border-right: 3px solid;
+  width: fit-content;
+}
+
+/* Styling for the custom layout */
+.projects-container h2,
+.about-section h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.projects-container h2:after,
+.about-section h2:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, #6165B5 0%, rgba(97, 101, 181, 0.2) 100%);
+}
+
