@@ -1,4 +1,4 @@
-export const NewGame = () => {
+export const Showcase = () => {
   return (
 <div>
     Cuming Soon!
