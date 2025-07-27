@@ -37,7 +37,7 @@ body {
    width: 100%;
    max-width: 100%;
    box-sizing: border-box;
-   /* background-color: #101010; */
+   background-color: #101010;
    color: white;
 }
 
@@ -165,9 +165,7 @@ html {
   background-image: none;
   color: #fff;
   cursor: pointer;
-  /* font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; */
+  font-family: var(--h1font), sans-serif;
   font-size: 100%;
   font-weight: 900;
   line-height: 1.5;
@@ -285,6 +283,7 @@ html {
 .name {
   letter-spacing: 2px;
   cursor: pointer;
+  font-family: var(--h1font);
   /* font-size: 3.5rem; */
   font-weight: bold;
   color: var(--text-color);
@@ -308,5 +307,4 @@ html {
    display: inline-block;
    transition: transform 0.1s ease;
 }
-
 

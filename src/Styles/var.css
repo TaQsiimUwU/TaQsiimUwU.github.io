@@ -1,3 +1,6 @@
+ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+
  :root {
       /* colors */
       --border: 0, 0, 0, 0.1;
@@ -17,7 +20,7 @@
       --animation-meteor: meteor 0.7s linear infinite;
 
       /* fonts */
-      --h1font: sans;
+      --h1font: 'JetBrains Mono', monospace;
    }
 
    /* key frames */
