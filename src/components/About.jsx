@@ -1,17 +1,25 @@
+const lines = [
+  "> Hello everyNyan~ ^w^",
+  "> I'm Abdallah Kassem 🐱 — a Computer Science student at E-JUST.",
+  "> React Front-End and Mobile App Developer using Flutter & Kotlin.",
+  "> Experienced in Python, C/C++, and embedded systems.",
+  "> ECPC problem solver. Love you <3",
+
+];
+
 export const About = () => {
   return (
-<div>
-    <section id="about" className="py-12 px-4">
-      <h2 className="text-3xl font-bold mb-6">About Me</h2>
-      <p className="text-lg mb-4">
-       Yo, I'm Abdallah Kassem or TaQsiim, computer science student at Egypt-Japan University of Science and Technology (E-JUST).
-        A full stack developer, specializing in Frontend development more. I make Mobile, desktop, and web applications using various technologies.
-      </p>
-      <p className="text-lg">
-       Some of the technologies I use are:
-      </p>
+    <div className="about-section">
+      <div className="about-content">
+        {lines.map((line, idx) => (
+          <div key={idx} className="about-line">
+            {line}
+          </div>
+        ))}
+      </div>
 
-    </section>
-</div>
+    </div>
   );
-}
+};
+
+

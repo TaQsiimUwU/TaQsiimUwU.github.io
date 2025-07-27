@@ -4,7 +4,7 @@ import { ThemeToggle } from '../components/Theme-Toggle.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Menu } from '../components/Menu.jsx';
 import { Main_content } from '../components/Main_content.jsx';
-import Aurora  from '../components/bg/Aurora.jsx';
+// import Aurora  from '../components/bg/Aurora.jsx';
 
 export const Home = () => {
   const [activeSection, setActiveSection] = useState('about');
