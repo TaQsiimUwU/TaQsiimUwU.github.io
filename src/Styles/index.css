@@ -37,8 +37,8 @@ body {
    width: 100%;
    max-width: 100%;
    box-sizing: border-box;
-   background-color: #101010;
-   color: white;
+   background-color: var(--background);
+   color: var(--text);
 }
 
 html {
@@ -161,9 +161,9 @@ html {
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: button;
   appearance: button;
-  background-color: #000;
+  background-color: #606080;
   background-image: none;
-  color: #fff;
+  /* color: var(--text-color); */
   cursor: pointer;
   font-family: var(--h1font), sans-serif;
   font-size: 100%;
@@ -200,7 +200,7 @@ html {
 
 .btn-31:before {
   --progress: 100%;
-  background: #fff;
+  background: #ffff;
   -webkit-clip-path: polygon(
     100% 0,
     var(--progress) var(--progress),
@@ -288,7 +288,7 @@ html {
   font-weight: bold;
   color: var(--text-color);
   text-align: center;
-  text-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
+  /* text-shadow: 10px 10px 10px rgba(0, 0, 0, 1); */
 
   @media (min-width: 768px) {
     font-size: 4.5rem;
@@ -307,4 +307,3 @@ html {
    display: inline-block;
    transition: transform 0.1s ease;
 }
-
