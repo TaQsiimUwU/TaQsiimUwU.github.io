@@ -1,100 +1,112 @@
- @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 
- :root {
-      /* colors */
-      --border: 0, 0, 0, 0.1;
-      --background:#201F2B;
-      --foreground: 255, 255, 255, 1;
-      --text: #ffff;
-      --primary: 0, 123, 255, 1;
-      --secondary: 108, 117, 125, 1;
-      --card: 255, 255, 255, .8;
-        /* animations var */
-      --animation-float: float 3s ease-in-out infinite;
-      --animation-pulse: pulse-subtle 4s ease-in-out infinite;
-      --animation-fade-in: fade-in 0.7s ease-in-out forwards;
-      --animation-fade-out: fade-out 0.7s ease-in-out forwards;
-      --animation-slide-in: slide-in 0.7s ease-in-out forwards;
-      --animation-fade-in-delay: fade-in 0.7s ease-in-out forwards;
-      --animation-meteor: meteor 0.7s linear infinite;
+:root {
+   /* colors */
+   --border: 0, 0, 0, 0.1;
+   --background:#201F2B;
+   --foreground: 255, 255, 255, 1;
+   --text: #ffff;
+   --primary: 0, 123, 255, 1;
+   --secondary: 108, 117, 125, 1;
+   --card: 255, 255, 255, .8;
+      /* animations var */
+   --animation-float: float 3s ease-in-out infinite;
+   --animation-pulse: pulse-subtle 4s ease-in-out infinite;
+   --animation-fade-in: fade-in 0.7s ease-in-out forwards;
+   --animation-fade-out: fade-out 0.7s ease-in-out forwards;
+   --animation-slide-in: slide-in 0.7s ease-in-out forwards;
+   --animation-fade-in-delay: fade-in 0.7s ease-in-out forwards;
+   --animation-meteor: meteor 0.7s linear infinite;
 
-      /* fonts */
-      --h1font: 'JetBrains Mono', monospace;
+   /* fonts */
+   --h1font: 'JetBrains Mono', monospace;
+}
+
+/* key frames */
+@keyframes float {
+   0%,
+   100% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(-10px);
+   }
+}
+
+@keyframes pulse-subtle {
+   0%,
+   100% {
+      transform: scale(1);
+      opacity: 1;
+   }
+   50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+   }
+}
+@keyframes fade-in {
+   from {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+@keyframes fade-out {
+   from {
+      opacity: 1;
+      transform: translateY(0);
+   }
+   to {
+      opacity: 0;
+      transform: translateY(20px);
    }
 
-   /* key frames */
-   @keyframes float {
-      0%,
-      100% {
-         transform: translateY(0);
-      }
-      50% {
-       transform: translateY(-10px);
-      }
    }
 
-   @keyframes pulse-subtle {
-      0%,
-      100% {
-         transform: scale(1);
-         opacity: 1;
-      }
-      50% {
-         transform: scale(1.05);
-         opacity: 0.8;
-      }
+@keyframes slide-in {
+   from {
+      opacity: 0;
+      transform: translateX(-100%);
    }
-   @keyframes fade-in {
-      from {
-         opacity: 0;
-         transform: translateY(20px);
-      }
-      to {
-         opacity: 1;
-         transform: translateY(0);
-      }
+   to {
+      opacity: 1;
+      transform: translateX(0);
    }
-   @keyframes fade-out {
-      from {
-         opacity: 1;
-         transform: translateY(0);
-      }
-      to {
-         opacity: 0;
-         transform: translateY(20px);
-      }
+}
 
-      }
-
-   @keyframes slide-in {
-      from {
-         opacity: 0;
-         transform: translateX(-100%);
-      }
-      to {
-         opacity: 1;
-         transform: translateX(0);
-      }
+@keyframes meteor {
+   0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
    }
+   70% {
 
-   @keyframes meteor {
-      0% {
-         transform: translateY(0) rotate(0deg);
-         opacity: 1;
-      }
-      70% {
-
-         opacity: 1;
-      }
-      100% {
-         transform: translateY(100vh) rotate(360deg);
-         opacity: 0;
-      }
+      opacity: 1;
    }
+   100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+   }
+}
 
-   @keyframes wiggle {
-   0%, 100% { transform: translateY(0); }
-   25% { transform: translateY(-8px); }
-   75% { transform: translateY(8px); }
+@keyframes wiggle {
+0%, 100% { transform: translateY(0); }
+25% { transform: translateY(-8px); }
+75% { transform: translateY(8px); }
+}
+
+@keyframes flicker {
+0%, 19%, 21%, 23%, 25%, 100% {
+   opacity: 1;
+}
+54%, 56%{
+   opacity: 0.6;
+}
+20%, 24%, 55% {
+   opacity: 0;
+}
 }

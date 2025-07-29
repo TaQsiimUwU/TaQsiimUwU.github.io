@@ -3,7 +3,7 @@ const lines = [
   "> I'm Abdallah Kassem 🐱 — a Computer Science student at E-JUST.",
   "> React Front-End and Mobile App Developer using Flutter & Kotlin.",
   "> Experienced in Python, C/C++, and embedded systems.",
-  "> ECPC problem solver. Love you <3",
+  "> Love you <3",
 
 ];
 
