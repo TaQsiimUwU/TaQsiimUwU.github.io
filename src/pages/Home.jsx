@@ -55,17 +55,23 @@ export const Home = () => {
           </div>
 
         {/* Main content */}
-        <div
-          className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}
-          id="main-content"
-        >
-          <button onClick={() => setShowMainContent(false)}>
-            <SquareX size={40} absoluteStrokeWidth />
-          </button>
-          <Main_content activeSection={activeSection} />
-        </div>
-      </div>
-      {/* Footer */}
+          <div id="main-content-decoration" className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}>
+                <div class="outer-box">
+                <div class="corner-tl"></div>
+                <div class="corner-tr"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+                </div>
+
+            <div id="main-content">
+              <button onClick={() => setShowMainContent(false)}>
+                <SquareX size={40} absoluteStrokeWidth />
+              </button>
+              <Main_content activeSection={activeSection} />
+            </div>
+          </div>
+              </div>
+              {/* Footer */}
       <Footer />
     </div>
   );
