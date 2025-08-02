@@ -5,7 +5,7 @@ export const Footer = () => {
         {/* <p className="text-sm">© {new Date().getFullYear()} TaQsiim. All rights reserved.</p> */}
 
       </div>
-      <p>PORTOFOLIO Ver 1.0</p>
+      <p>PORTOFOLIO Ver 0.1</p>
     </footer>
   );
 }

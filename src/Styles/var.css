@@ -3,10 +3,11 @@
 
 :root {
    /* colors */
-   --border: 0, 0, 0, 0.1;
    --background:#201F2B;
-   --foreground: 255, 255, 255, 1;
    --text: #ffff;
+   --button: #606080;
+   --border: 0, 0, 0, 0.1;
+   --foreground: 255, 255, 255, 1;
    --primary: 0, 123, 255, 1;
    --secondary: 108, 117, 125, 1;
    --card: 255, 255, 255, .8;
@@ -109,4 +110,85 @@
 20%, 24%, 55% {
    opacity: 0;
 }
+}
+
+@keyframes stroke {
+  0% {
+    stroke: white;
+    stroke-width: 0;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+  }
+  70% {
+    stroke: white;
+  }
+  80% {
+    stroke: white;
+    stroke-width: 3;
+  }
+  100% {
+    stroke: white;
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+  }
+}
+
+@keyframes stroke {
+  0% {
+    stroke: black;
+    stroke-width: 0;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+  }
+  70% {
+    stroke: black;
+  }
+  80% {
+    stroke: black;
+    stroke-width: 3;
+  }
+  100% {
+    stroke: black;
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+  }
+}
+
+
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }

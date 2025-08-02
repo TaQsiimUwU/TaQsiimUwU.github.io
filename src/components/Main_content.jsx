@@ -13,7 +13,7 @@ export const Main_content = ({ activeSection }) => {
         return <Projects />;
       case 'contact':
         return <Contact />;
-      case 'Showcase':
+      case 'ShowCase':
         return <Showcase />;
       default:
         return <About />;

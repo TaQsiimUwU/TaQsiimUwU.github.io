@@ -1,7 +1,7 @@
 export const Showcase = () => {
   return (
 <div>
-    Cuming Soon!
+    cuming Soon!
 </div>
   );
 }

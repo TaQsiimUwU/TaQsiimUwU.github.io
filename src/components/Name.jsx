@@ -8,13 +8,13 @@
 export const Name = () => {
   return (
   <div class="name" id="nameTitle">
-                <span class="letter">T</span>
-                <span class="letter">a</span>
-                <span class="letter">Q</span>
-                <span class="letter">s</span>
-                <span class="letter">i</span>
-                <span class="letter">i</span>
-                <span class="letter">m</span>
+                <text class="letter">T</text>
+                <text class="letter">a</text>
+                <text class="letter">Q</text>
+                <text class="letter">s</text>
+                <text class="letter">i</text>
+                <text class="letter">i</text>
+                <text class="letter">m</text>
             </div>
   );
 }
