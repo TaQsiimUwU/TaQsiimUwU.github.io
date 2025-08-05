@@ -347,6 +347,9 @@ justify-content: center;
   margin-top: 30px;
 }
 
+.project-card {
+  background-color: black;
+}
 
 
 
@@ -355,6 +358,14 @@ justify-content: center;
   color: var(--text);
   font-family: var(--h1font);
   font-size: 1.5rem;
-  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 0.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1rem;
+  }
+
 
 }

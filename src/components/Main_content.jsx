@@ -4,8 +4,8 @@ import {About} from './About.jsx';
 import {Showcase} from '../pages/Showcase.jsx';
 export const Main_content = ({ activeSection }) => {
 
-  // Function to render the correct section based on activeSection
-  const renderSection = () => {
+// Function to render the correct section based on activeSection
+const renderSection = () => {
     switch (activeSection) {
       case 'about':
         return <About />;
