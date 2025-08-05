@@ -8,7 +8,7 @@ export const Menu = ({ onMenuItemClick }) => {
       <nav className="w-full flex-grow flex items-center" >
         <div className="flex justify-center w-full">
           <ul className=" space-x-8 text-xl" id="list">
-            <li class="btn-31" onClick={() => onMenuItemClick('NewGame')}> <a   class="text-container" className=" font-medium" ><span class="text">New Game</span></a></li>
+            <li class="btn-31" onClick={() => onMenuItemClick('ShowCase')}> <a   class="text-container" className=" font-medium" ><span class="text">Show Case</span></a></li>
             <li class="btn-31" onClick={() => onMenuItemClick('projects')}> <a  class="text-container" className=" font-medium" ><span class="text">projects</span></a></li>
             <li class="btn-31" onClick={() => onMenuItemClick('about')}>  <a  class="text-container" className=" font-medium"   ><span class="text">About</span></a></li>
             {/* <li class="btn-31" onClick={() => onMenuItemClick('options')}> <a   class="text-container" className=" font-medium" ><span class="text">options</span></a></li> */}

@@ -1,11 +1,11 @@
 export const Footer = () => {
   return (
-    <footer className="">
+    <footer className="footerStyle">
       <div className=" text-center">
-        <p className="text-sm">© {new Date().getFullYear()} TaQsiim. All rights reserved.</p>
+        {/* <p className="text-sm">© {new Date().getFullYear()} TaQsiim. All rights reserved.</p> */}
 
       </div>
-      <p>Portofolio Ver 1.0</p>
+      <p>PORTOFOLIO Ver 0.1</p>
     </footer>
   );
 }

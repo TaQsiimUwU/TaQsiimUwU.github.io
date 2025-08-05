@@ -1,12 +1,11 @@
 import {Projects} from './projects.jsx';
 import {Contact} from './Contact.jsx';
 import {About} from './About.jsx';
-import {Options} from './Options.jsx';
-import {NewGame} from './NewGame.jsx';
+import {Showcase} from '../pages/Showcase.jsx';
 export const Main_content = ({ activeSection }) => {
 
-  // Function to render the correct section based on activeSection
-  const renderSection = () => {
+// Function to render the correct section based on activeSection
+const renderSection = () => {
     switch (activeSection) {
       case 'about':
         return <About />;
@@ -14,10 +13,8 @@ export const Main_content = ({ activeSection }) => {
         return <Projects />;
       case 'contact':
         return <Contact />;
-      case 'options':
-        return <Options />;
-      case 'NewGame':
-        return <NewGame />;
+      case 'ShowCase':
+        return <Showcase />;
       default:
         return <About />;
     }

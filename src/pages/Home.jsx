@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { ThemeToggle } from '../components/Theme-Toggle.jsx';
 import { Main_content } from '../components/Main_content.jsx';
 import Aurora from '../components/bg/Aurora.jsx';
-
+import { SquareX } from 'lucide-react';
 export const Home = () => {
   const [activeSection, setActiveSection] = useState('projects');
+  const [showMainContent, setShowMainContent] = useState(false);
 
   const handleMenuItemClick = (section) => {
     setActiveSection(section);
@@ -36,52 +37,27 @@ export const Home = () => {
             <h1 className="text-5xl md:text-6xl font-mono text-white">TaQsiim</h1>
           </div>
 
-          {/* Menu Buttons */}
-          <div className="w-full flex flex-col space-y-4">
-            <button
-              className={`py-3 px-6 text-left ${activeSection === 'NewGame' ? 'bg-[#6165B5] text-white' : 'bg-[#6165B580] text-white hover:bg-[#6165B5]'}`}
-              onClick={() => handleMenuItemClick('NewGame')}
-            >
-              Show Case
-            </button>
-            <button
-              className={`py-3 px-6 text-left ${activeSection === 'projects' ? 'bg-[#6165B5] text-white' : 'bg-[#6165B580] text-white hover:bg-[#6165B5]'}`}
-              onClick={() => handleMenuItemClick('projects')}
-            >
-              Projects
-            </button>
-            <button
-              className={`py-3 px-6 text-left ${activeSection === 'about' ? 'bg-[#6165B5] text-white' : 'bg-[#6165B580] text-white hover:bg-[#6165B5]'}`}
-              onClick={() => handleMenuItemClick('about')}
-            >
-              About
-            </button>
-            <button
-              className={`py-3 px-6 text-left ${activeSection === 'contact' ? 'bg-[#6165B5] text-white' : 'bg-[#6165B580] text-white hover:bg-[#6165B5]'}`}
-              onClick={() => handleMenuItemClick('contact')}
-            >
-              Contact
-            </button>
+          {/* Main content */}
+          <div id="main-content-decoration" className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}>
+            <div className="outer-box">
+              <div className="corner-tl"></div>
+              <div className="corner-tr"></div>
+              <div className="corner-bl"></div>
+              <div className="corner-br"></div>
+            </div>
+
+            <div id="main-content">
+              <button onClick={() => setShowMainContent(false)}>
+                <SquareX size={40} absoluteStrokeWidth />
+              </button>
+              <Main_content activeSection={activeSection} />
+            </div>
           </div>
         </div>
-
-        {/* Main Content Area */}
-        <div className="w-full md:w-2/3 relative">
-          <div className="absolute inset-4 border border-white opacity-50"></div>
-          <div className="absolute top-0 left-1/4 right-0 h-[1px] bg-white"></div>
-          <div className="absolute top-0 right-0 bottom-0 w-[1px] bg-white"></div>
-          <div className="absolute bottom-0 right-1/4 left-0 h-[1px] bg-white"></div>
-          <div className="absolute left-0 bottom-0 top-0 w-[1px] bg-white"></div>
-            <div className="p-4 md:p-12 h-full">
-            <Main_content activeSection={activeSection} />
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="p-4 text-white text-sm">
-        <p>Portfolio Ver 1.0</p>
+        {/* Footer */}
+        <Footer />
       </div>
     </div>
   );
 };
+
