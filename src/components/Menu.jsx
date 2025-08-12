@@ -1,21 +1,40 @@
+import { Name } from './Name.jsx';
 
-import {Name} from './Name.jsx';
 export const Menu = ({ onMenuItemClick }) => {
   return (
     <div className="flex flex-col items-center justify-center py-6 w-full h-full" id="menu">
-     {/* <h1 className="text-3xl font-bold mb-4" id="name">TaQsiim</h1> */}
       <Name />
-      <nav className="w-full flex-grow flex items-center" >
+      <nav className="w-full flex-grow flex items-center">
         <div className="flex justify-center w-full">
-          <ul className=" space-x-8 text-xl" id="list">
-            <li class="btn-31" onClick={() => onMenuItemClick('ShowCase')}> <a   class="text-container" className=" font-medium" ><span class="text">Show Case</span></a></li>
-            <li class="btn-31" onClick={() => onMenuItemClick('projects')}> <a  class="text-container" className=" font-medium" ><span class="text">projects</span></a></li>
-            <li class="btn-31" onClick={() => onMenuItemClick('about')}>  <a  class="text-container" className=" font-medium"   ><span class="text">About</span></a></li>
-            {/* <li class="btn-31" onClick={() => onMenuItemClick('options')}> <a   class="text-container" className=" font-medium" ><span class="text">options</span></a></li> */}
-            <li class="btn-31" onClick={() => onMenuItemClick('contact')}> <a  class="text-container" className=" font-medium" ><span class="text">contact</span></a></li>
+          <ul className="space-x-8 text-xl" id="list">
+            <li className="btn-31" onClick={() => onMenuItemClick('ShowCase')}>
+              <a className="text-container font-medium">
+                <span className="text">Show Case</span>
+              </a>
+            </li>
+            <li className="btn-31" onClick={() => onMenuItemClick('projects')}>
+              <a className="text-container font-medium">
+                <span className="text">Projects</span>
+              </a>
+            </li>
+            <li className="btn-31" onClick={() => onMenuItemClick('about')}>
+              <a className="text-container font-medium">
+                <span className="text">About</span>
+              </a>
+            </li>
+            <li className="btn-31" onClick={() => onMenuItemClick('contact')}>
+              <a className="text-container font-medium">
+                <span className="text">Contact</span>
+              </a>
+            </li>
+            {/* <li className="btn-31" onClick={() => onMenuItemClick('options')}>
+              <a className="text-container font-medium">
+                <span className="text">Options</span>
+              </a>
+            </li> */}
           </ul>
         </div>
       </nav>
     </div>
   );
-}
+};

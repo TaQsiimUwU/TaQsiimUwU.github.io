@@ -10,6 +10,9 @@ const lines = [
 export const About = () => {
   return (
     <div className="about-section">
+      <div className="section-title ">
+        <h1>About Me</h1>
+      </div>
       <div className="about-content">
         {lines.map((line, idx) => (
           <div key={idx} className="about-line">

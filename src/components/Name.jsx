@@ -7,14 +7,14 @@
         });
 export const Name = () => {
   return (
-  <div class="name" id="nameTitle">
-                <text class="letter">T</text>
-                <text class="letter">a</text>
-                <text class="letter">Q</text>
-                <text class="letter">s</text>
-                <text class="letter">i</text>
-                <text class="letter">i</text>
-                <text class="letter">m</text>
+  <div className="name" id="nameTitle">
+                <span className="letter">T</span>
+                <span className="letter">a</span>
+                <span className="letter">Q</span>
+                <span className="letter">s</span>
+                <span className="letter">i</span>
+                <span className="letter">i</span>
+                <span className="letter">m</span>
             </div>
   );
 }
