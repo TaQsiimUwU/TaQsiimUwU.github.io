@@ -29,9 +29,9 @@ export const Home = () => {
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden ">
       {/*  theme toggle*/}
-      <div className="absolute top-4 right-4">
+      {/* <div className="absolute top-4 right-4">
         <ThemeToggle />
-      </div>
+      </div> */}
       {/* Background Effects */}
 
      {/*
@@ -56,11 +56,11 @@ export const Home = () => {
 
         {/* Main content */}
           <div id="main-content-decoration" className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}>
-                <div class="outer-box">
-                <div class="corner-tl"></div>
-                <div class="corner-tr"></div>
-                <div class="corner-bl"></div>
-                <div class="corner-br"></div>
+                <div className="outer-box">
+                <div className="corner-tl"></div>
+                <div className="corner-tr"></div>
+                <div className="corner-bl"></div>
+                <div className="corner-br"></div>
                 </div>
 
             <div id="main-content">
@@ -72,7 +72,7 @@ export const Home = () => {
           </div>
               </div>
               {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
