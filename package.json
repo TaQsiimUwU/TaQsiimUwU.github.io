@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://taqsiimuwu.github.io/",
+  "homepage": "https://taqsiimuwu.github.io/TaQsiimUwU.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
