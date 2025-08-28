@@ -48,9 +48,9 @@ export const Home = () => {
       />
       */}
         {/* Content Container */}
-        <div className="flex-grow flex items-center justify-center" id="content-container">
+        <div className="items-center justify-center" id="content-container">
           {/* Navbar */}
-          <div className="w-full max-w-4xl flex flex-col items-center" id="menu">
+          <div className={`${showMainContent ? 'hide' : 'show'}`} id="menu">
             <Menu onMenuItemClick={handleMenuItemClick} />
           </div>
 
