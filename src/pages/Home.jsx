@@ -4,6 +4,7 @@ import { ThemeToggle } from '../components/Theme-Toggle.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Menu } from '../components/Menu.jsx';
 import { Main_content } from '../components/Main_content.jsx';
+import { BG } from '../components/bg/bg.jsx';
 // import Aurora  from '../components/bg/Aurora.jsx';
 
 export const Home = () => {
@@ -27,12 +28,13 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden ">
+    <div className="min-h-screen flex flex-col ">
       {/*  theme toggle*/}
       {/* <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div> */}
       {/* Background Effects */}
+      <BG />
 
      {/*
       <Aurora
@@ -48,9 +50,9 @@ export const Home = () => {
       />
       */}
         {/* Content Container */}
-        <div className="items-center justify-center" id="content-container">
+        <div className="flex-grow flex items-center justify-center" id="content-container">
           {/* Navbar */}
-          <div className={`${showMainContent ? 'hide' : 'show'}`} id="menu">
+          <div className="w-full max-w-4xl flex flex-col items-center" id="menu">
             <Menu onMenuItemClick={handleMenuItemClick} />
           </div>
 

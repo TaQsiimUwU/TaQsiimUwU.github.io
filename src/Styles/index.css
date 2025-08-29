@@ -1,4 +1,5 @@
 @import url("var.css");
+@import url("bg.css");
 @import "tailwindcss";
 
 /* Original index.css content */
@@ -34,25 +35,14 @@ overflow: hidden;
 width: 100%;
 max-width: 100%;
 box-sizing: border-box;
-background: radial-gradient(ellipse at bottom, var(--background-gradient-start) 0%, var(--background-gradient-end) 200%);
-background-attachment: fixed;
+background-color: black;
 color: var(--text);
 font-family: var(--h1font), sans-serif;
 position: relative;
 }
 
 /* Add glowing effect overlay */
-/* body::before {
-content: "";
-position: fixed;
-bottom: 0;
-left: 0;
-right: 0;
-height: 50vh;
-background: radial-gradient(ellipse at bottom, var(--background-gradient-start) 0%, transparent 70%);
-pointer-events: none;
-z-index: -1;
-} */
+
 
 button{
 cursor: crosshair;
@@ -83,15 +73,13 @@ box-sizing: border-box;
 #content-container {
 /* margin: 12%; */
 margin-top: 5%;
-margin-left: 18%;
-margin-right: 18%;
-
-/* margin-left: 10%; */
+/* margin-left: 18%;
+margin-right: 18%; */
 /* width: 80%; */
 justify-content: center;
 }
 #main-content{
-  /* height: 400px; */
+  height: 400px;
   padding: 5%;
 }
 
@@ -100,13 +88,14 @@ display: none;
 }
 
 #main-content-decoration.show-main-content {
-
+width: 100%;
+height: 200%;
 overflow: auto;
 border: none;
 position: relative;
-padding: 5rem;
+/* padding: 5rem; */
 box-sizing: border-box;
-
+margin-right: 5%;
 }
 /* Add new frame styling with double border */
 #main-content-decoration.show-main-content::before {
@@ -214,7 +203,7 @@ margin: 30px; /* Adds some spacing from the edges */
   display: none;
 }
 
-#menu.show {
+#menu {
 margin-bottom: 100px;
 letter-spacing: 8px;
 text-align: center;
@@ -222,6 +211,7 @@ height: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
+
 }
 
 #list {
