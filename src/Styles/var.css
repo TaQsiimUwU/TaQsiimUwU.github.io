@@ -2,15 +2,44 @@
 
 
 :root {
-   /* colors */
-   --background:#201F2B;
-   --text: #ffff;
-   --button: #606080;
+   /* colors - New Steel Blue & Crimson Theme */
+   --background: #141E30; /* dark navy */
+   --background-gradient-start: #35577D; /* steel blue */
+   --background-gradient-end: #141E30; /* dark navy */
+   --text: #F1FAEE; /* primary light text */
+   --text-secondary: #A8AAB5; /* muted secondary text */
+   --text-dark: #0D0D0D; /* dark text for light surfaces */
+   --button: #6B1E23; /* rich crimson */
+   --button-hover: #E63946; /* bright red for call-to-action */
+   --accent-primary: #E63946; /* bright red for call-to-action */
+   --accent-highlight: #A8DADC; /* soft cyan for highlights */
+   --accent-balance: #457B9D; /* muted sky blue for balance */
+   --accent-notification: #FFB347; /* warm orange for notifications */
+   --component-bg-start: #6B1E23; /* rich crimson */
+   --component-bg-end: #2C0F12; /* dark maroon */
    --border: 0, 0, 0, 0.1;
    --foreground: 255, 255, 255, 1;
    --primary: 0, 123, 255, 1;
    --secondary: 108, 117, 125, 1;
    --card: 255, 255, 255, .8;
+   --corner-decoration: #A8DADC; /* soft cyan for highlights */
+   --button-hover-bg: #F1FAEE; /* off-white */
+   --project-card-outer-start: #457B9D; /* muted sky blue */
+   --project-card-outer-end: #2C0F12; /* dark maroon */
+   --project-dot: #FFB347; /* warm orange */
+   --project-card-border: #6B1E23; /* rich crimson */
+   --project-card-bg-start: #6B1E23; /* rich crimson */
+   --project-card-bg-end: #2C0F12; /* dark maroon */
+   --project-card-text: #F1FAEE; /* primary light text */
+   --project-ray: #A8DADC; /* soft cyan */
+   --text-gradient-start: #0D0D0D; /* dark text */
+   --text-gradient-middle: #F1FAEE; /* off-white */
+   --text-gradient-end: #0D0D0D; /* dark text */
+   --project-line-base: #457B9D; /* muted sky blue */
+   --project-line-gradient-start: #A8DADC; /* soft cyan */
+   --project-line-gradient-end: #6B1E23; /* rich crimson */
+   --project-line-left-start: #457B9D; /* muted sky blue */
+   --project-line-left-end: #2C0F12; /* dark maroon */
       /* animations var */
    --animation-float: float 3s ease-in-out infinite;
    --animation-pulse: pulse-subtle 4s ease-in-out infinite;

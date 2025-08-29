@@ -1,4 +1,4 @@
-export const Leading = () => {
+export const StartUp = () => {
   return (
     <a href="./Home.jsx">
       <div className="Press-to-start">
