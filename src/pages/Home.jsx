@@ -30,25 +30,11 @@ export const Home = () => {
   return (
     <div className="min-h-screen flex flex-col ">
       {/*  theme toggle*/}
-      {/* <div className="absolute top-4 right-4">
+      <div className="absolute top-4 right-4">
         <ThemeToggle />
-      </div> */}
+      </div>
       {/* Background Effects */}
       <BG />
-
-     {/*
-      <Aurora
-
-        colorStops={["#FFFFFF", "#000000", "#FFFFFF"]}
-
-        blend={0.5}
-
-        amplitude={1.0}
-
-        speed={0.5}
-
-      />
-      */}
         {/* Content Container */}
         <div className="flex-grow flex items-center justify-center" id="content-container">
           {/* Navbar */}
@@ -74,7 +60,7 @@ export const Home = () => {
           </div>
               </div>
               {/* Footer */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

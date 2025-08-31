@@ -1,59 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-
 :root {
-   /* colors - New Steel Blue & Crimson Theme */
-   --background: #141E30; /* dark navy */
-   --background-gradient-start: #35577D; /* steel blue */
-   --background-gradient-end: #141E30; /* dark navy */
-   --text: #F1FAEE; /* primary light text */
-   --text-secondary: #A8AAB5; /* muted secondary text */
-   --text-dark: #0D0D0D; /* dark text for light surfaces */
-   --button: #6B1E23; /* rich crimson */
-   --button-hover: #E63946; /* bright red for call-to-action */
-   --accent-primary: #E63946; /* bright red for call-to-action */
-   --accent-highlight: #A8DADC; /* soft cyan for highlights */
-   --accent-balance: #457B9D; /* muted sky blue for balance */
-   --accent-notification: #FFB347; /* warm orange for notifications */
-   --component-bg-start: #6B1E23; /* rich crimson */
-   --component-bg-end: #2C0F12; /* dark maroon */
-   --border: 0, 0, 0, 0.1;
-   --foreground: 255, 255, 255, 1;
-   --primary: 0, 123, 255, 1;
-   --secondary: 108, 117, 125, 1;
-   --card: 255, 255, 255, .8;
-   --corner-decoration: #A8DADC; /* soft cyan for highlights */
-   --button-hover-bg: #F1FAEE; /* off-white */
-   --project-card-outer-start: #457B9D; /* muted sky blue */
-   --project-card-outer-end: #2C0F12; /* dark maroon */
-   --project-dot: #FFB347; /* warm orange */
-   --project-card-border: #6B1E23; /* rich crimson */
-   --project-card-bg-start: #6B1E23; /* rich crimson */
-   --project-card-bg-end: #2C0F12; /* dark maroon */
-   --project-card-text: #F1FAEE; /* primary light text */
-   --project-ray: #A8DADC; /* soft cyan */
-   --text-gradient-start: #0D0D0D; /* dark text */
-   --text-gradient-middle: #F1FAEE; /* off-white */
-   --text-gradient-end: #0D0D0D; /* dark text */
-   --project-line-base: #457B9D; /* muted sky blue */
-   --project-line-gradient-start: #A8DADC; /* soft cyan */
-   --project-line-gradient-end: #6B1E23; /* rich crimson */
-   --project-line-left-start: #457B9D; /* muted sky blue */
-   --project-line-left-end: #2C0F12; /* dark maroon */
-      /* animations var */
-   --animation-float: float 3s ease-in-out infinite;
-   --animation-pulse: pulse-subtle 4s ease-in-out infinite;
-   --animation-fade-in: fade-in 0.7s ease-in-out forwards;
-   --animation-fade-out: fade-out 0.7s ease-in-out forwards;
-   --animation-slide-in: slide-in 0.7s ease-in-out forwards;
-   --animation-fade-in-delay: fade-in 0.7s ease-in-out forwards;
-   --animation-meteor: meteor 0.7s linear infinite;
+   --background: #141E30;
+   --background-gradient-start: #35577D;
+   --background-gradient-end: #141E30;
+   --text: #F1FAEE;
+   --text-secondary: #A8AAB5;
+   --text-dark: #0D0D0D;
+   --button: #6B1E23;
+   --button-hover: #E63946;
+   --accent-primary: #E63946;
+   --accent-highlight: #A8DADC;
+   --accent-balance: #457B9D;
+   --accent-notification: #FFB347;
+   --component-bg-start: #1e3a8a;
+   --component-bg-end: #1e40af;
+   --border: #0000001a;
+   --foreground: #ffffff;
+   --primary: #007bff;
+   --secondary: #6c757d;
+   --card: #ffffffcc;
+   --corner-decoration: #A8DADC;
+   --button-hover-bg: #F1FAEE;
+   --project-card-outer-start: #457B9D;
+   --project-card-outer-end: #2C0F12;
+   --project-dot: #FFB347;
+   --project-card-border: #6B1E23;
+   --project-card-bg-start: #6B1E23;
+   --project-card-bg-end: #2C0F12;
+   --project-card-text: #F1FAEE;
+   --project-ray: #A8DADC;
+   --text-gradient-start: #0D0D0D;
+   --text-gradient-middle: #F1FAEE;
+   --text-gradient-end: #0D0D0D;
+   --project-line-base: #457B9D;
+   --project-line-gradient-start: #A8DADC;
+   --project-line-gradient-end: #6B1E23;
+   --project-line-left-start: #457B9D;
+   --project-line-left-end: #2C0F12;
+   --menu-button-bg-start: #1e3a8a;
+   --menu-button-bg-end: #1e40af;
+   --menu-button-border: #3b82f6;
+   --menu-button-hover-bg: #2563eb;
+   --menu-button-hover-border: #60a5fa;
 
-   /* fonts */
    --h1font: 'JetBrains Mono', monospace;
 }
 
-/* key frames */
 @keyframes float {
    0%,
    100% {
@@ -67,7 +60,6 @@
 @keyframes pulse-subtle {
    0%,
    100% {
-      /* transform: scale(1); */
       opacity: 1;
    }
    50% {
@@ -75,6 +67,7 @@
       opacity: 0.5;
    }
 }
+
 @keyframes fade-in {
    from {
       opacity: 0;
@@ -85,6 +78,7 @@
       transform: translateY(0);
    }
 }
+
 @keyframes fade-out {
    from {
       opacity: 1;
@@ -94,8 +88,7 @@
       opacity: 0;
       transform: translateY(20px);
    }
-
-   }
+}
 
 @keyframes slide-in {
    from {
@@ -114,7 +107,6 @@
       opacity: 1;
    }
    70% {
-
       opacity: 1;
    }
    100% {
@@ -124,121 +116,91 @@
 }
 
 @keyframes wiggle {
-0%, 100% { transform: translateY(0); }
-25% { transform: translateY(-8px); }
-75% { transform: translateY(8px); }
+   0%, 100% { transform: translateY(0); }
+   25% { transform: translateY(-8px); }
+   75% { transform: translateY(8px); }
 }
 
 @keyframes flicker {
-0%, 19%, 21%, 23%, 25%, 100% {
-   opacity: 1;
-}
-54%, 56%{
-   opacity: 0.6;
-}
-20%, 24%, 55% {
-   opacity: 0;
-}
-}
-
-@keyframes stroke {
-  0% {
-    stroke: white;
-    stroke-width: 0;
-    stroke-dashoffset: 25%;
-    stroke-dasharray: 0 50%;
-  }
-  70% {
-    stroke: white;
-  }
-  80% {
-    stroke: white;
-    stroke-width: 3;
-  }
-  100% {
-    stroke: white;
-    stroke-width: 0;
-    stroke-dashoffset: -25%;
-    stroke-dasharray: 50% 0;
-  }
+   0%, 19%, 21%, 23%, 25%, 100% {
+      opacity: 1;
+   }
+   54%, 56% {
+      opacity: 0.6;
+   }
+   20%, 24%, 55% {
+      opacity: 0;
+   }
 }
 
 @keyframes stroke {
-  0% {
-    stroke: black;
-    stroke-width: 0;
-    stroke-dashoffset: 25%;
-    stroke-dasharray: 0 50%;
-  }
-  70% {
-    stroke: black;
-  }
-  80% {
-    stroke: black;
-    stroke-width: 3;
-  }
-  100% {
-    stroke: black;
-    stroke-width: 0;
-    stroke-dashoffset: -25%;
-    stroke-dasharray: 50% 0;
-  }
+   0% {
+      stroke: black;
+      stroke-width: 0;
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 50%;
+   }
+   70% {
+      stroke: black;
+   }
+   80% {
+      stroke: black;
+      stroke-width: 3;
+   }
+   100% {
+      stroke: black;
+      stroke-width: 0;
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 50% 0;
+   }
 }
-
 
 @-webkit-keyframes move-up-alternate {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(80%);
-  }
-
-  51% {
-    transform: translateY(-80%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
+   0% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(80%);
+   }
+   51% {
+      transform: translateY(-80%);
+   }
+   to {
+      transform: translateY(0);
+   }
 }
 
 @keyframes move-up-alternate {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(80%);
-  }
-
-  51% {
-    transform: translateY(-80%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
+   0% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(80%);
+   }
+   51% {
+      transform: translateY(-80%);
+   }
+   to {
+      transform: translateY(0);
+   }
 }
-
 
 @keyframes moveDot {
    0%,
    100% {
-   top: 10%;
-   right: 10%;
+      top: 10%;
+      right: 10%;
    }
    25% {
-   top: 10%;
-   right: calc(100% - 35px);
+      top: 10%;
+      right: calc(100% - 35px);
    }
    50% {
-   top: calc(100% - 30px);
-   right: calc(100% - 35px);
+      top: calc(100% - 30px);
+      right: calc(100% - 35px);
    }
    75% {
-   top: calc(100% - 30px);
-   right: 10%;
+      top: calc(100% - 30px);
+      right: 10%;
    }
 }
