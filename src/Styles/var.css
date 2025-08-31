@@ -43,7 +43,10 @@
    --menu-button-border: #3b82f6;
    --menu-button-hover-bg: #2563eb;
    --menu-button-hover-border: #60a5fa;
-
+   /* Background */
+   --main-color: rgb(41, 128, 185);
+   --main-bg-color: rgba(41, 128, 185, 0.6);
+   --pattern-color: rgba(41, 128, 185, 0.2);
    --h1font: 'JetBrains Mono', monospace;
 }
 

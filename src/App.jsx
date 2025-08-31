@@ -1,6 +1,5 @@
 import { BrowserRouter , Route, Routes} from 'react-router-dom'
 import {StartUp} from './pages/StartUp.jsx'
-import {Home} from './pages/Home.jsx'
 import {Cards} from './pages/Cards'
 import {Store} from './pages/Store'
 import {NotFound} from './pages/404'
@@ -14,7 +13,7 @@ function App() {
 
     <BrowserRouter>
     <Routes>
-    <Route index element={<Home />} />
+    <Route index element={<StartUp />} />
     <Route path="/cards" element={<Cards />} />
     <Route path="/store" element={<Store />} />
     <Route path = "*" element = {<NotFound />} />

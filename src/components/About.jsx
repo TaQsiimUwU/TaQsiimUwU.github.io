@@ -1,6 +1,6 @@
 const lines = [
   "> Hello everyNyan~ ^w^",
-  "> I'm Abdallah Kassem 🐱 — a Computer Science student at E-JUST.",
+  "> I'm Abdallah Kassem — a Computer Science student at E-JUST.",
   "> React Front-End and Mobile App Developer using Flutter & Kotlin.",
   "> Experienced in Python, C/C++, and embedded systems.",
   "> Love you <3",
@@ -20,6 +20,7 @@ export const About = () => {
           </div>
         ))}
       </div>
+        <img src="/src/assets/spin-rei.gif" alt="Spinning Rei" className="about-gif" />
 
     </div>
   );

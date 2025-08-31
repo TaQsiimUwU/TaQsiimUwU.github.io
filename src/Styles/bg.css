@@ -1,7 +1,5 @@
 .bg {
-  --main-color: rgb(41, 128, 185);
-  --main-bg-color: rgba(41, 128, 185, 0.36);
-  --pattern-color: rgba(41, 128, 185, 0.073);
+
   /* Add these properties to take full screen */
   position: fixed;
   top: 0;
@@ -9,7 +7,7 @@
   width: 100%;
   height: 100vh;
 
-  z-index: -1;
+  z-index: -5;
   filter: hue-rotate(0deg);
 
   text-transform: uppercase;

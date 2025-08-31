@@ -2,38 +2,8 @@
 @import url("bg.css");
 @import "tailwindcss";
 
-/* Original index.css content */
-/* @utilities container {
-margin-inline: auto;
-padding-inline: 2rem;
-
-@media (min-width: 640px) {
-  max-width: 640px;
-}
-
-@media (min-width: 768px) {
-  max-width: 768px;
-}
-
-@media (min-width: 1024px) {
-  max-width: 1024px;
-}
-
-@media (min-width: 1280px) {
-  max-width: 1280px;
-}
-
-@media (min-width: 1536px) {
-  max-width: 1536px;
-}
-} */
-
-
 body {
-    --main-color: rgb(46, 213, 115);
-  --main-bg-color: rgba(46, 213, 116, 0.36);
-  --pattern-color: rgba(46, 213, 116, 0.073);
-cursor: url("../assets/cursor-alt-svgrepo-com.svg"), crosshair;
+cursor:crosshair;
 overflow: hidden;
 width: 100%;
 max-width: 100%;
@@ -465,16 +435,34 @@ height: 100%;
 .about-content{
   font-size: 1.2rem;
 }
-
+.about-gif {
+  z-index: -1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  scale: 2;
+  /* width: 30%; */
+}
 
 
 /* footer */
+.footerStyle {
+display: flex;
+}
+
+.footerStyle span{
+font-size: 0.8rem;
+margin-left: auto;
+margin-right: 1%;
+
+}
 .footerStyle p {
 color: var(--text);
 font-family: var(--h1font);
 font-size: 1.5rem;
 
-padding: 1%;
 
 /*
 @media (min-width: 768px) {
