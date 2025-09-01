@@ -17,24 +17,11 @@ export const StartUp = () => {
     <div
       className="Press-to-start"
       onClick={handleClick}
-      style={{
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}
     >
       <Name />
       {/** Background Effects **/}
       <BG />
-      <p style={{
-        color: 'white',
-        textAlign: 'center',
-        marginTop: '20px',
-        fontSize: '1rem',
-      }}>Click Anywhere to Start</p>
+      <p>Click Anywhere to Start</p>
     </div>
   );
 };

@@ -28,9 +28,9 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col ">
+    <div className="min-h-dvh flex flex-col ">
       {/*  theme toggle*/}
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-4 left-4">
         <ThemeToggle />
       </div>
       {/* Background Effects */}
@@ -52,7 +52,7 @@ export const Home = () => {
                 </div>
 
             <div id="main-content">
-              <button onClick={() => setShowMainContent(false)}>
+              <button id="x-btn" onClick={() => setShowMainContent(false)}>
                 <SquareX size={40} absoluteStrokeWidth />
               </button>
               <Main_content activeSection={activeSection} />

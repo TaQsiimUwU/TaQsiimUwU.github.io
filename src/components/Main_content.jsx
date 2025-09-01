@@ -21,7 +21,7 @@ const renderSection = () => {
   };
 
   return (
-    <div>
+    <div className="rendered-section">
       {/* Call the function to render the correct section */}
       {renderSection()}
     </div>

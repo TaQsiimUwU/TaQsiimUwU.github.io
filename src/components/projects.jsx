@@ -26,7 +26,7 @@ const Card = ({ text }) => {
 
   return (
     <div className="projects-section">
-      <h2 className="section-title">Projects</h2>
+      <h1 className="section-title">Projects</h1>
     <div className="projects-grid">
       <div className="project-card"><Card text="Project 1" /></div>
       <div className="project-card"><Card text="Project 2" /></div>

@@ -2,7 +2,6 @@ const lines = [
   "> Hello everyNyan~ ^w^",
   "> I'm Abdallah Kassem — a Computer Science student at E-JUST.",
   "> React Front-End and Mobile App Developer using Flutter & Kotlin.",
-  "> Experienced in Python, C/C++, and embedded systems.",
   "> Love you <3",
 
 ];
@@ -20,7 +19,17 @@ export const About = () => {
           </div>
         ))}
       </div>
-        <img src="/src/assets/spin-rei.gif" alt="Spinning Rei" className="about-gif" />
+      {/* <div className="button-borders">
+        <a href="/Abdallah-Kassem-CV.pdf" download>
+          <button className="primary-button">Download My CV</button>
+        </a>
+      </div> */}
+        <img src="/spin-rei.gif" alt="Spinning Rei" className="about-gif" />
+      <a className="text-container font-medium" href="/Abdallah-Kassem-CV.pdf" download>
+       <button className="CV-btn">
+                <span className="text">Download My CV</span>
+              </button>
+      </a>
 
     </div>
   );
