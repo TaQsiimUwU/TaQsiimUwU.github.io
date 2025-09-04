@@ -24,20 +24,20 @@
    --button-hover-bg: #F1FAEE;
    --project-card-outer-start: #457B9D;
    --project-card-outer-end: #2C0F12;
-   --project-dot: #FFB347;
-   --project-card-border: #6B1E23;
-   --project-card-bg-start: #6B1E23;
-   --project-card-bg-end: #2C0F12;
+   --project-dot: #60a5fa;
+   --project-card-border: #141E30;
+   --project-card-bg-start: #60a5fa;
+   --project-card-bg-end:#141E30 ;
    --project-card-text: #F1FAEE;
    --project-ray: #A8DADC;
-   --text-gradient-start: #0D0D0D;
-   --text-gradient-middle: #F1FAEE;
-   --text-gradient-end: #0D0D0D;
    --project-line-base: #457B9D;
    --project-line-gradient-start: #A8DADC;
    --project-line-gradient-end: #6B1E23;
    --project-line-left-start: #457B9D;
    --project-line-left-end: #2C0F12;
+   --text-gradient-start: #0D0D0D;
+   --text-gradient-middle: #F1FAEE;
+   --text-gradient-end: #0D0D0D;
    --menu-button-bg-start: #1e3a8a;
    --menu-button-bg-end: #1e40af;
    --menu-button-border: #3b82f6;
@@ -207,3 +207,22 @@
       right: 10%;
    }
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes slowed-rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+

@@ -1,3 +1,8 @@
+const contacts = ["Email : abdallahkassemhassan@gmail.com","Phone: +201013497030","LinkedIn: https://",];
+
+
+
+
 export const Contact = () => {
   return (
 <div>
@@ -5,7 +10,7 @@ export const Contact = () => {
         <h1>Contact Me</h1>
       </div>
 
-    <p>contact me here</p>
+
 </div>
   );
 }

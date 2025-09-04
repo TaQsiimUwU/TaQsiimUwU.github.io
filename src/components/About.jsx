@@ -25,6 +25,20 @@ export const About = () => {
         </a>
       </div> */}
         <img src="/spin-rei.gif" alt="Spinning Rei" className="about-gif" />
+
+        {/* cool cube  */}
+    {/* <div class="cube-container">
+
+        <div class="cube">
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face top"></div>
+            <div class="face back"></div>
+            <div class="face bottom"></div>
+
+        </div>
+      </div> */}
+
       <a className="text-container font-medium" href="/Abdallah-Kassem-CV.pdf" download>
        <button className="CV-btn">
                 <span className="text">Download My CV</span>
