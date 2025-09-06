@@ -1,5 +1,5 @@
 const lines = [
-  "> Hello everyNyan~ ^w^",
+
   "> I'm Abdallah Kassem — a Computer Science student at E-JUST.",
   "> React Front-End and Mobile App Developer using Flutter & Kotlin.",
   "> Located in Alexandria, Egypt",
