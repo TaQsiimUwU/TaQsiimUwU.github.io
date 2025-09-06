@@ -8,7 +8,7 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
     {
       title: "Cross Platform Task Manager ",
       description:
-        "A responsive admin dashboard for an e-commerce platform with analytics, inventory management, and order processing.",
+        "A cross-platform desktop application that provides real-time monitoring of system resources, including CPU, memory, disk usage, and running processes.",
       image: "/project-img/task-manager.jpg",
       tags: ["Python", "Psutil", "Electron", "Operating System"],
       liveUrl: "",
@@ -17,9 +17,18 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
     {
       title: "Project U",
       description:
-        "A modern travel booking application with destination search, booking management, and user authentication.",
+        "A website for students who just finished there exams to help them choose their university and track their application status.",
       image: "/project-img/project-U.png",
-      tags: ["Python", "Flask", "JS", "SWE"],
+      tags: ["Python", "Flask", "JS"],
+      liveUrl: "",
+      githubUrl: "https://github.com/Amr-Ma7moud/Project_U",
+    },
+      {
+      title: "Gesture-controlled ESP",
+      description:
+        "Created a gesture-controlled multi-game system to deliver an interactive user experience using Python on PC and an ESP32 microcontroller",
+      image: "/project-img/ESP32.webp",
+      tags: ["Python", "ESP 32", "Arduino IDE"],
       liveUrl: "",
       githubUrl: "https://github.com/Amr-Ma7moud/Project_U",
     },

@@ -368,6 +368,13 @@ button {
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+.project-image{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 /* About me */
 .about-content {
