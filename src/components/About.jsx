@@ -1,9 +1,9 @@
 const lines = [
-
-  "> I'm Abdallah Kassem — a Computer Science student at E-JUST.",
-  "> React Front-End and Mobile App Developer using Flutter & Kotlin.",
-  "> Located in Alexandria, Egypt",
-  "> Thank you ",
+  "> Let me tell you a bit about myself. I'm Abdallah Kassem, currently pursuing my dreams in Computer Science at E-JUST.",
+  "> My journey has led me to become a React Front-End developer.",
+  "> I've also ventured into Mobile App development using Flutter & Kotlin.",
+  "> I'm located in the beautiful city of Alexandria, Egypt.",
+  "> Thanks for taking the time to read my story!",
 ];
 
 export const About = () => {
@@ -24,7 +24,7 @@ export const About = () => {
           <button className="primary-button">Download My CV</button>
         </a>
       </div> */}
-        <img src="/spin-rei.gif" alt="Spinning Rei" className="about-gif" />
+        {/* <img src="/spin-rei.gif" alt="Spinning Rei" className="about-gif" /> */}
 
         {/* cool cube  */}
     {/* <div class="cube-container">

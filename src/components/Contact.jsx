@@ -1,9 +1,4 @@
-const contacts = [
-  "Email: abdallahkassemhassan@gmail.com",
-  "Phone: +201013497030",
-  "LinkedIn: https://www.linkedin.com/in/abdallah-kassem-2ba6a6294/", // Update with actual LinkedIn URL
-  "GitHub: https://github.com/TaQsiimUwU" // Based on your GitHub username
-];
+import { Github, Linkedin, Twitter,Instagram,Phone, Mail } from "lucide-react";
 
 export const Contact = () => {
   return (
@@ -13,26 +8,77 @@ export const Contact = () => {
       </div>
 
       <div className="contact-list">
-        {contacts.map((contact, index) => (
-          <div key={index} className="contact-item">
-            {contact.includes("http") ? (
-              <a href={contact.split(": ")[1]} target="_blank" rel="noopener noreferrer">
-                {contact}
-              </a>
-            ) : contact.includes("Email") ? (
-              <a href={`mailto:${contact.split(": ")[1]}`}>
-                {contact}
-              </a>
-            ) : contact.includes("Phone") ? (
-              <a href={`tel:${contact.split(": ")[1]}`}>
-                {contact}
-              </a>
-            ) : (
-              <span>{contact}</span>
-            )}
+        <a href="mailto:abdallahkassemhassan@gmail.com">
+          <div className="contact-item">
+            <span className="contact-label">
+              <Mail size={50} strokeWidth={1} />
+            </span>
+            <span className="contact-info">Abdallah Kassem</span>
           </div>
-        ))}
+        </a>
+
+        <a href="tel:+201013497030">
+          <div className="contact-item">
+            <span className="contact-label">
+              <Phone size={50} strokeWidth={1} />
+            </span>
+            <span className="contact-info">+201013497030</span>
+          </div>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/abdallah-kassem-2ba6a6294/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="contact-item">
+            <span className="contact-label">
+              <Linkedin size={50} strokeWidth={1} />
+            </span>
+            <span className="contact-info">Abdallah Kassem</span>
+          </div>
+        </a>
+
+        <a
+          href="https://github.com/TaQsiimUwU"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="contact-item">
+            <span className="contact-label">
+              <Github size={50} strokeWidth={1} />
+            </span>
+            <span className="contact-info">TaQsiimUwU</span>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/taqsiim/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="contact-item">
+            <span className="contact-label">
+              <Instagram size={50} strokeWidth={1} />
+            </span>
+            <span className="contact-info">taqsiim</span>
+          </div>
+        </a>
+
+        <a
+          href="https://x.com/tq__ak"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="contact-item">
+            <span className="contact-label">
+              <Twitter size={50} strokeWidth={1} />
+            </span>
+            <span className="contact-info">taqsiim</span>
+          </div>
+        </a>
+
       </div>
     </div>
   );
-}
+};

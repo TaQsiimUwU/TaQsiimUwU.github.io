@@ -12,14 +12,14 @@ export const Menu = ({ onMenuItemClick }) => {
                 <span className="text">Store</span>
               </a>
             </li> */}
-            <li className="btn-31" onClick={() => onMenuItemClick('projects')}>
-              <a className="text-container font-medium">
-                <span className="text">Projects</span>
-              </a>
-            </li>
             <li className="btn-31" onClick={() => onMenuItemClick('about')}>
               <a className="text-container font-medium">
                 <span className="text">About</span>
+              </a>
+            </li>
+            <li className="btn-31" onClick={() => onMenuItemClick('projects')}>
+              <a className="text-container font-medium">
+                <span className="text">Projects</span>
               </a>
             </li>
             <li className="btn-31" onClick={() => onMenuItemClick('contact')}>

@@ -20,8 +20,8 @@ export const StartUp = () => {
     >
       <Name />
       {/** Background Effects **/}
-      <BG />
       <p>Click Anywhere to Start</p>
+      <BG />
     </div>
   );
 };
