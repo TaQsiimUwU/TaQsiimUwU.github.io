@@ -30,9 +30,9 @@ export const Home = () => {
   return (
     <div className="min-h-dvh flex flex-col ">
       {/*  theme toggle*/}
-      <div className="absolute top-4 left-4">
-        {/* <ThemeToggle /> */}
-      </div>
+      {/* <div className="absolute top-4 left-4">
+        <ThemeToggle />
+      </div> */}
       {/* Background Effects */}
       <BG />
         {/* Content Container */}

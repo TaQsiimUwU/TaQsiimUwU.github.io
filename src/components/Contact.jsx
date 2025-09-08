@@ -1,7 +1,7 @@
 const contacts = [
   "Email: abdallahkassemhassan@gmail.com",
   "Phone: +201013497030",
-  "LinkedIn: https://linkedin.com/in/abdallahkassem", // Update with actual LinkedIn URL
+  "LinkedIn: https://www.linkedin.com/in/abdallah-kassem-2ba6a6294/", // Update with actual LinkedIn URL
   "GitHub: https://github.com/TaQsiimUwU" // Based on your GitHub username
 ];
 

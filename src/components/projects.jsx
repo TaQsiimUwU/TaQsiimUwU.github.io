@@ -44,12 +44,9 @@ export const Projects = () => {
       <h1 className="section-title">Projects</h1>
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <motion.div
+          <div
             key={index}
             className="project-card"
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
           >
             <div className="project-image">
               <img src={project.image} alt={project.title} />
@@ -92,7 +89,7 @@ export const Projects = () => {
                 )}
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

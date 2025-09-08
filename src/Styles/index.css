@@ -209,7 +209,11 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* transform: perspective(500px) rotateY(10deg); */
 }
+
+
+
 
 #list {
   font-size: 1rem;
@@ -326,19 +330,9 @@ button {
   font-weight: bold;
   color: var(--text);
   text-align: center;
+  font-size: 5rem;
   text-shadow: 0 0 10px rgba(241, 250, 238, 0.3);
-}
 
-@media (min-width: 768px) {
-  .name {
-    font-size: 4.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .name {
-    font-size: 5rem;
-  }
 }
 
 .name:hover .letter {
@@ -368,13 +362,21 @@ button {
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
-.project-image{
+.project-card {
+  background: #3B82F6;
+  color: black;
+  border: 1px solid var(--accent-highlight);
+  /* box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); */
+}
+
+
+/* .project-image{
   width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+} */
 
 /* About me */
 .about-content {

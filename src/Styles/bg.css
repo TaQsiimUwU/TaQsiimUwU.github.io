@@ -1,5 +1,7 @@
-.bg {
 
+
+
+.bg {
   /* Add these properties to take full screen */
   position: fixed;
   top: 0;
@@ -8,36 +10,46 @@
   height: 100vh;
 
   z-index: -5;
-  filter: hue-rotate(0deg);
 
-  text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  /* Increased brightness */
+  /* filter: hue-rotate(0deg) brightness(1.5); */
+
+  /* Modified radial gradient to come from bottom like a sun */
   background: radial-gradient(
-    circle,
+    circle at bottom center,
     var(--main-bg-color) 0%,
-    rgba(0, 0, 0, 0) 95%
-    ),
-    linear-gradient(var(--pattern-color) 1px, transparent 1px),
-    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
-  background-size:
-    cover,
-    60px 60px,
-    60px 60px;
-  background-position:
-    center center,
-    center center,
-    center center;
-  border-image: radial-gradient(
-    circle,
+    rgba(0, 0, 0, 0) 80%
+  );
+  /* background-size: cover; */
+  /* background-position: center center; */
+
+  /* border-image: radial-gradient(
+    circle at bottom center,
     var(--main-color) 0%,
     rgba(0, 0, 0, 0) 100%
-    )
-    1;
-  border-width: 1px 0 1px 0;
+  ) 1; */
+
   color: var(--main-color);
   padding: 1rem 3rem;
   font-weight: 700;
   font-size: 1.5rem;
-  transition: background-size 0.2s ease-in-out;
+}
 
+.bg-grid {
+  /* Grid pattern */
+  background: linear-gradient(var(--pattern-color) 2px, transparent 2px),
+              linear-gradient(to right, var(--pattern-color) 2px, transparent 2px);
+  background-size: 50px 50px, 50px 50px;
+  background-position: center center, center center;
+
+  /* Same fixed positioning as bg */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -4;
+ transform: perspective(500px) rotateX(60deg);
+
+  animation: gridMove 1s linear infinite;
 }
