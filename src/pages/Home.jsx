@@ -1,62 +1,65 @@
-// filepath: g:\programming\my_website\portofolio-V1.0\src\pages\Home.jsx
-import { useState } from 'react';
-import { ThemeToggle } from '../components/Theme-Toggle.jsx';
+import { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
+import { Footer } from '../components/Footer.jsx';
+import { Menu } from '../components/Menu.jsx';
 import { Main_content } from '../components/Main_content.jsx';
-import Aurora from '../components/bg/Aurora.jsx';
-import { SquareX } from 'lucide-react';
+import { BG } from '../components/bg/bg.jsx';
+
 export const Home = () => {
   const [activeSection, setActiveSection] = useState('projects');
   const [showMainContent, setShowMainContent] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Common breakpoint for mobile devices
+    };
+
+    checkMobile(); // Check on initial load
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleMenuItemClick = (section) => {
     setActiveSection(section);
   };
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden bg-[#1f1e2e]">
-      {/*  theme toggle */}
-      <div className="absolute top-4 right-4 z-10">
-        <ThemeToggle />
-      </div>
-
+    <div className="min-h-dvh flex flex-col ">
       {/* Background Effects */}
-      <div className="fixed inset-0 z-0 opacity-20">
-        <Aurora
-          colorStops={["#5227FF", "#7cff67", "#5227FF"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-      </div>
-
+      <BG />
       {/* Content Container */}
-      <div className="flex-grow flex flex-col md:flex-row items-stretch relative z-10 mt-8 mx-4 md:mx-12">
-        {/* Left Sidebar */}
-        <div className="w-full md:w-1/3 flex flex-col items-center justify-center px-4 py-6 md:py-12">
-          <div className="mb-8 md:mb-16">
-            <h1 className="text-5xl md:text-6xl font-mono text-white">TaQsiim</h1>
+      <div className="flex-grow flex items-center justify-center" id="content-container">
+        {/* Navbar - hide on mobile when main content is shown */}
+        <div
+          className={`w-full max-w-4xl flex flex-col items-center ${isMobile && showMainContent ? 'hide' : ''}`}
+          id="menu"
+        >
+          <Menu onMenuItemClick={handleMenuItemClick} />
+        </div>
+
+        {/* Main content */}
+        <div id="main-content-decoration" className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}>
+          <div className="outer-box">
+            <div className="corner-tl"></div>
+            <div className="corner-tr"></div>
+            <div className="corner-bl"></div>
+            <div className="corner-br"></div>
           </div>
 
-          {/* Main content */}
-          <div id="main-content-decoration" className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}>
-            <div className="outer-box">
-              <div className="corner-tl"></div>
-              <div className="corner-tr"></div>
-              <div className="corner-bl"></div>
-              <div className="corner-br"></div>
-            </div>
-
-            <div id="main-content">
-              <button onClick={() => setShowMainContent(false)}>
-                <SquareX size={40} absoluteStrokeWidth />
-              </button>
-              <Main_content activeSection={activeSection} />
-            </div>
+          <div id="main-content">
+            <button id="x-btn" onClick={() => setShowMainContent(false)}>
+              <X size={50} strokeWidth={1} />
+            </button>
+            <Main_content activeSection={activeSection} />
           </div>
         </div>
-        {/* Footer */}
-        <Footer />
       </div>
+      {/* Footer */}
+      <Footer />
+      {/* effects */}
     </div>
   );
 };

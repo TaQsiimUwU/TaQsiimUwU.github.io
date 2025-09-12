@@ -1,7 +1,7 @@
 import {Projects} from './projects.jsx';
 import {Contact} from './Contact.jsx';
 import {About} from './About.jsx';
-import {Showcase} from '../pages/Showcase.jsx';
+import {Store} from '../pages/Store.jsx';
 export const Main_content = ({ activeSection }) => {
 
 // Function to render the correct section based on activeSection
@@ -13,15 +13,15 @@ const renderSection = () => {
         return <Projects />;
       case 'contact':
         return <Contact />;
-      case 'ShowCase':
-        return <Showcase />;
+      case 'Store':
+        return <Store />;
       default:
         return <About />;
     }
   };
 
   return (
-    <div className="">
+    <div className="rendered-section">
       {/* Call the function to render the correct section */}
       {renderSection()}
     </div>

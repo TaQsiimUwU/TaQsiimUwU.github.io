@@ -1,37 +1,36 @@
-const lines = [
-  "> Hello everyNyan~ ^w^",
-  "> I'm Abdallah Kassem 🐱 — a Computer Science student at E-JUST.",
-  "> React Front-End and Mobile App Developer using Flutter & Kotlin.",
-  "> Experienced in Python, C/C++, and embedded systems.",
-  "> Love you <3",
+import GlareHover from "./effects/GlareHover";
 
-];
+const about = "> Let me tell you a bit about myself. I'm Abdallah Kassem, currently pursuing my dreams in Computer Science at E-JUST. My journey has led me to become a React Front-End developer. I've also ventured into Mobile App development using Flutter & Kotlin. I make unique websites and applications that are not only functional but also visually appealing to the eyes of the users. I'm located in the beautiful city of Alexandria, Egypt. Thanks for taking the time to read my story!";
 
 export const About = () => {
   return (
     <div className="about-section">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">About</h2>
-
-      <div className="bg-[#2a293a] border border-[#6165B5] p-6 rounded-sm">
-        <div className="terminal-text font-mono text-green-400">
-          {lines.map((line, idx) => (
-            <div key={idx} className="about-line mb-3 terminal-animation" style={{ animationDelay: `${idx * 200}ms` }}>
-              {line}
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8">
-          <h3 className="text-xl font-semibold text-white mb-4">Skills</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {['JavaScript', 'React', 'Flutter', 'Kotlin', 'Python', 'C/C++'].map((skill, idx) => (
-              <div key={idx} className="bg-[#3a3950] text-white py-2 px-3 rounded-sm text-center">
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="section-title ">
+        <h1>About Me</h1>
       </div>
+      <div className="about-content flex">
+        <div className="about-line">
+          {about}
+        </div>
+        <GlareHover
+        width="200%"
+        height="100%"
+        glareColor="#ffffff"
+        glareOpacity={0.5}
+        glareAngle={-30}
+        glareSize={300}
+        transitionDuration={800}
+        playOnce={false}>
+        <img src="/pfp.jpg" alt="ME" className="about-image" />
+        </GlareHover>
+      </div>
+
+      <a href="/Abdallah-Kassem-CV.pdf" download>
+       <button className="CV-btn">
+                <span className="text">Download My CV</span>
+              </button>
+      </a>
+
     </div>
   );
 };
