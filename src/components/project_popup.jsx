@@ -1,8 +1,3 @@
-import { useRef } from "react"
-// import { motion, useInView } from "framer-motion"
-// import Image from "next/image"
-import { ExternalLink, Github, ArrowRight } from "lucide-react"
-
 
   const projects = [
     {
@@ -25,36 +20,52 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
       title: "Gesture-controlled ESP",
       description:
         "Created a gesture-controlled multi-game system to deliver an interactive user experience using Python on PC and an ESP32 microcontroller",
-      image: "/project-img/ESP32.jpg",
+      image: "/project-img/ESP32.webp",
       tags: ["Python", "ESP 32", "Arduino IDE"],
       githubUrl: "https://github.com/Amr-Ma7moud/Project_U",
     },
   ]
 
 
-export const Projects = () => {
-  const ref = useRef(null)
-  // const isInView = useInView(ref, { once: true })
 
+
+
+
+
+export const projectpopup = () => {
   return (
-    <div className="projects-section" ref={ref}>
-      <h1 className="section-title">Projects</h1>
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="project-card"
-            data-tooltip={project.title}
-          >
-            <div className="project-image">
+    <div className="project-popup">
+      {projects.map((project, index) => (
+          <div className="project-content" key={index} >
+             <div className="project-image">
               <img src={project.image} alt={project.title} />
             </div>
-            {/* <span >Learn More <ArrowRight/></span> */}
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-description">{project.description}</p>
 
-          </div>
-        ))}
-      </div>
+              <div className="project-tags">
+                {project.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="project-links">
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link github-link"
+                  >
+                    <Github size={20} />
+                    <span>GitHub</span>
+                  </a>
+                )}
+              </div>
+            </div>
+      ))}
     </div>
-  )
+  );
 }
-

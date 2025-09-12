@@ -346,30 +346,43 @@ a{
   font-size: 2.25rem;
   margin-top: 30px;
   color: var(--text);
-  text-shadow: 0 0 15px var(--accent-highlight);
+  text-shadow: 0 0 10px var(--accent-highlight);
   font-weight: bold;
 }
 
 .projects-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 2fr));
 }
 .project-card {
-  background: #3B82F6;
-  color: black;
   border: 1px solid var(--accent-highlight);
-  /* box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); */
 }
 
 
-/* .project-image{
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-} */
+.project-card:hover {
+
+}
+
+.project-card span{
+    display:none;
+    z-index:-1;
+    margin-bottom:5%;
+    justify-content:center;
+  }
+
+
+ .project-card:hover span{
+    display:flex;
+    font-size:1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+
+.project-card:hover .project-image{
+  transform: scale(0.8);
+  transition: transform 0.3s ease ;
+}
 
 /* About me */
 .about-content {

@@ -4,7 +4,7 @@
    --background: #141E30;
    --background-gradient-start: #35577D;
    --background-gradient-end: #141E30;
-   --text: #F1FAEE;
+   --text: #FFFFFF;
    --text-secondary: #A8AAB5;
    --text-dark: #0D0D0D;
    --button: #6B1E23;
@@ -46,7 +46,7 @@
    /* Background */
    --main-color: rgb(41, 128, 185);
    --main-bg-color: rgba(41, 128, 185, 0.6);
-   --pattern-color: rgba(41, 128, 185, 0.2);
+   --pattern-color: rgba(255, 255, 255, 0.2);
    --h1font: 'JetBrains Mono', monospace;
 }
 
@@ -216,6 +216,7 @@
     transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   }
 }
+
 
 @keyframes slowed-rotate {
   0% {
