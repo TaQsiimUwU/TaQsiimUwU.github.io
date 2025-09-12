@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import { ThemeToggle } from '../components/Theme-Toggle.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Menu } from '../components/Menu.jsx';
 import { Main_content } from '../components/Main_content.jsx';
 import { BG } from '../components/bg/bg.jsx';
-// import Aurora  from '../components/bg/Aurora.jsx';
 
 export const Home = () => {
   const [activeSection, setActiveSection] = useState('about');
@@ -73,6 +71,7 @@ export const Home = () => {
       </div>
       {/* Footer */}
       <Footer />
+      {/* effects */}
     </div>
   );
 };
