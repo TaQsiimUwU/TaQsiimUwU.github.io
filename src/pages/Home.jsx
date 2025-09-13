@@ -6,9 +6,10 @@ import { Main_content } from '../components/Main_content.jsx';
 import { BG } from '../components/bg/bg.jsx';
 
 export const Home = () => {
-  const [activeSection, setActiveSection] = useState('projects');
+  const [activeSection, setActiveSection] = useState('about');
   const [showMainContent, setShowMainContent] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   // Check if device is mobile
   useEffect(() => {
@@ -24,9 +25,29 @@ export const Home = () => {
 
   const handleMenuItemClick = (section) => {
     setActiveSection(section);
+    setShowMainContent(true);
+    setIsClosing(false);
   };
 
-  return (
+  const handleCloseMainContent = () => {
+    setIsClosing(true);
+    // Wait for scale-down animation to complete before hiding
+    setTimeout(() => {
+      setShowMainContent(false);
+      setIsClosing(false);
+    }, 400); // Match the scaleDown animation duration
+  };
+
+  // Listen for ESC key to close main content
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === 'Escape') {
+        handleCloseMainContent();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);  return (
     <div className="min-h-dvh flex flex-col ">
       {/* Background Effects */}
       <BG />
@@ -41,7 +62,13 @@ export const Home = () => {
         </div>
 
         {/* Main content */}
-        <div id="main-content-decoration" className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}>
+        <div id="main-content-decoration" className={`${
+          showMainContent
+            ? 'show-main-content'
+            : isClosing
+              ? 'hide-main-content'
+              : 'completely-hidden'
+        }`}>
           <div className="outer-box">
             <div className="corner-tl"></div>
             <div className="corner-tr"></div>
@@ -50,7 +77,7 @@ export const Home = () => {
           </div>
 
           <div id="main-content">
-            <button id="x-btn" onClick={() => setShowMainContent(false)}>
+            <button id="x-btn" onClick={handleCloseMainContent}>
               <X size={50} strokeWidth={1} />
             </button>
             <Main_content activeSection={activeSection} />
@@ -63,4 +90,3 @@ export const Home = () => {
     </div>
   );
 };
-

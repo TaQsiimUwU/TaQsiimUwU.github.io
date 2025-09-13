@@ -1,7 +1,6 @@
 import { useRef } from "react"
-// import { motion, useInView } from "framer-motion"
-// import Image from "next/image"
 import { ExternalLink, Github, ArrowRight } from "lucide-react"
+// import { motion, useInView } from "framer-motion"
 
 
   const projects = [
@@ -34,7 +33,6 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
 
 export const Projects = () => {
   const ref = useRef(null)
-  // const isInView = useInView(ref, { once: true })
 
   return (
     <div className="projects-section" ref={ref}>
@@ -54,6 +52,7 @@ export const Projects = () => {
           </div>
         ))}
       </div>
+
     </div>
   )
 }

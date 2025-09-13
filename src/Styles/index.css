@@ -46,7 +46,7 @@ a {
   text-align: center;
   margin-top: 20px;
   font-size: 1rem;
-  animation: flicker 1.5s infinite;
+  animation: flicker 1s infinite;
 }
 
 .container {
@@ -77,16 +77,33 @@ a {
 }
 
 #main-content-decoration.hide-main-content {
-  display: none;
-}
-
-#main-content-decoration.show-main-content {
+  visibility: visible;
+  transform: scale(0);
+  opacity: 0;
   width: 300%;
   overflow: hidden;
   border: none;
   position: relative;
   box-sizing: border-box;
   margin-right: 5%;
+  animation: scaleDown 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+#main-content-decoration.completely-hidden {
+  display: none;
+}
+
+#main-content-decoration.show-main-content {
+  visibility: visible;
+  width: 300%;
+  overflow: hidden;
+  border: none;
+  position: relative;
+  box-sizing: border-box;
+  margin-right: 5%;
+  transform: scale(1);
+  opacity: 1;
+  animation: scaleUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 #main-content-decoration.show-main-content::before {
@@ -565,4 +582,46 @@ a {
   color: var(--text);
   font-family: var(--h1font);
   font-size: 1.5rem;
+}
+
+/* Bouncing Arrow */
+.bouncing-arrow {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  color: var(--accent-highlight);
+  animation: bounce 2s infinite;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.bouncing-arrow:hover {
+  color: var(--text);
+  transform: scale(1.5);
+}
+
+/* Scale Up Animation for Main Content */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
