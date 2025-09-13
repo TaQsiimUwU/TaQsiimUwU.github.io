@@ -7,11 +7,6 @@ export const Menu = ({ onMenuItemClick }) => {
       <nav className="w-full flex-grow flex items-center">
         <div className="flex justify-center w-full">
           <ul className="space-x-8 text-xl" id="list">
-            {/* <li className="btn-31" onClick={() => onMenuItemClick('Store')}>
-              <a className="text-container font-medium">
-                <span className="text">Store</span>
-              </a>
-            </li> */}
             <li className="btn-31" onClick={() => onMenuItemClick('about')}>
               <a className="text-container font-medium">
                 <span className="text">About</span>
@@ -20,6 +15,11 @@ export const Menu = ({ onMenuItemClick }) => {
             <li className="btn-31" onClick={() => onMenuItemClick('projects')}>
               <a className="text-container font-medium">
                 <span className="text">Projects</span>
+              </a>
+            </li>
+            <li className="btn-31" onClick={() => onMenuItemClick('Store')}>
+              <a className="text-container font-medium">
+                <span className="text">Services</span>
               </a>
             </li>
             <li className="btn-31" onClick={() => onMenuItemClick('contact')}>

@@ -1,71 +1,80 @@
 
-  const projects = [
-    {
-      title: "Cross Platform Task Manager ",
-      description:
-        "A cross-platform desktop application that provides real-time monitoring of system resources, including CPU, memory, disk usage, and running processes.",
-      image: "/project-img/task-manager.jpg",
-      tags: ["Python", "Psutil", "Electron", "Operating System"],
-      githubUrl: "https://github.com/TaQsiimUwU/Task-manager-with-GUI",
-    },
-    {
-      title: "Project U",
-      description:
-        "A website for students who just finished there exams to help them choose their university and track their application status.",
-      image: "/project-img/project-U.png",
-      tags: ["Python", "Flask", "JS"],
-      githubUrl: "https://github.com/Amr-Ma7moud/Project_U",
-    },
-      {
-      title: "Gesture-controlled ESP",
-      description:
-        "Created a gesture-controlled multi-game system to deliver an interactive user experience using Python on PC and an ESP32 microcontroller",
-      image: "/project-img/ESP32.webp",
-      tags: ["Python", "ESP 32", "Arduino IDE"],
-      githubUrl: "https://github.com/Amr-Ma7moud/Project_U",
-    },
-  ]
+import { X, Github, ExternalLink } from "lucide-react"
 
+export const ProjectPopup = ({ project, onClose }) => {
+  if (!project) return null
 
-
-
-
-
-
-export const projectpopup = () => {
   return (
-    <div className="project-popup">
-      {projects.map((project, index) => (
-          <div className="project-content" key={index} >
-             <div className="project-image">
-              <img src={project.image} alt={project.title} />
-            </div>
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
+    <div className="popup-overlay" onClick={onClose}>
+      <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+        <button className="popup-close" onClick={onClose}>
+          <X size={24} />
+        </button>
 
-              <div className="project-tags">
-                {project.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="tag">
-                    {tag}
-                  </span>
+        <div className="popup-header">
+          <div className="popup-image">
+            <img src={project.image} alt={project.title} />
+          </div>
+          <div className="popup-title-section">
+            <h2 className="popup-title">{project.title}</h2>
+            <p className="popup-short-description">{project.shortDescription}</p>
+          </div>
+        </div>
+
+        <div className="popup-body">
+          <div className="popup-description">
+            <h3>About This Project</h3>
+            <p>{project.fullDescription}</p>
+          </div>
+
+          {project.features && (
+            <div className="popup-features">
+              <h3>Key Features</h3>
+              <ul>
+                {project.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
                 ))}
-              </div>
-
-              <div className="project-links">
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link github-link"
-                  >
-                    <Github size={20} />
-                    <span>GitHub</span>
-                  </a>
-                )}
-              </div>
+              </ul>
             </div>
-      ))}
+          )}
+
+          <div className="popup-technologies">
+            <h3>Technologies Used</h3>
+            <div className="tech-tags">
+              {project.technologies.map((tech, index) => (
+                <span key={index} className="tech-tag">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="popup-links">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="popup-link github-link"
+              >
+                <Github size={20} />
+                <span>View on GitHub</span>
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="popup-link live-link"
+              >
+                <ExternalLink size={20} />
+                <span>Live Demo</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
