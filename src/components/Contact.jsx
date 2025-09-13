@@ -27,7 +27,7 @@ export const Contact = () => {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/abdallah-kassem-2ba6a6294/"
+          href="https://www.linkedin.com/in/abdallah-kassem-hassan/"
           target="_blank"
           rel="noopener noreferrer"
         >

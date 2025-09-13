@@ -15,21 +15,21 @@ import {
   GitBranch,
   Leaf,
   Target,
-  Heart
+  Heart,
+  Figma,
+  Atom
 } from "lucide-react";
-
 const about = "> Let me tell you a bit about myself. I'm Abdallah Kassem, currently pursuing my dreams in Computer Science at E-JUST. My journey has led me to become a React Front-End developer. I've also ventured into Mobile App development using Flutter & Kotlin. I make unique websites and applications that are not only functional but also visually appealing to the eyes of the users. I'm located in the beautiful city of Alexandria, Egypt. Thanks for taking the time to read my story!";
 
 const skills = [
   {
     category: "Frontend Development",
     technologies: [
-      { name: "React.js", icon: Code2 },
-      { name: "JavaScript", icon: Zap },
+      { name: "React.js", icon: Atom },
+      { name: "JavaScript/TypeScript", icon: Zap },
       { name: "HTML5", icon: FileCode },
       { name: "CSS3", icon: Palette },
       { name: "Tailwind CSS", icon: Wind },
-      { name: "TypeScript", icon: FileText }
     ]
   },
   {
@@ -55,7 +55,7 @@ const skills = [
       { name: "Git", icon: GitBranch },
       { name: "MongoDB", icon: Leaf },
       { name: "Firebase", icon: Flame },
-      { name: "Figma", icon: Target },
+      { name: "Figma", icon: Figma },
       { name: "VS Code", icon: Heart }
     ]
   }

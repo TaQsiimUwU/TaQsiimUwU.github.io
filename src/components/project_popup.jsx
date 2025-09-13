@@ -17,7 +17,6 @@ export const ProjectPopup = ({ project, onClose }) => {
           </div>
           <div className="popup-title-section">
             <h2 className="popup-title">{project.title}</h2>
-            <p className="popup-short-description">{project.shortDescription}</p>
           </div>
         </div>
 

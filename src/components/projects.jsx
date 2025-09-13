@@ -89,13 +89,13 @@ export const Projects = () => {
             data-tooltip={project.title}
             onClick={() => handleProjectClick(project)}
           >
-            <div className="project-image">
-              <img src={project.image} alt={project.title} />
-            </div>
             <div className="project-overlay">
               <span className="learn-more">
                 Learn More <ArrowRight size={20} />
               </span>
+            </div>
+            <div className="project-image">
+              <img src={project.image} alt={project.title} />
             </div>
           </div>
         ))}

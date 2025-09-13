@@ -87,6 +87,7 @@ a {
   position: relative;
   box-sizing: border-box;
   margin-right: 5%;
+
 }
 
 #main-content-decoration.show-main-content::before {
@@ -99,6 +100,7 @@ a {
   border: 1px solid var(--accent-highlight);
   box-shadow: 0 0 15px rgba(168, 218, 220, 0.2);
   pointer-events: none;
+  z-index: 4;
 }
 
 #main-content-decoration.show-main-content::after {
@@ -324,6 +326,7 @@ a {
 
 .section-title {
   position: absolute;
+  display: none;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -343,7 +346,6 @@ a {
 
 .project-card {
   border: 1px solid var(--accent-highlight);
-  cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -360,25 +362,20 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
+  z-index: 1;
+}
+.project-overlay:hover {
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
 .learn-more {
-  color: var(--text);
-  font-size: 1.2rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: none;
 }
 
 .project-card span {
@@ -388,9 +385,13 @@ a {
   justify-content: center;
 }
 
-.project-card:hover span {
-  display: flex;
+.project-card:hover .learn-more {
+  color: var(--text);
   font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: transform 0.3s ease;
 }
 
@@ -399,8 +400,8 @@ a {
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.05);
-  filter: brightness(70%);
+  transform: scale(1.5);
+  /* filter: brightness(70%); */
 }
 
 /* Project Popup Styles */
@@ -410,7 +411,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -422,7 +423,7 @@ a {
 .popup-content {
   background: var(--background);
   border: 2px solid var(--accent-highlight);
-  border-radius: 15px;
+  /* border-radius: 15px; */
   max-width: 800px;
   max-height: 90vh;
   width: 100%;
@@ -438,7 +439,6 @@ a {
   background: none;
   border: none;
   color: var(--text);
-  cursor: pointer;
   padding: 5px;
   border-radius: 50%;
   transition: all 0.3s ease;
@@ -614,9 +614,7 @@ a {
 .skills-section {
   margin: 4rem 0 3rem 0;
   padding: 2rem;
-  border: 2px solid var(--accent-highlight);
-  border-radius: 15px;
-  background: rgba(20, 30, 48, 0.3);
+  /* background: rgba(20, 30, 48, 0.3); */
   backdrop-filter: blur(10px);
 }
 
@@ -631,7 +629,7 @@ a {
 }
 
 .skills-grid {
-  display: grid;
+  display: list;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
@@ -639,8 +637,9 @@ a {
 .skill-category {
   background: rgba(30, 58, 138, 0.2);
   border: 1px solid var(--accent-highlight);
-  border-radius: 12px;
+  /* border-radius: 12px; */
   padding: 1.5rem;
+  margin-bottom: 1.5rem;
   transition: all 0.3s ease;
 }
 
@@ -663,7 +662,7 @@ a {
 
 .technologies-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
 }
 
@@ -962,7 +961,6 @@ a {
   background: transparent;
   color: var(--text);
   border-radius: 25px;
-  cursor: pointer;
   transition: all 0.3s ease;
   font-weight: bold;
   font-family: var(--h1font);
@@ -1128,7 +1126,6 @@ a {
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
 }
