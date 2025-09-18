@@ -80,7 +80,7 @@ export const About = () => {
         glareSize={300}
         transitionDuration={800}
         playOnce={false}>
-        <img src="/pfp.jpg" alt="ME" className="about-image" />
+        <img src="/pfp.png" alt="ME" className="about-image" />
         </GlareHover>
       </div>
 

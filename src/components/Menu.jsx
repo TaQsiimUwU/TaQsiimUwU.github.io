@@ -17,11 +17,11 @@ export const Menu = ({ onMenuItemClick }) => {
                 <span className="text">Projects</span>
               </a>
             </li>
-            <li className="btn-31" onClick={() => onMenuItemClick('Store')}>
+            {/* <li className="btn-31" onClick={() => onMenuItemClick('Store')}>
               <a className="text-container font-medium">
                 <span className="text">Services</span>
               </a>
-            </li>
+            </li> */}
             <li className="btn-31" onClick={() => onMenuItemClick('contact')}>
               <a className="text-container font-medium">
                 <span className="text">Contact</span>
