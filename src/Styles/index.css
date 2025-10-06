@@ -400,7 +400,7 @@ a {
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.5);
+  transform: scale(1.1);
   /* filter: brightness(70%); */
 }
 
