@@ -43,7 +43,7 @@ export const StartUp = () => {
       className="startup-screen"
       onClick={() => ready && setShowHome(true)}
     >
-      <BG />
+      <BG pause={true} />
       <div className="terminal-boot">
         <div className="terminal-header">
           <span className="terminal-dot red"></span>
