@@ -1,124 +1,68 @@
-import GlareHover from "./effects/GlareHover";
-import {
-  Code2,
-  Zap,
-  FileCode,
-  Palette,
-  Wind,
-  FileText,
-  PenTool,
-  Flame,
-  Circle,
-  Train,
-  Smartphone,
-  Diamond,
-  GitBranch,
-  Leaf,
-  Target,
-  Heart,
-  Figma,
-  Atom
-} from "lucide-react";
-const about = "> Let me tell you a bit about myself. I'm Abdallah Kassem, currently pursuing my dreams in Computer Science at E-JUST. My journey has led me to become a React Front-End developer. I've also ventured into Mobile App development using Flutter & Kotlin. I make unique websites and applications that are not only functional but also visually appealing to the eyes of the users. I'm located in the beautiful city of Alexandria, Egypt. Thanks for taking the time to read my story!";
+import { Server, Globe, FileText, Terminal } from 'lucide-react';
 
-const skills = [
+const bio = `I am TaQsiim, a full-stack software developer based in Alexandria, Egypt. With a strong foundation in the MERN stack and deep expertise in cross-platform technologies like Kotlin Multiplatform (KMP), Flutter, and Python, I build resilient and scalable applications.
+
+My approach to software engineering is rooted in strong system fundamentals. As a dedicated Arch Linux user, I am highly comfortable navigating complex system architectures, troubleshooting deep-level technical issues, and optimizing environments for peak performance. I value the entire software development lifecycle — heavily emphasizing thorough system design and comprehensive technical documentation (SRS) before writing a single line of code.`;
+
+const skillGroups = [
   {
-    category: "Frontend Development",
-    technologies: [
-      { name: "React.js", icon: Atom },
-      { name: "JavaScript/TypeScript", icon: Zap },
-      { name: "HTML5", icon: FileCode },
-      { name: "CSS3", icon: Palette },
-      { name: "Tailwind CSS", icon: Wind },
-    ]
+    title: 'Full-Stack Web',
+    Icon: Globe,
+    items: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'TypeScript'],
   },
   {
-    category: "Backend Development",
-    technologies: [
-      { name: "Python", icon: PenTool },
-      { name: "Flask", icon: Flame },
-      { name: "Node.js", icon: Circle },
-      { name: "Express.js", icon: Train }
-    ]
+    title: 'Cross-Platform',
+    Icon: Server,
+    items: ['Kotlin', 'Kotlin Multiplatform', 'Flutter', 'Python'],
   },
   {
-    category: "Mobile Development",
-    technologies: [
-      { name: "Flutter", icon: Smartphone },
-      { name: "Kotlin", icon: Diamond },
-      { name: "React Native", icon: Smartphone }
-    ]
+    title: 'System & DevOps',
+    Icon: Terminal,
+    items: ['Arch Linux', 'Git', 'Docker', 'PostgreSQL', 'Firebase'],
   },
   {
-    category: "Tools & Others",
-    technologies: [
-      { name: "Git", icon: GitBranch },
-      { name: "MongoDB", icon: Leaf },
-      { name: "Firebase", icon: Flame },
-      { name: "Figma", icon: Figma },
-      { name: "VS Code", icon: Heart }
-    ]
-  }
+    title: 'Planning & Design',
+    Icon: FileText,
+    items: ['SRS Documentation', 'System Architecture', 'API Design', 'UML'],
+  },
 ];
 
 export const About = () => {
   return (
-    <div className="about-section">
-      <div className="section-title ">
-        <h1>About Me</h1>
-      </div>
-      <div className="about-content flex">
-        <div className="about-line">
-          {about}
+    <div>
+      <div className="section-header">
+        <div className="section-cmd">
+          <span className="cmd-prompt">$ </span>cat about.txt
         </div>
-        <GlareHover
-        width="200%"
-        height="100%"
-        glareColor="#ffffff"
-        glareOpacity={0.5}
-        glareAngle={-30}
-        glareSize={300}
-        transitionDuration={800}
-        playOnce={false}>
-        <img src="/pfp.png" alt="ME" className="about-image" />
-        </GlareHover>
+        <h2 className="section-title-main">
+          About <span>Me</span>
+        </h2>
+        <div className="section-divider" />
       </div>
 
-      {/* Skills and Technologies Section */}
-      <div className="skills-section">
-        <h2 className="skills-title">Skills & Technologies</h2>
-        <div className="skills-grid">
-          {skills.map((skillCategory, categoryIndex) => (
-            <div key={categoryIndex} className="skill-category">
-              <h3 className="category-title">{skillCategory.category}</h3>
-              <div className="technologies-list">
-                {skillCategory.technologies.map((tech, techIndex) => {
-                  const IconComponent = tech.icon;
-                  return (
-                    <div key={techIndex} className="technology-item">
-                      <div className="tech-content">
-                        <span className="tech-icon">
-                          <IconComponent size={20} />
-                        </span>
-                        <span className="tech-name">{tech.name}</span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+      <div className="about-bio">{bio}</div>
+
+      <div className="skills-header">
+        <div className="section-cmd">
+          <span className="cmd-prompt">$ </span>ls ./skills/
+        </div>
+      </div>
+
+      <div className="skills-container">
+        {skillGroups.map(({ title, Icon, items }, i) => (
+          <div key={i} className="skill-group">
+            <div className="skill-group-title">
+              <Icon size={13} style={{ display: 'inline', marginRight: '0.4rem', verticalAlign: 'middle' }} />
+              {title}
             </div>
-          ))}
-        </div>
+            <div className="skill-tags">
+              {items.map((item, j) => (
+                <span key={j} className="skill-tag">{item}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-
-      <a href="/Abdallah-Kassem-CV.pdf" download>
-       <button className="CV-btn">
-                <span className="text">Download My CV</span>
-              </button>
-      </a>
-
     </div>
   );
 };
-
-

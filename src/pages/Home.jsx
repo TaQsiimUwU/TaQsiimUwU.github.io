@@ -1,77 +1,92 @@
 import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
-import { Footer } from '../components/Footer.jsx';
-import { Menu } from '../components/Menu.jsx';
-import { Main_content } from '../components/Main_content.jsx';
 import { BG } from '../components/bg/bg.jsx';
+import { Menu } from '../components/Menu.jsx';
+import { About } from '../components/About.jsx';
+import { Projects } from '../components/projects.jsx';
+import { Store } from './Store.jsx';
+import { Contact } from '../components/Contact.jsx';
+import { Footer } from '../components/Footer.jsx';
+
+const heroLines = [
+  { text: '> Hello, World.', cls: 'hero-greeting' },
+  { text: 'TaQsiim', cls: 'hero-name' },
+  { text: 'Full-Stack & Cross-Platform Developer', cls: 'hero-role' },
+  { text: '> Based in Alexandria, Egypt', cls: 'hero-location' },
+];
 
 export const Home = () => {
-  const [activeSection, setActiveSection] = useState('about');
-  const [showMainContent, setShowMainContent] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [visible, setVisible] = useState(0);
+  const [showCta, setShowCta] = useState(false);
 
-  // Check if device is mobile
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Common breakpoint for mobile devices
-    };
-
-    checkMobile(); // Check on initial load
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const handleMenuItemClick = (section) => {
-    setActiveSection(section);
-    setShowMainContent(true);
-  };
-
-  // Listen for ESC key to close main content
-  useEffect(() => {
-    const handleEsc = (event) => {
-      if (event.key === 'Escape') {
-        setShowMainContent(false);
+    let idx = 0;
+    const next = () => {
+      if (idx < heroLines.length) {
+        idx++;
+        setVisible(idx);
+        setTimeout(next, idx === 1 ? 300 : 420);
+      } else {
+        setTimeout(() => setShowCta(true), 350);
       }
     };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
+    const id = setTimeout(next, 300);
+    return () => clearTimeout(id);
   }, []);
 
   return (
-    <div className="min-h-dvh flex flex-col ">
-      {/* Background Effects */}
+    <div className="home">
       <BG />
-      {/* Content Container */}
-      <div className="flex-grow flex items-center justify-center" id="content-container">
-        {/* Navbar - hide on mobile when main content is shown */}
-        <div
-          className={`w-full max-w-4xl flex flex-col items-center ${isMobile && showMainContent ? 'hide' : ''}`}
-          id="menu"
-        >
-          <Menu onMenuItemClick={handleMenuItemClick} />
-        </div>
-
-        {/* Main content */}
-        <div id="main-content-decoration" className={`${showMainContent ? 'show-main-content' : 'hide-main-content'}`}>
-          <div className="outer-box">
-            <div className="corner-tl"></div>
-            <div className="corner-tr"></div>
-            <div className="corner-bl"></div>
-            <div className="corner-br"></div>
+      <Menu />
+      <main>
+        {/* ── Hero ── */}
+        <section id="hero" className="hero-section">
+          <div className="hero-container">
+            <div className="hero-terminal">
+              {heroLines.slice(0, visible).map((line, i) => (
+                <div
+                  key={i}
+                  className={`hero-line ${line.cls}`}
+                  style={{ animationDelay: `${i * 0.08}s` }}
+                >
+                  {line.text}
+                </div>
+              ))}
+              {!showCta && visible < heroLines.length && (
+                <span className="cursor-blink">█</span>
+              )}
+            </div>
+            {showCta && (
+              <div className="hero-cta" style={{ animation: 'slide-up 0.5s 0.1s both' }}>
+                <a href="#projects" className="btn-primary">[ View Projects ]</a>
+                <a href="#contact" className="btn-secondary">[ Get in Touch ]</a>
+                <a href="/Abdallah-Kassem-CV.pdf" download className="btn-secondary">[ Download CV ]</a>
+              </div>
+            )}
           </div>
+        </section>
 
-          <div id="main-content">
-            <button id="x-btn" onClick={() => setShowMainContent(false)}>
-              <X size={50} strokeWidth={1} />
-            </button>
-            <Main_content activeSection={activeSection} />
-          </div>
-        </div>
-      </div>
-      {/* Footer */}
+        {/* ── About ── */}
+        <section id="about" className="section">
+          <About />
+        </section>
+
+        {/* ── Projects ── */}
+        <section id="projects" className="section">
+          <Projects />
+        </section>
+
+        {/* ── Services ── */}
+        <section id="services" className="section">
+          <Store />
+        </section>
+
+        {/* ── Contact ── */}
+        <section id="contact" className="section">
+          <Contact />
+        </section>
+      </main>
+
       <Footer />
-      {/* effects */}
     </div>
   );
 };
