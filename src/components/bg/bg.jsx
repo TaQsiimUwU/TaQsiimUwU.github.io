@@ -39,8 +39,8 @@ export const BG = ({ pause = false }) => {
     brightness={0.2}
 
   />
-     <div className="bg-grid"></div>
-      <div className="scanlines"></div>
+     {/* <div className="bg-grid"></div>
+      <div className="scanlines"></div> */}
     </div>
   );
 }

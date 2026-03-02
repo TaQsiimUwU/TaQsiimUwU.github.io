@@ -176,6 +176,7 @@ a {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 7rem 2rem 4rem;
 }
 
@@ -183,6 +184,7 @@ a {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+  text-align: center;
 }
 
 .hero-terminal { margin-bottom: 2.5rem; }
@@ -231,6 +233,7 @@ a {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
   opacity: 0;
 }
 
@@ -283,7 +286,7 @@ a {
   margin: 0 auto;
 }
 
-.section-header { margin-bottom: 2.75rem; }
+.section-header { margin-bottom: 2.75rem; text-align: center; }
 
 .section-cmd {
   font-size: 0.76rem;
@@ -308,6 +311,8 @@ a {
   height: 2px;
   background: linear-gradient(to right, var(--primary), transparent);
   margin-top: 0.7rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ==================== ABOUT ==================== */
