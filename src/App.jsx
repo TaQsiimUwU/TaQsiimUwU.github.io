@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { StartUp } from './pages/StartUp.jsx'
 import { NotFound } from './pages/404'
+import { Home } from './pages/Home'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<StartUp />} />
+        <Route index element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
