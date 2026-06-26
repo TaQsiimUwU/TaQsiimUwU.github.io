@@ -1,8 +1,13 @@
 /* index.css */
 @import './theme.css';
+@import './portfolio.css';
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
 }
 
 body {
@@ -67,6 +72,27 @@ body {
   background-color: var(--color-card-bg);
   border-radius: 0.5rem;
   border: 1px solid rgba(239, 230, 222, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.bento-header-status {
+  font-size: 0.75rem;
+  font-family: var(--font-geist-mono), monospace;
+  color: #71717a;
+}
+
+.bento-header-version {
+  font-size: 0.75rem;
+  font-family: var(--font-geist-mono), monospace;
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+.bento-header-version:hover {
+  text-decoration: underline;
 }
 
 .bento-grid {

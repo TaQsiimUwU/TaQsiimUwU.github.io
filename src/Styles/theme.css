@@ -69,7 +69,7 @@
   --font-geist-pixel-triangle: 'Geist Pixel Triangle', monospace;
   --font-geist-pixel-line: 'Geist Pixel Line', monospace;
 
-  --font-primary: var(--font-geist-sans);
+  --font-primary: var(--font-geist-pixel-line);
   --font-retro: var(--font-geist-pixel-line);
 
   /* Color Variables */
@@ -81,4 +81,12 @@
   --color-card-bg: #1C1C1E;
   --color-accent-glow: rgba(251, 54, 64, 0.15);
   --color-accent-border: rgba(251, 54, 64, 0.3);
+
+  /* New Extended Colors from theme.css specification */
+  --color-border-primary: #2C2C2E;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
+  --color-text-bright: #F4F4F5;
+  --color-card-button: #2C2C2E;
+  --color-border-accent-hover: rgba(251, 54, 64, 0.3);
 }

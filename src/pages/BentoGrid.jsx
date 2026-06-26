@@ -1,31 +1,40 @@
+import { Link } from 'react-router-dom';
 import '../Styles/index.css';
+import ProjectSlides from '../components/BentoCards/ProjectSlides';
+import ServicesSlides from '../components/BentoCards/servicesSlides';
+import Skills from '../components/BentoCards/skills';
+import TaQsiim from '../components/BentoCards/TaQsiim';
+import ContactsCard from '../components/BentoCards/ContactsCard';
 
 const BentoGrid = () => {
   return (
     <div className="bento-container">
       {/* Top horizontal bar */}
-      <div className="bento-header"></div>
+      <div className="bento-header">
+        <span className="bento-header-status">SYSTEM.STATUS: ONLINE</span>
+        <span className="bento-header-version">PORTFOLIO v3.0</span>
+      </div>
 
       {/* Main Grid Layout */}
       <div className="bento-grid">
         <div className="bento-card card-top-left">
-          <h1 className="portfolio-nameplate">Project</h1>
+          <ProjectSlides />
         </div>
 
         <div className="bento-card card-top-right">
-          <span className="portfolio-nameplate">Services</span>
+          <ServicesSlides />
         </div>
 
         <div className="bento-card card-bottom-left">
-          <span className="portfolio-nameplate">Tools </span>
+          <Skills />
         </div>
 
-        <div className="bento-card card-center">
-          <h1 className="portfolio-nameplate">TaQsiim</h1>
-        </div>
+        <Link to="/about" className="bento-card card-center" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <TaQsiim />
+        </Link>
 
         <div className="bento-card card-bottom-right">
-          <h1 className="portfolio-nameplate">Contacts</h1>
+          <ContactsCard />
         </div>
       </div>
     </div>
@@ -33,3 +42,4 @@ const BentoGrid = () => {
 };
 
 export default BentoGrid;
+
