@@ -26,7 +26,7 @@ const Skills = () => {
         <h3 className="font-mono-custom text-accent" style={{ fontSize: '0.875rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           // Tech Stack & Tools
         </h3>
-        <span className="font-mono-custom" style={{ fontSize: '0.75rem', color: '#71717a' }}>skills.json</span>
+        <span className="font-mono-custom" style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>skills.json</span>
       </div>
 
       <div className="skills-container">

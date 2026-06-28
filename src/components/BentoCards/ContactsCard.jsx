@@ -1,9 +1,7 @@
-import React from 'react';
-import { Mail, Github, Linkedin, Send } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Mail, Linkedin, Phone, Github, Instagram, Twitter, Youtube, Download } from 'lucide-react';
 
 const ContactsCard = () => {
-  const socials = [
+  const contacts = [
     {
       icon: <Mail size={16} />,
       label: 'Email',
@@ -21,49 +19,71 @@ const ContactsCard = () => {
       label: 'LinkedIn',
       value: 'in/abdallah-kassem-hassan',
       href: 'https://linkedin.com/in/abdallah-kassem-hassan'
+    },
+    {
+      icon: <Phone size={16} />,
+      label: 'Phone',
+      value: '+201013497030',
+      href: 'tel:+201013497030'
     }
+  ];
+
+  const socialMedia = [
+    { icon: <Instagram size={18} />, label: 'Instagram', href: 'https://instagram.com/taqsiim' },
+    { icon: <Twitter size={18} />, label: 'Twitter', href: 'https://twitter.com/taqsiim' },
+    { icon: <img src="/socialMedia/threads.svg" alt="Threads" style={{ width: 18, height: 18, filter: 'invert(1)' }} />, label: 'Threads', href: 'https://threads.net/taqsiim' },
+    { icon: <Youtube size={18} />, label: 'YouTube', href: 'https://youtube.com/c/taqsiim' }
   ];
 
   return (
     <div className="contacts-card-flex">
-      <div className="contacts-left-col">
-        <div>
-          <h3 className="font-mono-custom text-accent" style={{ fontSize: '0.875rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-            Get In Touch
-          </h3>
-          <h4 className="contacts-cta-title">
-            Let's build something epic together.
-          </h4>
-        </div>
-        <div style={{ marginTop: '0.75rem' }}>
-          <Link
-            to="/contacts"
-            className="btn-message-me"
-          >
-            <span>Message Me</span>
-            <Send size={12} />
-          </Link>
-        </div>
-      </div>
-
-      <div className="contacts-right-col">
-        {socials.map((social, idx) => (
+      <div className="contacts-left-col" style={{ gap: '0.5rem', justifyContent: 'flex-start' }}>
+        {contacts.map((contact, idx) => (
           <a
             key={idx}
-            href={social.href}
+            href={contact.href}
             target="_blank"
             rel="noopener noreferrer"
             className="social-item-link"
           >
             <div className="social-item-icon">
-              {social.icon}
+              {contact.icon}
             </div>
             <div className="flex-col-between" style={{ height: 'auto', gap: '0.125rem' }}>
-              <p className="social-item-label">{social.label}</p>
-              <p className="social-item-val">{social.value}</p>
+              <p className="social-item-label">{contact.label}</p>
+              <p className="social-item-val">{contact.value}</p>
             </div>
           </a>
         ))}
+      </div>
+
+      <div className="contacts-right-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', alignContent: 'start', padding: '0.5rem' }}>
+        {socialMedia.map((social, idx) => (
+          <a
+            key={idx}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-grid-item"
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem', textDecoration: 'none', color: 'var(--color-text-secondary)', padding: '0.5rem', borderRadius: '0.5rem', transition: 'all 0.2s ease' }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--color-bg-primary)';
+              e.currentTarget.style.color = 'var(--color-text-bright)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = 'var(--color-text-secondary)';
+            }}
+          >
+            <div className="social-item-icon" style={{ padding: '0.5rem', marginBottom: '0.25rem' }}>
+              {social.icon}
+            </div>
+            <span style={{ fontSize: '0.625rem', fontWeight: 500, fontFamily: 'var(--font-geist-mono), monospace' }}>{social.label}</span>
+          </a>
+        ))}
+        <a href="/Abdallah-Kassem-Hassan.pdf" target="_blank" rel="noopener noreferrer" className='btn-cv'>
+          <Download size={16} /> get my Resume
+        </a>
       </div>
     </div>
   );

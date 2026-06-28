@@ -1,122 +1,83 @@
-import React, { useState } from 'react';
-import { ArrowRight, Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import HoverCard from '../HoverCard';
 
 const projectsData = [
   {
-    title: 'Aetheria - 3D Metaverse',
-    description: 'Immersive 3D multiplayer social space built with React Three Fiber, WebGL, and Socket.io.',
-    tags: ['R3F', 'Three.js', 'React', 'Socket.io'],
-    github: '#',
-    demo: '#'
+    title: 'Project U',
+    description: 'A university management platform for students and faculty.',
+    image: '/project-img/project-U.png',
   },
   {
-    title: 'Neon Forge - E-Commerce',
-    description: 'Modern cyberpunk styled merchandise store featuring custom Stripe integration and CSS modules.',
-    tags: ['Next.js', 'Stripe', 'CSS Modules', 'PostgreSQL'],
-    github: '#',
-    demo: '#'
+    title: 'ESP32 IoT System',
+    description: 'IoT monitoring system powered by ESP32 microcontrollers.',
+    image: '/project-img/ESP32.jpg',
   },
   {
-    title: 'Nova UI - Component Library',
-    description: 'Highly accessible, customizable React design system components with physics-based transitions.',
-    tags: ['React', 'Framer Motion', 'Radix', 'Vite'],
-    github: '#',
-    demo: '#'
+    title: 'Task Manager',
+    description: 'A productivity app for organizing and tracking tasks.',
+    image: '/project-img/task-manager.jpg',
+  },
+  {
+    title: 'Task Manager looks like shit',
+    description: 'A productivity app for organizing and tracking tasks.',
+    image: '/project-img/task-manager.jpg',
   }
 ];
 
 const ProjectSlides = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handleNext = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setCurrentIndex((prev) => (prev + 1) % projectsData.length);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % projectsData.length);
+        setIsTransitioning(false);
+      }, 400);
+    }, 3000);
 
-  const handlePrev = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setCurrentIndex((prev) => (prev - 1 + projectsData.length) % projectsData.length);
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   const activeProject = projectsData[currentIndex];
 
   return (
-    <div className="flex-col-between">
-      <div className="flex-row-between" style={{ borderBottom: '1px solid #2c2c2e', paddingBottom: '0.5rem', marginBottom: '0.5rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span style={{ width: '8px', height: '8px', borderRadius: '9999px', backgroundColor: 'var(--color-accent)' }}></span>
-          <h3 className="font-mono-custom text-accent" style={{ fontSize: '0.875rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-            Featured Projects
-          </h3>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-          <button 
-            onClick={handlePrev}
-            className="carousel-nav-btn"
-            aria-label="Previous Project"
-          >
-            <ChevronLeft size={14} />
-          </button>
-          <span className="font-mono-custom" style={{ fontSize: '10px', color: '#71717a', padding: '0 0.25rem' }}>
-            {currentIndex + 1} / {projectsData.length}
-          </span>
-          <button 
-            onClick={handleNext}
-            className="carousel-nav-btn"
-            aria-label="Next Project"
-          >
-            <ChevronRight size={14} />
-          </button>
-        </div>
-      </div>
+    <Link to="/projects" className="project-slides-fullscreen">
+      <HoverCard tooltipText={activeProject.description}>
+        {/* Background image */}
+        <div
+          className={`project-slide-bg ${isTransitioning ? 'fade-out' : 'fade-in'}`}
+          style={{ backgroundImage: `url(${activeProject.image})` }}
+        />
 
-      <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '100px' }}>
-        <div>
-          <h4 className="project-carousel-title">
-            {activeProject.title}
-          </h4>
-          <p className="card-body-text" style={{ marginTop: '0.375rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-            {activeProject.description}
-          </p>
-          <div className="tag-list">
-            {activeProject.tags.map((tag, idx) => (
-              <span key={idx} className="carousel-tag">
-                {tag}
-              </span>
+        {/* Dark overlay for readability */}
+        <div className="project-slide-overlay" />
+
+        {/* Centered project name */}
+        <div className={`project-slide-content ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+          <h3 className="project-slide-title">{activeProject.title}</h3>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="project-slide-bottom">
+          <div className="project-slide-dots">
+            {projectsData.map((_, idx) => (
+              <span
+                key={idx}
+                className={`project-dot ${idx === currentIndex ? 'active' : ''}`}
+              />
             ))}
           </div>
+          <div className="project-slide-cta">
+            <span>All Projects</span>
+            <ArrowRight size={12} />
+          </div>
         </div>
-      </div>
-
-      <div className="flex-row-between" style={{ marginTop: '0.75rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(44, 44, 46, 0.8)' }}>
-        <div className="footer-link-group">
-          <a 
-            href={activeProject.github} 
-            className="footer-action-link"
-            aria-label="Github repository"
-          >
-            <Github size={16} />
-          </a>
-          <a 
-            href={activeProject.demo} 
-            className="footer-action-link"
-            aria-label="Live demo"
-          >
-            <ExternalLink size={16} />
-          </a>
-        </div>
-        <Link 
-          to="/projects" 
-          className="link-all-projects"
-        >
-          <span>All Projects</span>
-          <ArrowRight size={12} />
-        </Link>
-      </div>
-    </div>
+      </HoverCard>
+    </Link>
   );
 };
 

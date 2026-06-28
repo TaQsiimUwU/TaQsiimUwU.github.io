@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Mail, Github, Linkedin, MessageSquare, Send, Check } from 'lucide-react';
+import { ArrowLeft, Mail, Linkedin, Phone, Github, Instagram, Twitter, Youtube, Download, MessageSquare, Send, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export const Contacts = () => {
+export const Links = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
@@ -10,7 +10,7 @@ export const Contacts = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    
+
     setIsSubmitting(true);
     // Simulate API call
     setTimeout(() => {
@@ -26,25 +26,38 @@ export const Contacts = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const socials = [
+  const contacts = [
     {
-      icon: <Mail size={18} style={{ color: 'var(--color-accent)' }} />,
-      label: 'Email Address',
-      value: 'hello@taqsiim.dev',
-      href: 'mailto:hello@taqsiim.dev'
+      icon: <Mail size={16} />,
+      label: 'Email',
+      value: 'abdallahkassemhassan@gmail.com',
+      href: 'mailto:abdallahkassemhassan@gmail.com'
     },
     {
-      icon: <Github size={18} style={{ color: 'var(--color-accent)' }} />,
-      label: 'Github Profile',
-      value: 'github.com/taqsiimTQ',
+      icon: <Github size={16} />,
+      label: 'Github',
+      value: 'taqsiimTQ',
       href: 'https://github.com/taqsiimTQ'
     },
     {
-      icon: <Linkedin size={18} style={{ color: 'var(--color-accent)' }} />,
-      label: 'LinkedIn Connect',
-      value: 'linkedin.com/in/taqsiim',
-      href: 'https://linkedin.com'
+      icon: <Linkedin size={16} />,
+      label: 'LinkedIn',
+      value: 'in/abdallah-kassem-hassan',
+      href: 'https://linkedin.com/in/abdallah-kassem-hassan'
+    },
+    {
+      icon: <Phone size={16} />,
+      label: 'Phone',
+      value: '+201013497030',
+      href: 'tel:+201013497030'
     }
+  ];
+
+  const socialMedia = [
+    { icon: <Instagram size={18} />, label: 'Instagram', href: 'https://instagram.com/taqsiim' },
+    { icon: <Twitter size={18} />, label: 'Twitter', href: 'https://twitter.com/taqsiim' },
+    { icon: <img src="/socialMedia/threads.svg" alt="Threads" style={{ width: 18, height: 18, filter: 'invert(1)' }} />, label: 'Threads', href: 'https://threads.net/taqsiim' },
+    { icon: <Youtube size={18} />, label: 'YouTube', href: 'https://youtube.com/c/taqsiim' }
   ];
 
   return (
@@ -52,8 +65,8 @@ export const Contacts = () => {
       <div className="page-inner-med">
         {/* Navigation / Header */}
         <header className="page-header">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="back-link"
           >
             <ArrowLeft size={16} />
@@ -83,26 +96,55 @@ export const Contacts = () => {
             <h3 className="contacts-info-title">
               Direct Channels
             </h3>
-            <div className="contacts-direct-links">
-              {socials.map((social, idx) => (
+
+            <div className="contacts-direct-links" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              {contacts.map((contact, idx) => (
+                <a
+                  key={idx}
+                  href={contact.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-item-link"
+                >
+                  <div className="social-item-icon">
+                    {contact.icon}
+                  </div>
+                  <div className="flex-col-between" style={{ height: 'auto', gap: '0.125rem' }}>
+                    <p className="social-item-label">{contact.label}</p>
+                    <p className="social-item-val">{contact.value}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', marginTop: '1rem', padding: '0.5rem' }}>
+              {socialMedia.map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="direct-channel-card"
+                  className="social-grid-item"
+                  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem', textDecoration: 'none', color: 'var(--color-text-secondary)', padding: '0.5rem', borderRadius: '0.5rem', transition: 'all 0.2s ease' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--color-bg-primary)';
+                    e.currentTarget.style.color = 'var(--color-text-bright)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.color = 'var(--color-text-secondary)';
+                  }}
                 >
-                  <div className="direct-channel-card-wrap">
-                    <div className="direct-channel-icon-wrap">
-                      {social.icon}
-                    </div>
-                    <div>
-                      <p className="direct-channel-meta-label">{social.label}</p>
-                      <p className="direct-channel-val">{social.value}</p>
-                    </div>
+                  <div className="social-item-icon" style={{ padding: '0.5rem', marginBottom: '0.25rem' }}>
+                    {social.icon}
                   </div>
+                  <span style={{ fontSize: '0.625rem', fontWeight: 500, fontFamily: 'var(--font-geist-mono), monospace' }}>{social.label}</span>
                 </a>
               ))}
+
+              <a href="/Abdallah_Kassem_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-cv">
+                <Download size={16} /> My CV
+              </a>
             </div>
           </div>
 
@@ -184,4 +226,4 @@ export const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Links;

@@ -37,11 +37,11 @@ const ServicesSlides = () => {
 
   return (
     <div className="flex-col-between">
-      <div className="flex-row-between" style={{ borderBottom: '1px solid #2c2c2e', paddingBottom: '0.5rem', marginBottom: '0.75rem' }}>
+      <div className="flex-row-between" style={{ borderBottom: '1px solid var(--color-border-primary)', paddingBottom: '0.5rem', marginBottom: '0.75rem' }}>
         <h3 className="font-mono-custom text-accent" style={{ fontSize: '0.875rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           Services
         </h3>
-        <span className="font-mono-custom" style={{ fontSize: '10px', color: '#71717a' }}>Auto-rotating</span>
+        <span className="font-mono-custom" style={{ fontSize: '10px', color: 'var(--color-text-muted)' }}>Auto-rotating</span>
       </div>
 
       {/* Main List */}
@@ -66,7 +66,7 @@ const ServicesSlides = () => {
         })}
       </div>
 
-      <div style={{ marginTop: '1rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(44, 44, 46, 0.8)' }}>
+      <div style={{ marginTop: '1rem', paddingTop: '0.5rem', borderTop: '1px solid var(--color-border-primary-alpha-80)' }}>
         <Link 
           to="/services" 
           className="link-all-projects"

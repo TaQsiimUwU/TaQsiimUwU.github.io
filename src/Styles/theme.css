@@ -73,20 +73,36 @@
   --font-retro: var(--font-geist-pixel-line);
 
   /* Color Variables */
-  --color-bg-primary: #121212;
-  --color-text-primary: #EFE6DE;
-  --color-accent-blue: #FB3640;
-  --color-accent-green: #FB3640;
-  --color-accent: #FB3640;
-  --color-card-bg: #1C1C1E;
+  --color-bg-primary: rgba(18, 18, 18, 1);
+  --color-text-primary: rgba(239, 230, 222, 1);
+  --color-accent-blue: rgba(251, 54, 64, 1);
+  --color-accent-green: rgba(251, 54, 64, 1);
+  --color-accent: rgba(251, 54, 64, 1);
+  --color-card-bg: rgba(28,28,30,0.7);
   --color-accent-glow: rgba(251, 54, 64, 0.15);
   --color-accent-border: rgba(251, 54, 64, 0.3);
 
   /* New Extended Colors from theme.css specification */
-  --color-border-primary: #2C2C2E;
-  --color-text-secondary: #A1A1AA;
-  --color-text-muted: #71717A;
-  --color-text-bright: #F4F4F5;
-  --color-card-button: #2C2C2E;
+  --color-border-primary: rgba(44, 44, 46, 1);
+  --color-text-secondary: rgba(161, 161, 170, 1);
+  --color-text-muted: rgba(113, 113, 122, 1);
+  --color-text-bright: rgba(244, 244, 245, 1);
+  --color-card-button: rgba(44, 44, 46, 1);
   --color-border-accent-hover: rgba(251, 54, 64, 0.3);
+
+  /* Automatically extracted colors */
+  --color-accent-alpha-20: rgba(251, 54, 64, 0.2);
+  --color-accent-alpha-10: rgba(251, 54, 64, 0.1);
+  --color-accent-alpha-5: rgba(251, 54, 64, 0.05);
+  --color-text-primary-alpha-5: rgba(239, 230, 222, 0.05);
+  --color-text-primary-alpha-10: rgba(239, 230, 222, 0.1);
+  --color-text-primary-alpha-3: rgba(239, 230, 222, 0.03);
+  --color-black-alpha-90: rgba(0, 0, 0, 0.9);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-tooltip-bg: rgba(28, 28, 30, 0.6);
+  --color-accent-hover: rgba(225, 45, 54, 1);
+  --color-success: rgba(34, 197, 94, 1);
+  --color-white-alpha-30: rgba(255, 255, 255, 0.3);
+  --color-white: rgba(255, 255, 255, 1);
+  --color-border-primary-alpha-80: rgba(44, 44, 46, 0.8);
 }

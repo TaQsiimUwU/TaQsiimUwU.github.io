@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import HoverCard from '../HoverCard';
 const AnimatedName = ({ names, typingSpeed = 100, deleteSpeed = 60, pauseDuration = 2500 }) => {
   const [displayText, setDisplayText] = useState('');
   const [nameIndex, setNameIndex] = useState(0);
@@ -50,22 +50,28 @@ const TaQsiim = () => {
   const names = ['TaQsiim', 'Abdallah Kassem'];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', width: '100%', height: '100%' }}>
-      <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', color: 'var(--color-text-secondary)' }}>
-        <ArrowUpRight size={20} className="taqsiim-arrow" />
-      </div>
 
-      <img
-        src="/Logo colored.svg"
-        alt="TaQsiim Logo"
-        style={{ width: '100px', height: 'auto', display: 'block', flexShrink: 0 }}
-      />
-      <div>
-        <h2 className="taqsiim-name" style={{ margin: 0, textAlign: 'center' }}>
-          <AnimatedName names={names} />
-        </h2>
-      </div>
-    </div>
+    <HoverCard tooltipText="About Me" >
+      <Link to="/about">
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', width: '100%', height: '100%' }}>
+          <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', color: 'var(--color-text-secondary)' }}>
+            <ArrowUpRight size={20} className="taqsiim-arrow" />
+          </div>
+
+          <img
+            src="/Logo colored.svg"
+            alt="TaQsiim Logo"
+            style={{ width: '100px', height: 'auto', display: 'block', flexShrink: 0 }}
+          />
+          <div>
+            <h2 className="taqsiim-name" style={{ margin: 0, textAlign: 'center' }}>
+              <AnimatedName names={names} />
+            </h2>
+          </div>
+        </div>
+      </Link>
+
+    </HoverCard >
   );
 };
 

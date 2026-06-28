@@ -4,6 +4,7 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  cursor: crosshair !important;
 }
 
 input, button, textarea, select {
@@ -32,17 +33,17 @@ body {
   text-transform: uppercase;
   margin: 0;
   letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(251, 54, 64, 0.2);
+  text-shadow: 0 0 10px var(--color-accent-alpha-20);
 }
 
 .tech-stack-tag {
   font-family: var(--font-retro);
   font-size: 0.9rem;
   color: var(--color-text-primary);
-  background-color: rgba(239, 230, 222, 0.05);
+  background-color: var(--color-text-primary-alpha-5);
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  border: 1px solid rgba(239, 230, 222, 0.1);
+  border: 1px solid var(--color-text-primary-alpha-10);
   transition: all 0.2s ease;
 }
 
@@ -71,7 +72,7 @@ body {
   height: 2.5rem;
   background-color: var(--color-card-bg);
   border-radius: 0.5rem;
-  border: 1px solid rgba(239, 230, 222, 0.03);
+  border: 1px solid var(--color-text-primary-alpha-3);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,14 +82,13 @@ body {
 .bento-header-status {
   font-size: 0.75rem;
   font-family: var(--font-geist-mono), monospace;
-  color: #71717a;
+  color: var(--color-text-muted);
 }
 
 .bento-header-version {
   font-size: 0.75rem;
   font-family: var(--font-geist-mono), monospace;
   color: var(--color-accent);
-  cursor: pointer;
 }
 
 .bento-header-version:hover {
@@ -108,13 +108,12 @@ body {
 .bento-card {
   background-color: var(--color-card-bg);
   border-radius: 2rem; /* The large rounded corners from the image */
-  padding: 2rem;
-  border: 1px solid rgba(239, 230, 222, 0.03);
-  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+  padding: 1rem; 
+  box-shadow: 0 10px 30px -15px var(--color-black-alpha-90);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  
+   
   /* Flexbox to center the placeholder text */
   display: flex;
   align-items: center;
@@ -122,10 +121,9 @@ body {
 }
 
 .bento-card:hover {
-  border-color: var(--color-accent-border);
-  box-shadow: 0 20px 40px -20px var(--color-accent-glow), 
-              0 10px 30px -15px rgba(0, 0, 0, 0.8),
-              inset 0 0 15px rgba(251, 54, 64, 0.03);
+  box-shadow: 0 40px 80px -40px var(--color-accent-glow), 
+              0 10px 30px -15px var(--color-black),
+              inset 0 0 15px var(--color-accent-alpha-5);
 }
 
 /* Grid Area Shorthand: 
