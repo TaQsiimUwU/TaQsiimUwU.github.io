@@ -1,5 +1,5 @@
 import { Mail, Linkedin, Phone, Github, Instagram, Twitter, Youtube, Download } from 'lucide-react';
-import HoverCard from '../components/HoverCard';
+import HoverCard from '../HoverCard';
 
 const ContactsCard = () => {
   const contacts = [
