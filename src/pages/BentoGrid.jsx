@@ -5,7 +5,6 @@ import ServicesSlides from '../components/BentoCards/servicesSlides';
 import Skills from '../components/BentoCards/skills';
 import TaQsiim from '../components/BentoCards/TaQsiim';
 import ContactsCard from '../components/BentoCards/ContactsCard';
-import HoverCard from '../components/HoverCard';
 
 const BentoGrid = () => {
   return (
@@ -36,9 +35,7 @@ const BentoGrid = () => {
 
 
         <div className="bento-card card-bottom-right" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <HoverCard tooltipText="Get in touch">
-            <ContactsCard />
-          </HoverCard>
+          <ContactsCard />
         </div>
 
       </div>

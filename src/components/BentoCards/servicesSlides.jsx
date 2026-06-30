@@ -49,7 +49,7 @@ const ServicesSlides = () => {
         {services.map((srv, idx) => {
           const isActive = idx === activeIdx;
           return (
-            <div 
+            <div
               key={idx}
               className={`service-item-row ${isActive ? 'active' : ''}`}
               onMouseEnter={() => setActiveIdx(idx)}
@@ -67,10 +67,10 @@ const ServicesSlides = () => {
       </div>
 
       <div style={{ marginTop: '1rem', paddingTop: '0.5rem', borderTop: '1px solid var(--color-border-primary-alpha-80)' }}>
-        <Link 
-          to="/services" 
+        <Link
+          to="/services"
           className="link-all-projects"
-          style={{ justifyContent: 'space-between' }}
+          style={{ justifyContent: 'space-between', textDecoration: 'none' }}
         >
           <span>Explore All Services</span>
           <ArrowRight size={12} />

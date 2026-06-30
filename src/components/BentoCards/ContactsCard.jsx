@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Phone, Github, Instagram, Twitter, Youtube, Download } from 'lucide-react';
+import HoverCard from '../components/HoverCard';
 
 const ContactsCard = () => {
   const contacts = [
@@ -36,56 +37,61 @@ const ContactsCard = () => {
   ];
 
   return (
-    <div className="contacts-card-flex">
-      <div className="contacts-left-col" style={{ gap: '0.5rem', justifyContent: 'flex-start' }}>
-        {contacts.map((contact, idx) => (
-          <a
-            key={idx}
-            href={contact.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-item-link"
-          >
-            <div className="social-item-icon">
-              {contact.icon}
-            </div>
-            <div className="flex-col-between" style={{ height: 'auto', gap: '0.125rem' }}>
-              <p className="social-item-label">{contact.label}</p>
-              <p className="social-item-val">{contact.value}</p>
-            </div>
+
+    <HoverCard tooltipText="Get in touch">
+      <div className="contacts-card-flex">
+        <div className="contacts-left-col" style={{ gap: '0.5rem', justifyContent: 'flex-start' }}>
+          {contacts.map((contact, idx) => (
+            <a
+              key={idx}
+              href={contact.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-item-link"
+            >
+              <div className="social-item-icon">
+                {contact.icon}
+              </div>
+              <div className="flex-col-between" style={{ height: 'auto', gap: '0.125rem' }}>
+                <p className="social-item-label">{contact.label}</p>
+                <p className="social-item-val">{contact.value}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="contacts-right-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', alignContent: 'start', padding: '0.5rem' }}>
+          {socialMedia.map((social, idx) => (
+            <a
+              key={idx}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-grid-item"
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem', textDecoration: 'none', color: 'var(--color-text-secondary)', padding: '0.5rem', borderRadius: '0.5rem', transition: 'all 0.2s ease' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--color-bg-primary)';
+                e.currentTarget.style.color = 'var(--color-text-bright)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'var(--color-text-secondary)';
+              }}
+            >
+              <div className="social-item-icon" style={{ padding: '0.5rem', marginBottom: '0.25rem' }}>
+                {social.icon}
+              </div>
+              <span style={{ fontSize: '0.625rem', fontWeight: 500, fontFamily: 'var(--font-geist-mono), monospace' }}>{social.label}</span>
+            </a>
+          ))}
+          <a href="/Abdallah-Kassem-Hassan.pdf" target="_blank" rel="noopener noreferrer" className='btn-cv'>
+            <Download size={16} /> get my Resume
           </a>
-        ))}
+        </div>
       </div>
 
-      <div className="contacts-right-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', alignContent: 'start', padding: '0.5rem' }}>
-        {socialMedia.map((social, idx) => (
-          <a
-            key={idx}
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-grid-item"
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem', textDecoration: 'none', color: 'var(--color-text-secondary)', padding: '0.5rem', borderRadius: '0.5rem', transition: 'all 0.2s ease' }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--color-bg-primary)';
-              e.currentTarget.style.color = 'var(--color-text-bright)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = 'var(--color-text-secondary)';
-            }}
-          >
-            <div className="social-item-icon" style={{ padding: '0.5rem', marginBottom: '0.25rem' }}>
-              {social.icon}
-            </div>
-            <span style={{ fontSize: '0.625rem', fontWeight: 500, fontFamily: 'var(--font-geist-mono), monospace' }}>{social.label}</span>
-          </a>
-        ))}
-        <a href="/Abdallah-Kassem-Hassan.pdf" target="_blank" rel="noopener noreferrer" className='btn-cv'>
-          <Download size={16} /> get my Resume
-        </a>
-      </div>
-    </div>
+    </HoverCard>
+
   );
 };
 
