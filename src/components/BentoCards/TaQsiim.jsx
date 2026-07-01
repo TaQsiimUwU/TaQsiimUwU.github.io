@@ -51,8 +51,8 @@ const TaQsiim = () => {
 
   return (
 
-    <HoverCard tooltipText="About Me" >
-      <Link to="/about" style={{ textDecoration: 'none' }}>
+    <Link to="/about" style={{ textDecoration: 'none' }}>
+      <HoverCard tooltipText="Projects">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', width: '100%', height: '100%' }}>
           <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', color: 'var(--color-text-secondary)' }}>
             <ArrowUpRight size={20} className="taqsiim-arrow" />
@@ -69,9 +69,8 @@ const TaQsiim = () => {
             </h2>
           </div>
         </div>
-      </Link>
-
-    </HoverCard >
+      </HoverCard>
+    </Link>
   );
 };
 

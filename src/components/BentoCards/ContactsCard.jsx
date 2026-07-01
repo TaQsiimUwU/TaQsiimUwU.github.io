@@ -1,5 +1,4 @@
 import { Mail, Linkedin, Phone, Github, Instagram, Twitter, Youtube, Download } from 'lucide-react';
-import HoverCard from '../HoverCard';
 
 const ContactsCard = () => {
   const contacts = [
@@ -37,8 +36,7 @@ const ContactsCard = () => {
   ];
 
   return (
-
-    <HoverCard tooltipText="Get in touch">
+    <div className="contacts-container">
       <div className="contacts-card-flex">
         <div className="contacts-left-col" style={{ gap: '0.5rem', justifyContent: 'flex-start' }}>
           {contacts.map((contact, idx) => (
@@ -89,9 +87,7 @@ const ContactsCard = () => {
           </a>
         </div>
       </div>
-
-    </HoverCard>
-
+    </div>
   );
 };
 

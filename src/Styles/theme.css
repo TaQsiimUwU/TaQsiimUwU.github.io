@@ -105,4 +105,13 @@
   --color-white-alpha-30: rgba(255, 255, 255, 0.3);
   --color-white: rgba(255, 255, 255, 1);
   --color-border-primary-alpha-80: rgba(44, 44, 46, 0.8);
+  --color-bg-glow: rgba(35, 18, 19, 1);
+
+  /* Refined Dark Glassmorphism */
+  --color-glass-bg: rgba(20, 20, 22, 0.45);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-shadow-1: rgba(0, 0, 0, 0.5);
+  --color-glass-shadow-2: rgba(255, 255, 255, 0.04);
+  --color-glass-shadow-3: rgba(0, 0, 0, 0.3);
+  --color-glass-highlight: rgba(255, 255, 255, 0.12);
 }

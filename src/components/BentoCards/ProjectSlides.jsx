@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HoverCard from '../HoverCard';
-
 const projectsData = [
   {
     title: 'Project U',
