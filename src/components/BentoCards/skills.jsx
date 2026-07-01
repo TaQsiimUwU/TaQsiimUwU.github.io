@@ -1,27 +1,30 @@
 import React from 'react';
-import { Cpu, Layout, Database } from 'lucide-react';
+import { Cpu, Layout, Database, Smartphone } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
+      title: 'Mobile',
+      icon: <Smartphone size={14} style={{ color: 'var(--color-accent)' }} />,
+      items: ['Kotlin', 'Flutter']
+    },
+    {
       title: 'Frontend',
       icon: <Layout size={14} style={{ color: 'var(--color-accent)' }} />,
-      items: ['React', 'Next.js', 'Three.js', 'Vite']
+      items: ['React.js']
     },
     {
-      title: 'Languages',
-      icon: <Cpu size={14} style={{ color: 'var(--color-accent)' }} />,
-      items: ['JS', 'TS', 'HTML5', 'CSS3']
-    },
-    {
-      title: 'Backend/Tools',
+      title: 'Backend & Tools',
       icon: <Database size={14} style={{ color: 'var(--color-accent)' }} />,
-      items: ['Node.js', 'Git', 'Webpack', 'Figma']
+      items: ['Git', 'Figma', 'Node.js']
     }
   ];
 
   return (
     <div className="flex-col-between">
+      <div style={{ marginBottom: '1rem' }}>
+        <h2 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--color-text-bright)' }}>Mobile & Frontend Developer</h2>
+      </div>
       <div className="flex-row-between" style={{ marginBottom: '0.75rem' }}>
         <h3 className="font-mono-custom text-accent" style={{ fontSize: '0.875rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           // Tech Stack & Tools
