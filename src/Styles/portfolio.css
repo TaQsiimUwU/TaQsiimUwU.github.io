@@ -140,7 +140,7 @@
 }
 
 .cursor-tooltip {
-  position: fixed;
+  position: absolute;
   pointer-events: none;
   z-index: 9999;
 
@@ -229,12 +229,12 @@
 }
 
 .skill-tag {
-  padding: 0.125rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   background-color: var(--color-bg-primary);
   border: 1px solid var(--color-border-primary);
-  font-size: 0.625rem;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
   transition: all 0.2s ease;
   font-family: var(--font-geist-mono), monospace;
 }
@@ -254,7 +254,7 @@
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  border-radius: inherit;
+  border-radius: 15px;
 }
 
 .project-slide-bg {
@@ -267,7 +267,7 @@
 }
 
 .project-slide-bg.fade-in {
-  opacity: 1;
+  opacity: 0.5;
   transform: scale(1);
 }
 

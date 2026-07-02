@@ -1,51 +1,123 @@
 import React from 'react';
-import { Cpu, Layout, Database, Smartphone } from 'lucide-react';
+import { Smartphone, Layout, Database, Terminal, Code, Code2, MonitorPlay, Zap, Globe, Lightbulb } from 'lucide-react';
+import Marquee from 'react-fast-marquee';
+import {
+  SiKotlin, SiDart, SiPython, SiCplusplus, SiC, SiJavascript, SiHtml5,
+  SiJetpackcompose, SiFlutter, SiFirebase, SiAndroidstudio,
+  SiGit, SiGithub, SiArchlinux, SiAndroid
+} from 'react-icons/si';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Mobile',
-      icon: <Smartphone size={14} style={{ color: 'var(--color-accent)' }} />,
-      items: ['Kotlin', 'Flutter']
+      title: 'Mobile Development',
+      icon: <Smartphone size={18} style={{ color: 'var(--color-accent)' }} />,
+      items: [
+        { name: 'Kotlin', icon: <SiKotlin /> },
+        { name: 'Dart', icon: <SiDart /> },
+        { name: 'Jetpack Compose', icon: <SiJetpackcompose /> },
+        { name: 'Flutter', icon: <SiFlutter /> },
+        { name: 'KMP', icon: <SiKotlin /> },
+        { name: 'Android Studio', icon: <SiAndroidstudio /> },
+        { name: 'Hilt', icon: <SiAndroid /> },
+        { name: 'Room', icon: <Database size={18} /> },
+        { name: 'Jetpack Nav', icon: <SiAndroid /> }
+      ]
     },
     {
-      title: 'Frontend',
-      icon: <Layout size={14} style={{ color: 'var(--color-accent)' }} />,
-      items: ['React.js']
+      title: 'Web Development',
+      icon: <Layout size={18} style={{ color: 'var(--color-accent)' }} />,
+      items: [
+        { name: 'JavaScript', icon: <SiJavascript /> },
+        { name: 'HTML/CSS', icon: <SiHtml5 /> }
+      ]
     },
     {
-      title: 'Backend & Tools',
-      icon: <Database size={14} style={{ color: 'var(--color-accent)' }} />,
-      items: ['Git', 'Figma', 'Node.js']
+      title: 'Backend & APIs',
+      icon: <Database size={18} style={{ color: 'var(--color-accent)' }} />,
+      items: [
+        { name: 'Python', icon: <SiPython /> },
+        { name: 'Firebase', icon: <SiFirebase /> },
+        { name: 'Retrofit', icon: <Globe size={18} /> },
+        { name: 'RESTful APIs', icon: <Globe size={18} /> }
+      ]
+    },
+    {
+      title: 'Core & Tools',
+      icon: <Terminal size={18} style={{ color: 'var(--color-accent)' }} />,
+      items: [
+        { name: 'C/C++', icon: <SiCplusplus /> },
+        { name: 'Clean Architecture', icon: <Code2 size={18} /> },
+        { name: 'MVVM', icon: <MonitorPlay size={18} /> },
+        { name: 'Coroutines', icon: <Zap size={18} /> },
+        { name: 'OOP', icon: <Code size={18} /> },
+        { name: 'Agile/SDLC', icon: <Terminal size={18} /> },
+        { name: 'VS Code', icon: <Code size={18} /> },
+        { name: 'Git/GitHub', icon: <SiGithub /> },
+        { name: 'Arch Linux', icon: <SiArchlinux /> }
+      ]
     }
   ];
 
   return (
-    <div className="flex-col-between">
+    <div className="flex-col-between" style={{ height: '100%' }}>
       <div style={{ marginBottom: '1rem' }}>
         <h2 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--color-text-bright)' }}>Mobile & Frontend Developer</h2>
       </div>
-      <div className="flex-row-between" style={{ marginBottom: '0.75rem' }}>
-        <h3 className="font-mono-custom text-accent" style={{ fontSize: '0.875rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-          // Tech Stack & Tools
-        </h3>
-        <span className="font-mono-custom" style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>skills.json</span>
-      </div>
 
-      <div className="skills-container">
+      <div className="skills-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', overflow: 'hidden' }}>
         {skillCategories.map((category, idx) => (
-          <div key={idx} className="skills-category">
-            <div className="skills-category-title">
+          <div key={idx} className="skills-category" style={{ marginBottom: 0 }}>
+            <div className="skills-category-title" style={{ marginBottom: '0.5rem', gap: '0.5rem' }}>
               {category.icon}
-              <span>{category.title}</span>
+              <span style={{ fontSize: '1rem', fontWeight: 500 }}>{category.title}</span>
             </div>
-            <div className="skills-tags-grid">
-              {category.items.map((skill, sIdx) => (
-                <span key={sIdx} className="skill-tag">
-                  {skill}
-                </span>
-              ))}
+
+            <div style={{ overflow: 'hidden', maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
+              <Marquee
+                gradient={false}
+                speed={30 + Math.random() * 10}
+                direction={idx % 2 === 0 ? 'left' : 'right'}
+                pauseOnHover={true}
+              >
+                <div style={{ display: 'flex', padding: '0.5rem 0' }}>
+                  {category.items.map((skill, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="skill-tag"
+                      style={{
+                        margin: '0 0.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      {skill.icon}
+                      {skill.name}
+                    </span>
+                  ))}
+                  {/* Duplicate web items to ensure it scrolls properly since it only has 2 items */}
+                  {category.items.length < 4 && category.items.map((skill, sIdx) => (
+                    <span
+                      key={`dup-${sIdx}`}
+                      className="skill-tag"
+                      style={{
+                        margin: '0 0.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      {skill.icon}
+                      {skill.name}
+                    </span>
+                  ))}
+                </div>
+              </Marquee>
             </div>
+
           </div>
         ))}
       </div>

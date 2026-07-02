@@ -52,24 +52,22 @@ const TaQsiim = () => {
   return (
 
     <Link to="/about" style={{ textDecoration: 'none' }}>
-      <HoverCard tooltipText="Projects">
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', width: '100%', height: '100%' }}>
-          <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', color: 'var(--color-text-secondary)' }}>
-            <ArrowUpRight size={20} className="taqsiim-arrow" />
-          </div>
-
-          <img
-            src="/Logo colored.svg"
-            alt="TaQsiim Logo"
-            style={{ width: '100px', height: 'auto', display: 'block', flexShrink: 0 }}
-          />
-          <div>
-            <h2 className="taqsiim-name" style={{ margin: 0, textAlign: 'center' }}>
-              <AnimatedName names={names} />
-            </h2>
-          </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', width: '100%', height: '100%' }}>
+        <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', color: 'var(--color-text-secondary)' }}>
+          <ArrowUpRight size={20} className="taqsiim-arrow" />
         </div>
-      </HoverCard>
+
+        <img
+          src="/Logo colored.svg"
+          alt="TaQsiim Logo"
+          style={{ width: '100px', height: 'auto', display: 'block', flexShrink: 0 }}
+        />
+        <div>
+          <h2 className="taqsiim-name" style={{ margin: 0, textAlign: 'center' }}>
+            <AnimatedName names={names} />
+          </h2>
+        </div>
+      </div>
     </Link>
   );
 };

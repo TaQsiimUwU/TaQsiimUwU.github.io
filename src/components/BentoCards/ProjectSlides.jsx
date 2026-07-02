@@ -44,8 +44,8 @@ const ProjectSlides = () => {
   const activeProject = projectsData[currentIndex];
 
   return (
-    <Link to="/projects" className="project-slides-fullscreen">
-      <HoverCard tooltipText={activeProject.description}>
+    <HoverCard tooltipText={activeProject.description}>
+      <Link to="/projects" className="project-slides-fullscreen">
         {/* Background image */}
         <div
           className={`project-slide-bg ${isTransitioning ? 'fade-out' : 'fade-in'}`}
@@ -75,8 +75,8 @@ const ProjectSlides = () => {
             <ArrowRight size={12} />
           </div>
         </div>
-      </HoverCard>
-    </Link>
+      </Link>
+    </HoverCard>
   );
 };
 

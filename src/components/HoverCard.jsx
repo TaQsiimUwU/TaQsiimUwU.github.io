@@ -6,9 +6,10 @@ const HoverCard = ({ children, tooltipText }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
-      x: e.clientX,
-      y: e.clientY
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
     });
   };
 
