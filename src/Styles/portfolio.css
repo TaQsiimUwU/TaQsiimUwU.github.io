@@ -497,31 +497,54 @@
   gap: 0.5rem;
   width: 100%;
   padding: 0.625rem 1rem;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
   color: var(--color-text-bright);
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: 1px solid var(--color-accent-border);
-  border-radius: 0.5rem;
+  border: 1px solid var(--color-glass-border);
+  border-radius: 0.75rem;
   cursor: pointer;
-  box-shadow: 0 4px 15px var(--color-accent-alpha-20);
-  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 32px var(--color-glass-shadow-1),
+    inset 0 1px 0 var(--color-glass-highlight),
+    inset 0 -1px 0 var(--color-glass-shadow-3);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   grid-column: span 2;
   margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cv::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-glass-highlight), transparent);
+  z-index: 10;
+  pointer-events: none;
 }
 
 .btn-cv:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px var(--color-accent-border);
-  background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
+  box-shadow: 
+    0 20px 40px -20px var(--color-accent-glow), 
+    0 10px 20px -10px var(--color-black),
+    inset 0 0 15px var(--color-accent-alpha-10);
+  border-color: var(--color-accent-border);
+  background: var(--color-accent-alpha-5);
+  color: var(--color-text-bright);
 }
 
 .btn-cv:active {
-  transform: translateY(0);
+  transform: translateY(1px);
 }
 
 .contacts-right-col {

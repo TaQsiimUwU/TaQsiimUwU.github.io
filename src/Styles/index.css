@@ -213,7 +213,7 @@ body {
 */
 
 .card-top-left {
-  grid-area: 1 / 1 / 2 / 3;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .card-top-right {
@@ -225,7 +225,7 @@ body {
 }
 
 .card-center {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 1 / 2 / 3 / 3;
 }
 
 .card-bottom-right {

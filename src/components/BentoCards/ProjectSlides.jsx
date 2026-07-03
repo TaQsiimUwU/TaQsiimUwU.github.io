@@ -4,25 +4,20 @@ import { Link } from 'react-router-dom';
 import HoverCard from '../HoverCard';
 const projectsData = [
   {
-    title: 'Project U',
-    description: 'A university management platform for students and faculty.',
-    image: '/project-img/project-U.png',
+    title: 'Campus Connect',
+    description: 'Empowering students and club managers with a seamless, interconnected campus experience.',
+    image: '/project-img/CampusConnect.png',
   },
   {
-    title: 'ESP32 IoT System',
-    description: 'IoT monitoring system powered by ESP32 microcontrollers.',
-    image: '/project-img/ESP32.jpg',
+    title: 'Cardio Logic',
+    description: 'heart-monitoring client that leverages (BLE) and on-device AI to perform real-time rhythm analysis.',
+    image: '/project-img/CardioLogic.jpg',
   },
   {
-    title: 'Task Manager',
-    description: 'A productivity app for organizing and tracking tasks.',
-    image: '/project-img/task-manager.jpg',
+    title: 'AnimBro',
+    description: 'A complete experience to discover, track, and manage anime, with integrated profiles, watchlists.',
+    image: '/project-img/AnimBro.jpg',
   },
-  {
-    title: 'Task Manager looks like shit',
-    description: 'A productivity app for organizing and tracking tasks.',
-    image: '/project-img/task-manager.jpg',
-  }
 ];
 
 const ProjectSlides = () => {

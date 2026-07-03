@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Phone, Github, Instagram, Twitter, Youtube, Download } from 'lucide-react';
+import { Mail, Linkedin, Phone, Github, Instagram, Twitter, Youtube } from 'lucide-react';
 
 const ContactsCard = () => {
   const contacts = [
@@ -82,9 +82,6 @@ const ContactsCard = () => {
               <span style={{ fontSize: '0.625rem', fontWeight: 500, fontFamily: 'var(--font-geist-mono), monospace' }}>{social.label}</span>
             </a>
           ))}
-          <a href="/Abdallah-Kassem-Hassan.pdf" target="_blank" rel="noopener noreferrer" className='btn-cv'>
-            <Download size={16} /> get my Resume
-          </a>
         </div>
       </div>
     </div>

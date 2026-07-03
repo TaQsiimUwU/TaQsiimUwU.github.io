@@ -32,8 +32,10 @@ const BentoGrid = () => {
 
       {/* Main Grid Layout */}
       <div className="bento-grid">
-        <div className="bento-card card-top-left">
-          <ProjectSlides />
+        <div className="bento-card card-top-left" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <HoverCard tooltipText="About Me">
+            <TaQsiim />
+          </HoverCard>
         </div>
 
         <div className="bento-card card-top-right">
@@ -48,10 +50,8 @@ const BentoGrid = () => {
           </HoverCard>
         </div>
 
-        <div className="bento-card card-center" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <HoverCard tooltipText="About Me">
-            <TaQsiim />
-          </HoverCard>
+        <div className="bento-card card-center">
+          <ProjectSlides />
         </div>
 
 

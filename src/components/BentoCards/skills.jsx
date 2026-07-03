@@ -1,5 +1,5 @@
 import React from 'react';
-import { Smartphone, Layout, Database, Terminal, Code, Code2, MonitorPlay, Zap, Globe, Lightbulb } from 'lucide-react';
+import { Smartphone, Layout, Database, Terminal, Code, Code2, MonitorPlay, Zap, Globe, Lightbulb, Download } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
 import {
   SiKotlin, SiDart, SiPython, SiCplusplus, SiC, SiJavascript, SiHtml5,
@@ -46,23 +46,22 @@ const Skills = () => {
       title: 'Core & Tools',
       icon: <Terminal size={18} style={{ color: 'var(--color-accent)' }} />,
       items: [
-        { name: 'C/C++', icon: <SiCplusplus /> },
         { name: 'Clean Architecture', icon: <Code2 size={18} /> },
         { name: 'MVVM', icon: <MonitorPlay size={18} /> },
         { name: 'Coroutines', icon: <Zap size={18} /> },
         { name: 'OOP', icon: <Code size={18} /> },
         { name: 'Agile/SDLC', icon: <Terminal size={18} /> },
-        { name: 'VS Code', icon: <Code size={18} /> },
-        { name: 'Git/GitHub', icon: <SiGithub /> },
-        { name: 'Arch Linux', icon: <SiArchlinux /> }
+        { name: 'NeoVim', icon: <Code size={18} /> },
+        { name: 'Git/GitHub', icon: <SiGit /> },
+        { name: 'Arch Linux btw', icon: <SiArchlinux /> }
       ]
     }
   ];
 
   return (
     <div className="flex-col-between" style={{ height: '100%' }}>
-      <div style={{ marginBottom: '1rem' }}>
-        <h2 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--color-text-bright)' }}>Mobile & Frontend Developer</h2>
+      <div style={{ marginBottom: '1rem', width: '100%' }}>
+        <h2 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--color-text-bright)', textAlign: 'center' }}>Mobile & Frontend Developer</h2>
       </div>
 
       <div className="skills-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', overflow: 'hidden' }}>
@@ -120,6 +119,11 @@ const Skills = () => {
 
           </div>
         ))}
+      </div>
+      <div style={{ marginTop: 'auto', paddingTop: '1rem', display: 'flex', justifyContent: 'center' }}>
+        <a href="/Abdallah-Kassem-Hassan.pdf" target="_blank" rel="noopener noreferrer" className='btn-cv' style={{ width: '100%', justifyContent: 'center' }}>
+          <Download size={16} /> get my Resume
+        </a>
       </div>
     </div>
   );
