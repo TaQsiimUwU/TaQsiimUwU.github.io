@@ -238,6 +238,20 @@ body {
     height: auto;
     min-height: 100vh;
     padding: 1rem;
+    flex-direction: column;
+  }
+
+  .bento-header {
+    width: 100%;
+    height: 3.5rem;
+    flex-direction: row;
+    padding: 0 1.5rem;
+  }
+
+  .bento-header-status,
+  .bento-header-version {
+    writing-mode: horizontal-tb;
+    transform: none;
   }
 
   .bento-grid {
@@ -250,4 +264,10 @@ body {
     grid-area: auto; /* Resets the grid layout so they stack naturally */
     min-height: 200px;
   }
+
+  .card-top-left { order: 1; }
+  .card-bottom-left { order: 2; }
+  .card-center { order: 3; }
+  .card-top-right { order: 4; }
+  .card-bottom-right { order: 5; }
 }

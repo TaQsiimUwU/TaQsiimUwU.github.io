@@ -1,3 +1,4 @@
+import { MapPin, Globe, Moon } from 'lucide-react';
 import '../Styles/index.css';
 import ProjectSlides from '../components/BentoCards/ProjectSlides';
 import ServicesSlides from '../components/BentoCards/servicesSlides';
@@ -24,10 +25,28 @@ const BentoGrid = () => {
         />
       </div>
 
-      {/* Top horizontal bar */}
-      <div className="bento-header">
-        <span className="bento-header-status">SYSTEM.STATUS: ONLINE</span>
-        <span className="bento-header-version">PORTFOLIO v3.0</span>
+      {/* Top horizontal bar / Sidebar */}
+      <div className="bento-header" style={{ justifyContent: 'space-between', padding: '1.5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'inherit', gap: '1.5rem', alignItems: 'center' }}>
+          <HoverCard tooltipText="Toggle Theme">
+            <Moon size={18} style={{ color: 'var(--color-text-secondary)', cursor: 'crosshair' }} />
+          </HoverCard>
+          <HoverCard tooltipText="Language (AR/EN)">
+            <Globe size={18} style={{ color: 'var(--color-text-secondary)', cursor: 'crosshair' }} />
+          </HoverCard>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'inherit', gap: '1.5rem', alignItems: 'center' }}>
+          <HoverCard tooltipText="Alexandria, Egypt">
+            <MapPin size={18} style={{ color: 'var(--color-text-secondary)', cursor: 'crosshair' }} />
+          </HoverCard>
+          <HoverCard tooltipText="Open to Work">
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '18px', height: '18px', cursor: 'crosshair' }}>
+              <div style={{ width: '10px', height: '10px', backgroundColor: 'var(--color-success)', borderRadius: '50%', zIndex: 2 }}></div>
+              <div className="pulse-ring" style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', backgroundColor: 'var(--color-success)', opacity: 0.4 }}></div>
+            </div>
+          </HoverCard>
+        </div>
       </div>
 
       {/* Main Grid Layout */}

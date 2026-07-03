@@ -41,14 +41,13 @@ const ServicesSlides = () => {
   const activeService = services[activeIdx];
 
   return (
-    <div className="project-slides-fullscreen" style={{ display: 'flex', flexDirection: 'column', padding: '1.25rem', justifyContent: 'space-between', boxSizing: 'border-box' }}>
-      
+    <Link to="/Services" className="project-slides-fullscreen" style={{ display: 'flex', flexDirection: 'column', padding: '1.25rem', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+
       {/* Top Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2, width: '100%' }}>
-        <h3 className="font-mono-custom text-accent" style={{ fontSize: '0.875rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-          Services
+        <h3 className="font-mono-custom text-accent" style={{ fontSize: '1rem', textAlign: 'center', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          What I offer
         </h3>
-        <span className="font-mono-custom" style={{ fontSize: '10px', color: 'var(--color-text-muted)' }}>Auto-rotating</span>
       </div>
 
       {/* Main Content Centered */}
@@ -60,7 +59,7 @@ const ServicesSlides = () => {
             {activeService.desc}
           </p>
         </div>
-        
+
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', padding: '0.25rem 0.75rem', background: 'var(--color-accent-alpha-10)', borderRadius: '2rem', border: '1px solid var(--color-accent-border)', color: 'var(--color-text-bright)', fontSize: '0.875rem', fontWeight: 700, marginTop: '0.25rem' }}>
           <DollarSign size={14} style={{ color: 'var(--color-accent)' }} />
           {activeService.price}+
@@ -77,13 +76,9 @@ const ServicesSlides = () => {
             />
           ))}
         </div>
-        <a href="mailto:abdallahkassemhassan@gmail.com?subject=Service Inquiry" className="project-slide-cta" style={{ textDecoration: 'none', color: 'var(--color-text-bright)' }}>
-          <span>Request</span>
-          <ArrowRight size={12} />
-        </a>
       </div>
 
-    </div>
+    </Link>
   );
 };
 

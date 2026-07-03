@@ -30,7 +30,7 @@ const ContactsCard = () => {
 
   const socialMedia = [
     { icon: <Instagram size={18} />, label: 'Instagram', href: 'https://instagram.com/taqsiim' },
-    { icon: <Twitter size={18} />, label: 'Twitter', href: 'https://twitter.com/taqsiim' },
+    { icon: <img src="/socialMedia/x.svg" alt="X" style={{ width: 18, height: 18, filter: 'invert(1)' }} />, label: 'Twitter', href: 'https://twitter.com/taqsiim' },
     { icon: <img src="/socialMedia/threads.svg" alt="Threads" style={{ width: 18, height: 18, filter: 'invert(1)' }} />, label: 'Threads', href: 'https://threads.net/taqsiim' },
     { icon: <Youtube size={18} />, label: 'YouTube', href: 'https://youtube.com/c/taqsiim' }
   ];

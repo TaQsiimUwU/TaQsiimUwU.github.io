@@ -1,26 +1,27 @@
 import React from 'react';
-import { ArrowLeft, User, Briefcase } from 'lucide-react';
+import { ArrowLeft, User, Briefcase, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const About = () => {
   const experiences = [
     {
-      role: 'Senior Full Stack Developer',
-      company: 'Aether Labs',
-      period: '2024 - Present',
-      desc: 'Leading a team of developers building 3D metaverse spaces and high-performance WebGL applications.'
-    },
+      role: 'Mobile Application Development Trainee',
+      company: 'Digital Egypt Pioneers Initiative (DEPI) - Egypt',
+      period: 'June 2025 - Nov 2025',
+      desc: (
+        <ul style={{ paddingLeft: '1rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <li>Built AnimBro end-to-end as the program’s flagship deliverable — architected API integration, reactive UI in Jetpack Compose, and offline-first data layer under production code review.</li>
+          <li>Applied MVVM architecture and Clean Architecture principles to ensure scalability and maintainability across all production-level applications developed during the program.</li>
+        </ul>
+      )
+    }
+  ];
+
+  const education = [
     {
-      role: 'Frontend Engineer',
-      company: 'Pixel Forge',
-      period: '2022 - 2024',
-      desc: 'Developed interactive custom design systems and user interfaces for enterprise SaaS applications.'
-    },
-    {
-      role: 'Creative Web Designer',
-      company: 'Self-Employed',
-      period: '2020 - 2022',
-      desc: 'Crafted bespoke marketing sites, branding identities, and customized Vite/React solutions.'
+      degree: 'Bachelor of Science in Computer Science and Information Technology',
+      school: 'Egypt-Japan University for Science and Technology - Alexandria, Egypt',
+      period: 'Sep 2023 – July 2027'
     }
   ];
 
@@ -36,33 +37,33 @@ export const About = () => {
             <ArrowLeft size={16} />
             <span>Back to Home</span>
           </Link>
-          <span className="page-meta-tag">ABOUT_ME_FILE_v1.0</span>
+          <span className="page-meta-tag">ABOUT_ME_FILE_v2.0</span>
         </header>
 
         {/* Hero Section */}
         <section style={{ marginBottom: '4rem' }}>
           <div className="page-section-tag">
             <User size={14} />
-            <span>The Architect</span>
+            <span>The Developer</span>
           </div>
           <h1 className="page-title-large">
-            Designing digital realities with <span>intent</span> and precision.
+            Architecting native ecosystems with <span>performance</span> and scale.
           </h1>
           <div className="about-grid-intro">
             <div className="about-bio-paragraphs">
               <p>
-                I am a multi-disciplinary developer and designer based at the intersection of aesthetic brilliance and logical architecture. I build interactive web applications that run flawlessly and captivate users visually.
+                Mobile Developer with expertise in architecting high-performance native (Android/Kotlin) and cross-platform (Flutter/KMP) ecosystems.
               </p>
               <p>
-                My work centers around modern frameworks like React and Next.js, combined with cutting-edge styling and graphics capabilities like CSS modules, canvas API, and React Three Fiber (WebGL). I believe code should not only solve problems but tell compelling stories.
+                Android and Flutter developer (Kotlin, KMP) with hands-on experience shipping a BLE-connected AI health app and a 2,500-user campus platform. Passionate about on-device ML and cross-platform architecture.
               </p>
             </div>
             <div className="about-vitals-card">
               <span className="vitals-label">// Vitals</span>
               <ul className="vitals-list">
-                <li><span>Name:</span> <span>TaQsiim</span></li>
-                <li><span>Role:</span> <span>Full Stack Dev</span></li>
-                <li><span>Focus:</span> <span>Interactive UX</span></li>
+                <li><span>Name:</span> <span>Abdallah Kassem Hassan</span></li>
+                <li><span>Role:</span> <span>Mobile Developer</span></li>
+                <li><span>Base:</span> <span>Alexandria, Egypt</span></li>
                 <li><span>Status:</span> <span className="status-active">Active</span></li>
               </ul>
             </div>
@@ -70,10 +71,10 @@ export const About = () => {
         </section>
 
         {/* Experience Section */}
-        <section className="timeline-section">
+        <section className="timeline-section" style={{ marginBottom: '4rem' }}>
           <div className="page-section-tag" style={{ marginBottom: '2rem' }}>
             <Briefcase size={14} />
-            <span>Professional Journey</span>
+            <span>Professional Experience</span>
           </div>
           <div className="timeline-list">
             {experiences.map((exp, idx) => (
@@ -88,9 +89,33 @@ export const About = () => {
                     {exp.period}
                   </span>
                 </div>
-                <p className="timeline-desc">
+                <div className="timeline-desc">
                   {exp.desc}
-                </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section className="timeline-section">
+          <div className="page-section-tag" style={{ marginBottom: '2rem' }}>
+            <GraduationCap size={14} />
+            <span>Education</span>
+          </div>
+          <div className="timeline-list">
+            {education.map((edu, idx) => (
+              <div key={idx} className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-item-header">
+                  <div>
+                    <h3 className="timeline-role">{edu.degree}</h3>
+                    <p className="timeline-company">{edu.school}</p>
+                  </div>
+                  <span className="timeline-period">
+                    {edu.period}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -99,3 +124,5 @@ export const About = () => {
     </div>
   );
 };
+
+export default About;

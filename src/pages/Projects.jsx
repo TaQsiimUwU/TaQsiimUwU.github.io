@@ -4,50 +4,26 @@ import { Link } from 'react-router-dom';
 
 const projects = [
   {
-    title: 'Aetheria - 3D Metaverse',
-    category: '3D Graphics',
-    description: 'Immersive 3D multiplayer social space built with React Three Fiber, WebGL, and Socket.io. Features dynamic lighting, audio spatialization, and customizable avatars.',
-    tags: ['React Three Fiber', 'Three.js', 'Socket.io', 'Node.js', 'CSS Modules'],
+    title: 'AnimBro',
+    category: 'Mobile App',
+    description: 'A complete experience to discover, track, and manage anime, with integrated profiles, watchlists. Built end-to-end with reactive UI in Jetpack Compose and offline-first data layer.',
+    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'MVVM', 'Clean Architecture'],
     github: '#',
     demo: '#'
   },
   {
-    title: 'Neon Forge - E-Commerce',
+    title: 'Cardio Logic',
+    category: 'Health Tech',
+    description: 'Heart-monitoring client that leverages Bluetooth Low Energy (BLE) and on-device AI to perform real-time rhythm analysis.',
+    tags: ['Flutter', 'Kotlin', 'BLE', 'On-device ML'],
+    github: '#',
+    demo: '#'
+  },
+  {
+    title: 'Campus Connect',
     category: 'Full Stack',
-    description: 'Modern cyberpunk styled merchandise store featuring custom Stripe payment checkout, admin dashboard, inventory tracking, and fluid page transitions.',
-    tags: ['Next.js', 'Stripe API', 'PostgreSQL', 'Prisma', 'Vanilla CSS'],
-    github: '#',
-    demo: '#'
-  },
-  {
-    title: 'Nova UI - Component Library',
-    category: 'UI/UX',
-    description: 'Highly accessible, custom-designed React design system components with physics-based spring transitions. Documented thoroughly using Storybook.',
-    tags: ['React', 'Framer Motion', 'Radix Primitives', 'Vite', 'CSS Modules'],
-    github: '#',
-    demo: '#'
-  },
-  {
-    title: 'Chronos - Productivity Suite',
-    category: 'Web App',
-    description: 'Minimalist time blocking and scheduling application incorporating focus sessions, analytics charts, and localized local-storage configuration syncing.',
-    tags: ['TypeScript', 'React', 'Zustand', 'Chart.js', 'Vite'],
-    github: '#',
-    demo: '#'
-  },
-  {
-    title: 'Pulse - Audio Visualizer',
-    category: '3D Graphics',
-    description: 'Real-time microphone and audio file Web Audio API visualizer rendering interactive audio-responsive particle systems with Canvas2D/WebGL.',
-    tags: ['HTML5 Canvas', 'WebGL', 'JavaScript', 'Vite'],
-    github: '#',
-    demo: '#'
-  },
-  {
-    title: 'Helix - Markdown Notebook',
-    category: 'Desktop App',
-    description: 'Offline-first, markdown editor desktop client featuring tree navigation, syntax highlighting, export to PDF, and automatic workspace autosaves.',
-    tags: ['Electron', 'React', 'Vanilla CSS', 'Marked', 'Prism.js'],
+    description: 'Empowering students and club managers with a seamless, interconnected campus experience. Scaled to a 2,500-user platform.',
+    tags: ['Mobile Development', 'Backend API', 'Cross-platform'],
     github: '#',
     demo: '#'
   }
@@ -56,7 +32,7 @@ const projects = [
 export const Projects = () => {
   const [filter, setFilter] = useState('All');
   
-  const categories = ['All', '3D Graphics', 'Full Stack', 'UI/UX', 'Web App', 'Desktop App'];
+  const categories = ['All', 'Mobile App', 'Health Tech', 'Full Stack'];
   
   const filteredProjects = filter === 'All' 
     ? projects 
