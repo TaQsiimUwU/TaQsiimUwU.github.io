@@ -1,27 +1,29 @@
 import React from 'react';
-import { ArrowLeft, User, Briefcase, GraduationCap } from 'lucide-react';
+import { ArrowLeft, ExternalLink, MapPin, Download, Briefcase, GraduationCap, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Beams from '../components/ReactBits/Beams';
+import { useTranslation } from 'react-i18next';
 
 export const About = () => {
-  const experiences = [
+  const { t } = useTranslation();
+  const education = [
     {
-      role: 'Mobile Application Development Trainee',
-      company: 'Digital Egypt Pioneers Initiative (DEPI) - Egypt',
-      period: 'June 2025 - Nov 2025',
-      desc: (
-        <ul style={{ paddingLeft: '1rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          <li>Built AnimBro end-to-end as the program’s flagship deliverable — architected API integration, reactive UI in Jetpack Compose, and offline-first data layer under production code review.</li>
-          <li>Applied MVVM architecture and Clean Architecture principles to ensure scalability and maintainability across all production-level applications developed during the program.</li>
-        </ul>
-      )
+      degree: t('about_edu_degree'),
+      school: t('about_edu_uni'),
+      period: t('about_edu_date')
     }
   ];
 
-  const education = [
+  const experiences = [
     {
-      degree: 'Bachelor of Science in Computer Science and Information Technology',
-      school: 'Egypt-Japan University for Science and Technology - Alexandria, Egypt',
-      period: 'Sep 2023 – July 2027'
+      role: t('about_exp_role'),
+      company: t('about_exp_company'),
+      period: t('about_exp_date'),
+      desc: (
+        <ul style={{ paddingLeft: '1rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <li>{t('about_exp_desc')}</li>
+        </ul>
+      )
     }
   ];
 
@@ -30,8 +32,8 @@ export const About = () => {
       <div className="page-inner">
         {/* Navigation / Header */}
         <header className="page-header">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="back-link"
           >
             <ArrowLeft size={16} />
@@ -52,18 +54,15 @@ export const About = () => {
           <div className="about-grid-intro">
             <div className="about-bio-paragraphs">
               <p>
-                Mobile Developer with expertise in architecting high-performance native (Android/Kotlin) and cross-platform (Flutter/KMP) ecosystems.
-              </p>
-              <p>
-                Android and Flutter developer (Kotlin, KMP) with hands-on experience shipping a BLE-connected AI health app and a 2,500-user campus platform. Passionate about on-device ML and cross-platform architecture.
+                {t('about_summary_text')}
               </p>
             </div>
             <div className="about-vitals-card">
               <span className="vitals-label">// Vitals</span>
               <ul className="vitals-list">
-                <li><span>Name:</span> <span>Abdallah Kassem Hassan</span></li>
-                <li><span>Role:</span> <span>Mobile Developer</span></li>
-                <li><span>Base:</span> <span>Alexandria, Egypt</span></li>
+                <li><span>Name:</span> <span>{t('about_name')}</span></li>
+                <li><span>Role:</span> <span>{t('about_title')}</span></li>
+                <li><span>Base:</span> <span>{t('about_location')}</span></li>
                 <li><span>Status:</span> <span className="status-active">Active</span></li>
               </ul>
             </div>
@@ -74,7 +73,7 @@ export const About = () => {
         <section className="timeline-section" style={{ marginBottom: '4rem' }}>
           <div className="page-section-tag" style={{ marginBottom: '2rem' }}>
             <Briefcase size={14} />
-            <span>Professional Experience</span>
+            <span>{t('about_exp_title')}</span>
           </div>
           <div className="timeline-list">
             {experiences.map((exp, idx) => (
@@ -101,7 +100,7 @@ export const About = () => {
         <section className="timeline-section">
           <div className="page-section-tag" style={{ marginBottom: '2rem' }}>
             <GraduationCap size={14} />
-            <span>Education</span>
+            <span>{t('about_edu_title')}</span>
           </div>
           <div className="timeline-list">
             {education.map((edu, idx) => (

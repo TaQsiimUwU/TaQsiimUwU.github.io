@@ -30,9 +30,9 @@ const Sidebar = () => {
                 }
               }
             })
-            .catch(() => {});
+            .catch(() => { });
         },
-        () => {}
+        () => { }
       );
     }
   }, []);
@@ -40,9 +40,7 @@ const Sidebar = () => {
   return (
     <div className="bento-header" style={{ justifyContent: 'space-between', padding: '1.5rem' }}>
       <div style={{ display: 'flex', flexDirection: 'inherit', gap: '1.5rem', alignItems: 'center' }}>
-        <HoverCard tooltipText={t('toggle_theme')}>
-          <Moon size={18} style={{ color: 'var(--color-text-secondary)', cursor: 'crosshair' }} />
-        </HoverCard>
+        <Moon size={18} style={{ color: 'var(--color-text-secondary)', cursor: 'crosshair' }} />
         <span onClick={toggleLanguage} className="bento-header-status" style={{ fontWeight: 600, color: 'var(--color-text-secondary)', cursor: 'crosshair' }}>
           {t('toggle_lang')}
         </span>

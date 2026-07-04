@@ -52,7 +52,7 @@ const BentoGrid = () => {
 
 
         <div className="bento-card card-bottom-right" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <HoverCard tooltipText={`Let's Get in touch ${<ArrowUpRight size={14} />}`}>
+          <HoverCard tooltipText="Let's Get in touch" >
             <ContactsCard />
           </HoverCard>
         </div>

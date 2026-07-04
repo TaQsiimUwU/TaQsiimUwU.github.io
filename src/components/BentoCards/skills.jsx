@@ -1,5 +1,6 @@
 import React from 'react';
 import { Smartphone, Layout, Database, Terminal, Code, Code2, MonitorPlay, Zap, Globe, Lightbulb, Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Marquee from 'react-fast-marquee';
 import {
   SiKotlin, SiDart, SiPython, SiCplusplus, SiC, SiJavascript, SiHtml5,
@@ -8,9 +9,10 @@ import {
 } from 'react-icons/si';
 
 const Skills = () => {
+  const { t } = useTranslation();
   const skillCategories = [
     {
-      title: 'Mobile Development',
+      title: t('mobile_dev'),
       icon: <Smartphone size={18} style={{ color: 'var(--color-accent)' }} />,
       items: [
         { name: 'Kotlin', icon: <SiKotlin /> },
@@ -25,7 +27,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Web Development',
+      title: t('web_dev'),
       icon: <Layout size={18} style={{ color: 'var(--color-accent)' }} />,
       items: [
         { name: 'JavaScript', icon: <SiJavascript /> },
@@ -33,7 +35,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Backend & APIs',
+      title: t('backend_apis'),
       icon: <Database size={18} style={{ color: 'var(--color-accent)' }} />,
       items: [
         { name: 'Python', icon: <SiPython /> },
@@ -43,7 +45,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Core & Tools',
+      title: t('core_tools'),
       icon: <Terminal size={18} style={{ color: 'var(--color-accent)' }} />,
       items: [
         { name: 'Clean Architecture', icon: <Code2 size={18} /> },

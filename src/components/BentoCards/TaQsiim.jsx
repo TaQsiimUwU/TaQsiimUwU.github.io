@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HoverCard from '../HoverCard';
+import { useTranslation } from 'react-i18next';
 const AnimatedName = ({ names, typingSpeed = 100, deleteSpeed = 60, pauseDuration = 2500 }) => {
   const [displayText, setDisplayText] = useState('');
   const [nameIndex, setNameIndex] = useState(0);
@@ -47,7 +48,8 @@ const AnimatedName = ({ names, typingSpeed = 100, deleteSpeed = 60, pauseDuratio
 };
 
 const TaQsiim = () => {
-  const names = ['TaQsiim', 'Abdallah Kassem'];
+  const { t } = useTranslation();
+  const names = [t('taqsiim'), t('abdallah_kassem')];
 
   return (
 

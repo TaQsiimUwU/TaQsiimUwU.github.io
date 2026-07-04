@@ -4,5 +4,32 @@
   "lets_build": "Let's build something",
   "reach_out": "Reach out via any of these platforms",
   "toggle_theme": "Toggle Theme",
-  "toggle_lang": "عربي"
+  "toggle_lang": "عربي",
+
+  "mobile_dev": "Mobile Development",
+  "web_dev": "Web Development",
+  "backend_apis": "Backend & APIs",
+  "core_tools": "Core & Tools",
+  "core_skills": "Core Skills",
+  
+  "taqsiim": "TaQsiim",
+  "abdallah_kassem": "Abdallah Kassem",
+  "view_projects": "View Projects",
+
+  "about_name": "Abdallah Kassem Hassan",
+  "about_title": "Mobile Developer",
+  "about_location": "Alexandria, Egypt",
+  "about_summary_title": "Summary",
+  "about_summary_text": "Mobile Developer with expertise in architecting high-performance native (Android/Kotlin) and cross-platform (Flutter/KMP) ecosystems. Android and Flutter developer (Kotlin, KMP) with hands-on experience shipping a BLE-connected AI health app and a 2,500-user campus platform. Passionate about on-device ML and cross-platform architecture.",
+  
+  "about_edu_title": "Education",
+  "about_edu_uni": "Egypt-Japan University for Science and Technology",
+  "about_edu_degree": "Bachelor of Science in Computer Science and Information Technology",
+  "about_edu_date": "Sep 2023 – July 2027",
+
+  "about_exp_title": "Experience",
+  "about_exp_company": "Digital Egypt Pioneers Initiative (DEPI)",
+  "about_exp_role": "Mobile Application Development Trainee",
+  "about_exp_date": "June 2025 – Nov 2025",
+  "about_exp_desc": "Built AnimBro end-to-end as the program’s flagship deliverable — architected API integration, reactive UI in Jetpack Compose, and offline-first data layer under production constraints."
 }

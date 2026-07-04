@@ -620,7 +620,6 @@
 
 .page-container {
   min-height: 100vh;
-  background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   padding: 1.5rem;
 }
@@ -966,11 +965,14 @@
 
 .project-card-interactive {
   display: flex;
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border-primary);
-  border-radius: 1rem;
+  border: 1px solid var(--color-glass-border);
+  border-radius: 20px;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
