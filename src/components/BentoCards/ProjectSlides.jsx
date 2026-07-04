@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import HoverCard from '../HoverCard';
 const projectsData = [
   {
@@ -40,7 +39,7 @@ const ProjectSlides = () => {
 
   return (
     <HoverCard tooltipText={activeProject.description}>
-      <Link to="/projects" className="project-slides-fullscreen">
+      <div className="project-slides-fullscreen" style={{ cursor: 'pointer' }}>
         {/* Background image */}
         <div
           className={`project-slide-bg ${isTransitioning ? 'fade-out' : 'fade-in'}`}
@@ -70,7 +69,7 @@ const ProjectSlides = () => {
             <ArrowRight size={12} />
           </div>
         </div>
-      </Link>
+      </div>
     </HoverCard>
   );
 };

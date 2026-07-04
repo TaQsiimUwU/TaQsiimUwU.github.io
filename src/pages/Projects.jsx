@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Github, ExternalLink, FolderGit2, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Beams from '../components/ReactBits/Beams';
@@ -47,7 +47,7 @@ const projects = [
   }
 ];
 
-export const Projects = () => {
+export const Projects = ({ isModal = false }) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const openModal = (project) => {
@@ -60,33 +60,42 @@ export const Projects = () => {
     document.body.style.overflow = '';
   };
 
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return (
-    <div className="page-container">
-      <div style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
-        <Beams
-          beamWidth={2}
-          beamHeight={25}
-          beamNumber={50}
-          lightColor="#ff8a8a"
-          speed={10}
-          noiseIntensity={1.75}
-          scale={0.2}
-          rotation={116}
-        />
-      </div>
+    <div className={isModal ? "" : "page-container"}>
+      {!isModal && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
+          <Beams
+            beamWidth={2}
+            beamHeight={25}
+            beamNumber={50}
+            lightColor="#ff8a8a"
+            speed={10}
+            noiseIntensity={1.75}
+            scale={0.2}
+            rotation={116}
+          />
+        </div>
+      )}
 
-
-      <div className="page-inner-wide">
+      <div className={isModal ? "" : "page-inner-wide"}>
         {/* Navigation / Header */}
-        <header className="page-header">
-          <Link
-            to="/"
-            className="back-link"
-          >
-            <ArrowLeft size={16} />
-            <span>Back to Home</span>
-          </Link>
-        </header>
+        {!isModal && (
+          <header className="page-header">
+            <Link
+              to="/"
+              className="back-link"
+            >
+              <ArrowLeft size={16} />
+              <span>Back to Home</span>
+            </Link>
+          </header>
+        )}
 
         {/* Hero Title */}
         <div className="page-intro">

@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import HoverCard from '../HoverCard';
 import { useTranslation } from 'react-i18next';
 const AnimatedName = ({ names, typingSpeed = 100, deleteSpeed = 60, pauseDuration = 2500 }) => {
   const [displayText, setDisplayText] = useState('');
@@ -53,7 +51,7 @@ const TaQsiim = () => {
 
   return (
 
-    <Link to="/about" style={{ textDecoration: 'none' }}>
+    <div style={{ textDecoration: 'none' }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', width: '100%', height: '100%' }}>
         <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', color: 'var(--color-text-secondary)' }}>
           <ArrowUpRight size={20} className="taqsiim-arrow" />
@@ -62,7 +60,7 @@ const TaQsiim = () => {
         <img
           src="/Logo colored.svg"
           alt="TaQsiim Logo"
-          style={{ width: '100px', height: 'auto', display: 'block', flexShrink: 0 }}
+          style={{ width: '100px', height: 'auto', display: 'block', flexShrink: 0, marginTop: '2.5rem' }}
         />
         <div>
           <h2 className="taqsiim-name" style={{ margin: 0, textAlign: 'center' }}>
@@ -70,7 +68,7 @@ const TaQsiim = () => {
           </h2>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

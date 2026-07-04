@@ -3,8 +3,9 @@ import { ArrowLeft, ExternalLink, MapPin, Download, Briefcase, GraduationCap, Us
 import { Link } from 'react-router-dom';
 import Beams from '../components/ReactBits/Beams';
 import { useTranslation } from 'react-i18next';
-export const About = () => {
+export const About = ({ isModal = false }) => {
   const { t } = useTranslation();
+
   const education = [
     {
       degree: t('about_edu_degree'),
@@ -27,32 +28,36 @@ export const About = () => {
   ];
 
   return (
-    <div className="page-container">
+    <div className={isModal ? "" : "page-container"}>
 
-      <div style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
-        <Beams
-          beamWidth={2}
-          beamHeight={25}
-          beamNumber={50}
-          lightColor="#ff8a8a"
-          speed={10}
-          noiseIntensity={1.75}
-          scale={0.2}
-          rotation={116}
-        />
-      </div>
-      <div className="page-inner">
+      {!isModal && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
+          <Beams
+            beamWidth={2}
+            beamHeight={25}
+            beamNumber={50}
+            lightColor="#ff8a8a"
+            speed={10}
+            noiseIntensity={1.75}
+            scale={0.2}
+            rotation={116}
+          />
+        </div>
+      )}
+      <div className={isModal ? "" : "page-inner"}>
         {/* Navigation / Header */}
-        <header className="page-header">
-          <Link
-            to="/"
-            className="back-link"
-          >
-            <ArrowLeft size={16} />
-            <span>Back to Home</span>
-          </Link>
-          <span className="page-meta-tag">ABOUT_ME_FILE_v2.0</span>
-        </header>
+        {!isModal && (
+          <header className="page-header">
+            <Link
+              to="/"
+              className="back-link"
+            >
+              <ArrowLeft size={16} />
+              <span>Back to Home</span>
+            </Link>
+            <span className="page-meta-tag">ABOUT_ME_FILE_v2.0</span>
+          </header>
+        )}
 
         {/* Hero Section */}
         <section style={{ marginBottom: '4rem' }}>

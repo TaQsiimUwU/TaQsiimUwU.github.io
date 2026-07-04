@@ -124,6 +124,17 @@ body {
   letter-spacing: 0.1em;
 }
 
+.lang-toggle-btn {
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lang-toggle-btn:hover {
+  color: var(--color-accent) !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
 .bento-header-version {
   font-size: 0.75rem;
   font-family: var(--font-geist-mono), monospace;
@@ -270,6 +281,71 @@ body {
   .card-center { order: 3; }
   .card-top-right { order: 4; }
   .card-bottom-right { order: 5; }
+}
+
+/* =========================================
+   Expanded Card / Modal Styles
+   ========================================= */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 17, 21, 0.8); /* Darken the background */
+  backdrop-filter: blur(8px); /* Optional: blur the grid behind it */
+  z-index: 100;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  pointer-events: none; /* Let clicks pass through to backdrop */
+}
+
+.expanded-card {
+  width: 90%;
+  max-width: 800px;
+  min-height: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--color-bg-secondary);
+  border-radius: 2rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto; /* Re-enable clicks inside the card */
+  border: 1px solid var(--color-glass-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.expanded-content {
+  margin-top: 2rem;
+}
+
+.close-button {
+  margin-top: 1rem;
+  align-self: flex-end;
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  font-family: var(--font-retro);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: var(--color-accent-alpha-10);
 }
 
 /* =========================================
