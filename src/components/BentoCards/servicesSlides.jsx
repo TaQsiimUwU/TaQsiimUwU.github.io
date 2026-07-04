@@ -2,9 +2,38 @@ import React from 'react';
 import { Smartphone, Layout, Layers, DollarSign } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 
 import HoverCard from '../HoverCard';
+
+const serviceContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const serviceCardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: 'spring',
+      damping: 20,
+      stiffness: 100,
+    },
+  },
+};
+
 const ServicesSlides = () => {
   const { t } = useTranslation();
 
@@ -36,9 +65,14 @@ const ServicesSlides = () => {
           {t('what_i_offer')}
         </h3>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', flex: 1, width: '100%' }}>
+        <motion.div
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', flex: 1, width: '100%' }}
+          initial="hidden"
+          animate="visible"
+          variants={serviceContainerVariants}
+        >
           {services.map((svc, idx) => (
-            <div key={idx} className="service-card-animated bento-card">
+            <motion.div key={idx} className="service-card-animated bento-card" variants={serviceCardVariants}>
               <span className="service-title">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                   {svc.icon}
@@ -59,9 +93,9 @@ const ServicesSlides = () => {
                   {svc.price}+
                 </div>
               </span>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </HoverCard >
   );
