@@ -56,7 +56,7 @@ const Sidebar = () => {
           </span>
           {t('open_to_work')}
         </span>
-        <span className="bento-header-status" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <span className="bento-header-status hide-on-mobile" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <MapPin size={14} style={{ transform: 'rotate(90deg)' }} />
           {location}
         </span>

@@ -31,7 +31,7 @@ export const About = ({ isModal = false }) => {
     <div className={isModal ? "" : "page-container"}>
 
       {!isModal && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
+        <div className="hide-on-mobile" style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
           <Beams
             beamWidth={2}
             beamHeight={25}
@@ -55,7 +55,6 @@ export const About = ({ isModal = false }) => {
               <ArrowLeft size={16} />
               <span>Back to Home</span>
             </Link>
-            <span className="page-meta-tag">ABOUT_ME_FILE_v2.0</span>
           </header>
         )}
 

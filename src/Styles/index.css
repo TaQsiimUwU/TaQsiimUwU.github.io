@@ -245,6 +245,10 @@ body {
 
 /* Optional: Make it responsive for smaller screens */
 @media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
   .bento-container {
     height: auto;
     min-height: 100vh;

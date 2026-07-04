@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../components/BentoCards/Sidebar';
 import '../Styles/index.css';
 import ProjectSlides from '../components/BentoCards/ProjectSlides';
@@ -66,12 +66,19 @@ const BentoGrid = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeView = searchParams.get('view');
 
+  const navigate = useNavigate();
   const closeView = () => {
     const newParams = new URLSearchParams(searchParams);
     newParams.delete('view');
     setSearchParams(newParams);
   };
-  const openView = (id) => setSearchParams({ view: id });
+  const openView = (id) => {
+    if (window.innerWidth <= 768) {
+      navigate(`/${id}`);
+    } else {
+      setSearchParams({ view: id });
+    }
+  };
 
   const activeData = activeView && views[activeView] ? views[activeView] : null;
 
@@ -94,6 +101,7 @@ const BentoGrid = () => {
       variants={containerVariants}
     >
       <motion.div
+        className="hide-on-mobile"
         style={{ position: 'fixed', inset: 0, zIndex: -1 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -69,7 +69,7 @@ export const Projects = ({ isModal = false }) => {
   return (
     <div className={isModal ? "" : "page-container"}>
       {!isModal && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
+        <div className="hide-on-mobile" style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
           <Beams
             beamWidth={2}
             beamHeight={25}
