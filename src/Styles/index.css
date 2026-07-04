@@ -271,7 +271,8 @@ body {
     flex-grow: 0;
   }
   
-  .bento-card {
+  .bento-card,
+  .card-top-right {
     grid-area: auto; /* Resets the grid layout so they stack naturally */
     min-height: 200px;
   }
