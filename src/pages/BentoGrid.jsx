@@ -1,4 +1,4 @@
-import { MapPin, Globe, Moon } from 'lucide-react';
+import Sidebar from '../components/BentoCards/Sidebar';
 import '../Styles/index.css';
 import ProjectSlides from '../components/BentoCards/ProjectSlides';
 import ServicesSlides from '../components/BentoCards/servicesSlides';
@@ -7,7 +7,7 @@ import TaQsiim from '../components/BentoCards/TaQsiim';
 import ContactsCard from '../components/BentoCards/ContactsCard';
 import HoverCard from '../components/HoverCard';
 import Beams from '../components/ReactBits/Beams';
-
+import { ArrowUpRight } from 'lucide-react';
 const BentoGrid = () => {
 
   return (
@@ -26,28 +26,7 @@ const BentoGrid = () => {
       </div>
 
       {/* Top horizontal bar / Sidebar */}
-      <div className="bento-header" style={{ justifyContent: 'space-between', padding: '1.5rem' }}>
-        <div style={{ display: 'flex', flexDirection: 'inherit', gap: '1.5rem', alignItems: 'center' }}>
-          <HoverCard tooltipText="Toggle Theme">
-            <Moon size={18} style={{ color: 'var(--color-text-secondary)', cursor: 'crosshair' }} />
-          </HoverCard>
-          <HoverCard tooltipText="Language (AR/EN)">
-            <Globe size={18} style={{ color: 'var(--color-text-secondary)', cursor: 'crosshair' }} />
-          </HoverCard>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'inherit', gap: '1.5rem', alignItems: 'center' }}>
-          <HoverCard tooltipText="Alexandria, Egypt">
-            <MapPin size={18} style={{ color: 'var(--color-text-secondary)', cursor: 'crosshair' }} />
-          </HoverCard>
-          <HoverCard tooltipText="Open to Work">
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '18px', height: '18px', cursor: 'crosshair' }}>
-              <div style={{ width: '10px', height: '10px', backgroundColor: 'var(--color-success)', borderRadius: '50%', zIndex: 2 }}></div>
-              <div className="pulse-ring" style={{ position: 'absolute', width: '100%', height: '100%', borderRadius: '50%', backgroundColor: 'var(--color-success)', opacity: 0.4 }}></div>
-            </div>
-          </HoverCard>
-        </div>
-      </div>
+      <Sidebar />
 
       {/* Main Grid Layout */}
       <div className="bento-grid">
@@ -57,10 +36,8 @@ const BentoGrid = () => {
           </HoverCard>
         </div>
 
-        <div className="bento-card card-top-right">
-          <HoverCard tooltipText="Services">
-            <ServicesSlides />
-          </HoverCard>
+        <div className="card-top-right" style={{ display: 'flex' }}>
+          <ServicesSlides />
         </div>
 
         <div className="bento-card card-bottom-left">
@@ -75,7 +52,7 @@ const BentoGrid = () => {
 
 
         <div className="bento-card card-bottom-right" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <HoverCard tooltipText="Let's Get in touch">
+          <HoverCard tooltipText={`Let's Get in touch ${<ArrowUpRight size={14} />}`}>
             <ContactsCard />
           </HoverCard>
         </div>

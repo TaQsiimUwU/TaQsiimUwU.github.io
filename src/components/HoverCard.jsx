@@ -34,7 +34,6 @@ const HoverCard = ({ children, tooltipText }) => {
           }}
         >
           {tooltipText}
-          <ArrowUpRight size={14} />
         </div>
       )}
     </div>

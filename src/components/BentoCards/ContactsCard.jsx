@@ -1,6 +1,8 @@
 import { Mail, Linkedin, Phone, Github, Instagram, Twitter, Youtube } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const ContactsCard = () => {
+  const { t } = useTranslation();
   const contacts = [
     {
       icon: <Mail size={16} />,
@@ -37,6 +39,10 @@ const ContactsCard = () => {
 
   return (
     <div className="contacts-container">
+      <div style={{ padding: '0.5rem 1rem 1rem', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center' }}>
+        <h3 className="font-mono-custom text-accent" style={{ margin: 0, fontSize: '1rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('lets_build')}</h3>
+        <p style={{ margin: 0, fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>{t('reach_out')}</p>
+      </div>
       <div className="contacts-card-flex">
         <div className="contacts-left-col" style={{ gap: '0.5rem', justifyContent: 'flex-start' }}>
           {contacts.map((contact, idx) => (
