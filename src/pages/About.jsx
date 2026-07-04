@@ -3,7 +3,6 @@ import { ArrowLeft, ExternalLink, MapPin, Download, Briefcase, GraduationCap, Us
 import { Link } from 'react-router-dom';
 import Beams from '../components/ReactBits/Beams';
 import { useTranslation } from 'react-i18next';
-
 export const About = () => {
   const { t } = useTranslation();
   const education = [
@@ -29,6 +28,19 @@ export const About = () => {
 
   return (
     <div className="page-container">
+
+      <div style={{ position: 'fixed', inset: 0, zIndex: -1 }}>
+        <Beams
+          beamWidth={2}
+          beamHeight={25}
+          beamNumber={50}
+          lightColor="#ff8a8a"
+          speed={10}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={116}
+        />
+      </div>
       <div className="page-inner">
         {/* Navigation / Header */}
         <header className="page-header">

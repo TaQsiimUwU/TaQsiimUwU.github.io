@@ -21,22 +21,26 @@ const ContactsCard = () => {
       label: 'Phone',
       value: '+201013497030',
       href: 'tel:+201013497030'
-    }
+    },
+    {
+      icon: <Github size={16} />,
+      label: 'Github',
+      value: 'taqsiimTQ',
+      href: 'https://github.com/taqsiimTQ'
+    },
   ];
 
   const socialMedia = [
-    { icon: <Instagram size={18} />, label: 'Instagram', href: 'https://instagram.com/taqsiim' },
-    { icon: <img src="/socialMedia/x.svg" alt="X" style={{ width: 18, height: 18, filter: 'invert(1)' }} />, label: 'Twitter', href: 'https://twitter.com/taqsiim' },
-    { icon: <img src="/socialMedia/threads.svg" alt="Threads" style={{ width: 18, height: 18, filter: 'invert(1)' }} />, label: 'Threads', href: 'https://threads.net/taqsiim' },
-    { icon: <Youtube size={18} />, label: 'YouTube', href: 'https://youtube.com/c/taqsiim' },
-    { icon: <Github size={16} />, label: 'Github', value: 'taqsiimTQ', href: 'https://github.com/taqsiimTQ' },
+    { icon: <Instagram size={18} />, label: '@taqsiim', href: 'https://instagram.com/taqsiim' },
+    { icon: <img src="/socialMedia/x.svg" alt="X" style={{ width: 18, height: 18, filter: 'invert(1)' }} />, label: '@taqsiim', href: 'https://twitter.com/taqsiim' },
+    { icon: <img src="/socialMedia/threads.svg" alt="Threads" style={{ width: 18, height: 18, filter: 'invert(1)' }} />, label: '@taqsiim', href: 'https://threads.net/taqsiim' },
+    { icon: <Youtube size={18} />, label: 'taqsiim', href: 'https://youtube.com/c/taqsiim' },
   ];
 
   return (
     <div className="contacts-container">
       <div style={{ padding: '0.5rem 1rem 1rem', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center' }}>
         <h3 className="font-mono-custom text-accent" style={{ margin: 0, fontSize: '1rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('lets_build')}</h3>
-        <p style={{ margin: 0, fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>{t('reach_out')}</p>
       </div>
       <div className="contacts-card-flex">
         <div className="contacts-left-col" style={{ gap: '0.5rem', justifyContent: 'flex-start' }}>
